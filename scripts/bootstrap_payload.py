@@ -9,6 +9,7 @@ for part in parts:
     chunk = "".join(part.read_text().split())
     if part.name == "bootstrap_payload.part11.b64" and len(chunk) == 4499:
         chunk = chunk[:3119] + "Q" + chunk[3119:]
+    print(f"{part.name}: {len(chunk)} {hashlib.sha256(chunk.encode()).hexdigest()}")
     chunks.append(chunk)
 payload = "".join(chunks)
 expected = "77a6e1aff573859a8844f936e618f40063fb32d2af1cc0f11ca66dc042f6d074"
