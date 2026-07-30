@@ -3,6 +3,8 @@ name: Bootstrap DSP radar tutor harness
 on:
   push:
     branches: [agent/codex-learning-harness]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write
