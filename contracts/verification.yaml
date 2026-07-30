@@ -1,0 +1,12 @@
+schema_version: 1
+levels:
+  static: required
+  simulated: module-specific
+  matlab_runtime: optional_named_evidence
+  hardware_capture: not_applicable_by_default
+  manual_learning: required_for_personal_completion
+manual_gates:
+  - learner teach-back before personal completion
+known_limitations:
+  - CI does not include a licensed MATLAB runtime.
+  - Static validation cannot prove numerical correctness or educational effectiveness.

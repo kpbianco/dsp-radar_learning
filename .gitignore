@@ -1,0 +1,12 @@
+.learning/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.asv
+*.m~
+**/figures/*.fig
+**/figures/*.png
+**/results.mat
+**/generated/
+docs/evidence/local/*
+!docs/evidence/local/.gitkeep
