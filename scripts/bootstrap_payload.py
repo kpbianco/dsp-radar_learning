@@ -3,7 +3,14 @@ from __future__ import annotations
 import base64, io, tarfile
 from pathlib import Path
 root = Path(__file__).resolve().parents[1]
-payload = "".join(p.read_text().strip() for p in sorted((root / "scripts").glob("bootstrap_payload.part*.b64")))
+parts = sorted((root / "scripts").glob("bootstrap_payload.part*.b64"))
+chunks = []
+for part in parts:
+    chunk = "".join(part.read_text().split())
+    print(f"{part.name}: {len(chunk)}")
+    chunks.append(chunk)
+payload = "".join(chunks)
+print(f"payload characters: {len(payload)}")
 with tarfile.open(fileobj=io.BytesIO(base64.b64decode(payload)), mode="r:gz") as archive:
     archive.extractall(root)
 (root / ".github/workflows/bootstrap-harness.yml").unlink(missing_ok=True)
