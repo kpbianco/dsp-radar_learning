@@ -1,5 +1,65 @@
 # DSP & Radar Learning Lab
 
-Interactive MATLAB-first DSP and radar curriculum governed by `kpbianco/portfolio-control`.
+An interactive, MATLAB-first curriculum for learning DSP and radar through 84 visual experiments. The repository is designed to work in two distinct modes:
 
-The repository is being bootstrapped with an 84-module Codex tutor harness.
+- **Tutor mode:** Codex walks you through an already implemented module one observation at a time.
+- **Build mode:** Portfolio Control activates one governed batch that implements the next module without silently changing the rest of the curriculum.
+
+The curriculum progresses from sampled sinusoids and FFT intuition through matched filtering, pulse-Doppler processing, CFAR, tracking, arrays, FMCW, SAR, passive radar, and STAP.
+
+## Start learning
+
+Open Codex in this repository and say:
+
+```text
+start
+```
+
+The repository instructions make `start` run the local learner CLI and begin the tutor protocol. You can also be explicit:
+
+```text
+start 17
+continue
+show status
+```
+
+From a shell:
+
+```bash
+./bin/learn start
+./bin/learn start 17
+./bin/learn status
+./bin/learn list
+```
+
+Project 1 is the initial implemented reference lesson. Every module folder already contains its complete curriculum brief and ready-to-paste AI prompt. Projects 2–84 intentionally wait for separate Portfolio Control batches to add their MATLAB experiment, lesson, walkthrough, checks, and validation.
+
+## Module layout
+
+```text
+modules/01-build-a-sinusoid-and-a-complex-phasor/
+├── README.md          # question, experiment, procedure, concept, completion
+├── experiment.m       # added when the module is implemented
+├── lesson.md          # added when the module is implemented
+├── walkthrough.md     # added when the module is implemented
+└── checks.md          # added when the module is implemented
+```
+
+## Implement the next module
+
+This repository is governed by `kpbianco/portfolio-control`. Once the companion control-plane PR is merged and its submodule is initialized:
+
+```bash
+portfolio status dsp-radar-learning
+portfolio go dsp-radar-learning --max-batches 1
+```
+
+Each `P##` batch may edit only its own module plus shared harness files explicitly named by the batch contract. A module is not considered implemented merely because a script exists: it must include a visual experiment, concept explanation, guided parameter sweeps, a deliberately broken case, interpretation checks, deterministic validation, and retained evidence.
+
+## Verify the repository
+
+```bash
+./scripts/agent-verify.sh
+```
+
+The default CI verifies curriculum completeness, folder identity, tutor CLI behavior, and static contracts. It does **not** claim that MATLAB executed unless named MATLAB or compatible runtime evidence is retained separately.

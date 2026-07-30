@@ -1,0 +1,28 @@
+schema_version: 1
+profile: product-data
+intent: Preserve canonical curriculum data, module identity, progression, reproducibility, and recoverable learner tooling.
+required_gates:
+  - curriculum-schema-validation
+  - module-completeness-and-uniqueness
+  - deterministic-static-tests
+  - tutor-cli-tests
+  - implementation-status-integrity
+  - retained-evidence
+required_evidence:
+  - curriculum-counts
+  - module-validation-results
+  - exact verification commands
+  - MATLAB-runtime status
+  - known-content-gaps
+prohibited_autonomy:
+  - rewrite-canonical-learning-goals-without-approval
+  - mark-module-implemented-with-placeholder-content
+  - claim-matlab-execution-without-runtime-evidence
+  - commit-personal-learner-progress
+  - merge-protected-branch
+review_focus:
+  - generic-or-placeholder-teaching-content
+  - hidden-toolbox-dependencies
+  - conceptual-errors
+  - curriculum-order-or-identity-drift
+  - unsupported-validation-claims

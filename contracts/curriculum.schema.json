@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "module_count",
+    "modules"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "module_count": {
+      "const": 84
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 84,
+      "maxItems": 84
+    }
+  }
+}

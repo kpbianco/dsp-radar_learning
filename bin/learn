@@ -1,0 +1,163 @@
+#!/usr/bin/env python3
+"""Local learner-state and module-selection CLI."""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+MANIFEST = ROOT / "curriculum" / "modules.json"
+STATE = ROOT / ".learning" / "progress.json"
+
+
+def load_manifest() -> dict:
+    return json.loads(MANIFEST.read_text(encoding="utf-8"))
+
+
+def default_state() -> dict:
+    return {"schema_version": 1, "current": None, "completed": [], "notes": {}}
+
+
+def load_state() -> dict:
+    if not STATE.exists():
+        return default_state()
+    data = json.loads(STATE.read_text(encoding="utf-8"))
+    base = default_state()
+    base.update(data)
+    return base
+
+
+def save_state(state: dict) -> None:
+    STATE.parent.mkdir(parents=True, exist_ok=True)
+    STATE.write_text(json.dumps(state, indent=2) + "\n", encoding="utf-8")
+
+
+def resolve(selector: str | None, modules: list[dict], state: dict) -> dict:
+    if selector is None:
+        current = state.get("current")
+        if current:
+            for m in modules:
+                if m["id"] == current:
+                    return m
+        completed = set(state.get("completed", []))
+        implemented = [m for m in modules if m["status"] == "implemented"]
+        for m in implemented:
+            if m["id"] not in completed:
+                return m
+        if implemented:
+            return implemented[-1]
+        raise SystemExit("No implemented modules are available.")
+    normalized = selector.strip().lower()
+    if normalized.isdigit():
+        normalized = f"p{int(normalized):02d}"
+    for m in modules:
+        if normalized in {m["id"].lower(), m["slug"].lower(), Path(m["folder"]).name.lower()}:
+            return m
+    raise SystemExit(f"Unknown module selector: {selector}")
+
+
+def print_start(module: dict, state: dict) -> int:
+    state["current"] = module["id"]
+    save_state(state)
+    print(f"{module['id']} — {module['title']}")
+    print(f"status: {module['status']}")
+    print(f"path: {module['folder']}")
+    print(f"guiding question: {module['guiding_question']}")
+    if module["status"] != "implemented":
+        print(f"\nThis module is scaffolded and awaits Portfolio batch {module['implementation_batch']}.")
+        print("Tutor mode may review the brief, but it must not invent completion artifacts outside that batch.")
+        return 3
+    print("\nTutor entry:")
+    print("1. Read README.md and lesson.md.")
+    print("2. Run the baseline section of experiment.m.")
+    print("3. Follow walkthrough.md one observation at a time.")
+    print("4. Use checks.md before recording completion.")
+    return 0
+
+
+def cmd_list(modules: list[dict], state: dict) -> int:
+    completed = set(state.get("completed", []))
+    for m in modules:
+        mark = "x" if m["id"] in completed else " "
+        current = " <current>" if state.get("current") == m["id"] else ""
+        print(f"[{mark}] {m['id']} {m['status']:<11} {m['title']}{current}")
+    return 0
+
+
+def cmd_status(modules: list[dict], state: dict) -> int:
+    implemented = sum(m["status"] == "implemented" for m in modules)
+    print(f"curriculum: {len(modules)} modules")
+    print(f"implemented: {implemented}")
+    print(f"completed locally: {len(state.get('completed', []))}")
+    print(f"current: {state.get('current') or 'none'}")
+    next_pending = next((m for m in modules if m["status"] != "implemented"), None)
+    if next_pending:
+        print(f"next implementation batch: {next_pending['implementation_batch']} — {next_pending['title']}")
+    return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(prog="learn")
+    sub = parser.add_subparsers(dest="command", required=True)
+    p_start = sub.add_parser("start")
+    p_start.add_argument("selector", nargs="?")
+    sub.add_parser("continue")
+    sub.add_parser("list")
+    sub.add_parser("status")
+    p_path = sub.add_parser("path")
+    p_path.add_argument("selector")
+    p_complete = sub.add_parser("complete")
+    p_complete.add_argument("selector", nargs="?")
+    p_complete.add_argument("--note", default="")
+    sub.add_parser("reset")
+    sub.add_parser("doctor")
+    args = parser.parse_args()
+
+    manifest = load_manifest()
+    modules = manifest["modules"]
+    state = load_state()
+
+    if args.command == "list":
+        return cmd_list(modules, state)
+    if args.command == "status":
+        return cmd_status(modules, state)
+    if args.command in {"start", "continue"}:
+        selector = getattr(args, "selector", None) if args.command == "start" else None
+        return print_start(resolve(selector, modules, state), state)
+    if args.command == "path":
+        print(ROOT / resolve(args.selector, modules, state)["folder"])
+        return 0
+    if args.command == "complete":
+        module = resolve(args.selector, modules, state)
+        if module["status"] != "implemented":
+            raise SystemExit(f"Cannot complete {module['id']}: implementation batch {module['implementation_batch']} is pending.")
+        completed = state.setdefault("completed", [])
+        if module["id"] not in completed:
+            completed.append(module["id"])
+        if args.note:
+            state.setdefault("notes", {})[module["id"]] = args.note
+        state["current"] = module["id"]
+        save_state(state)
+        print(f"Recorded local completion for {module['id']}.")
+        return 0
+    if args.command == "reset":
+        save_state(default_state())
+        print("Local learner progress reset.")
+        return 0
+    if args.command == "doctor":
+        errors = []
+        if not MANIFEST.is_file(): errors.append(f"missing {MANIFEST}")
+        if len(modules) != 84: errors.append(f"expected 84 modules, found {len(modules)}")
+        for m in modules:
+            if not (ROOT / m["folder"] / "README.md").is_file(): errors.append(f"missing README for {m['id']}")
+        if errors:
+            print("\n".join(errors), file=sys.stderr)
+            return 1
+        print("Learner harness contract is healthy.")
+        return 0
+    return 2
+
+if __name__ == "__main__":
+    raise SystemExit(main())
