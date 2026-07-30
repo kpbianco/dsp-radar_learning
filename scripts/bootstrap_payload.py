@@ -44,6 +44,7 @@ if actual != expected:
 with tarfile.open(fileobj=io.BytesIO(base64.b64decode(payload)), mode="r:gz") as archive:
     archive.extractall(root)
 (root / ".github/workflows/bootstrap-harness.yml").unlink(missing_ok=True)
+(root / ".github/workflows/quality.yml").unlink(missing_ok=True)
 (root / "scripts/bootstrap_payload.py").unlink(missing_ok=True)
 for part in (root / "scripts").glob("bootstrap_payload.part*.b64"):
     part.unlink()
