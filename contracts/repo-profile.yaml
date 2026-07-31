@@ -1,5 +1,5 @@
 schema_version: 1
 profile: product-data
 source: portfolio-control/profiles/product-data.yaml
-source_version: 8e7d3ba46e3fd9b05c35754579880729e7e6de50
+source_version: a0fee73a7b126e901d718d3793cef275d5e4e104
 autonomy_level: 1
