@@ -1,6 +1,6 @@
 {
   "control_repository": "kpbianco/portfolio-control",
-  "control_revision": "3992789f6918efddd398a4223f9d65986f15adc4",
+  "control_revision": "cf753b86ff38cfb1fcef899408dc9c046ddabd2d",
   "harness_version": 2,
   "managed_paths": {
     ".agents/skills/ci-diagnose/SKILL.md": "93a7ce825178685239d6f3f124e5670f648b7f6a242be7716e86fd8b10f653b0",
@@ -26,9 +26,9 @@
     ".github/codex/schemas/planner-review.schema.json": "0b6e73da860c4c6d9024f6e2c2889162f4d49813e4c5069187f68ef79183eba9",
     ".github/codex/schemas/product.schema.json": "0c01a565e795a00f9532a55bdc2fc1d51aa20d8b2af2f5941b8be11723fd4191",
     ".gitignore": "d0d25bc37fee6259f819eb19d4542788e0f71d2b6c3afd7c5c3df94ce9d9d37a",
-    "AGENTS.md": "281310081b8ae521a6f4b2758a2409903b8ae131c97607702152885ccadfa3a4",
+    "AGENTS.md": "e432c2061704a3582274b7a7656c20e36b3013e523471f80be7586067e878051",
     "contracts/profile-requirements.yaml": "9ea06e3ae247df200b6d65cd26a6e91c0e6d2f8d0f455e46b88e0855d5120c94",
-    "contracts/repo-profile.yaml": "e0b73273c603b0731af2bdf9a7e36e6008dd39c74fdd2659b3d3c8d90cc0a739"
+    "contracts/repo-profile.yaml": "f926142316ddeabc6f6fc9f5083dc9175b34d5fdbebf30abd0b2c9c3530f2c47"
   },
   "product": "dsp-radar-learning",
   "profile": "product-data",
