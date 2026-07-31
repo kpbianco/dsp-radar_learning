@@ -34,6 +34,7 @@ Interpret related commands as follows:
 ## Build-mode rules
 
 - Read the active batch contract before editing.
+- Read `contracts/dsp-radar-requirements.yaml` for DSP curriculum, MATLAB-runtime, and module evidence requirements.
 - A `P##` batch primarily owns `modules/##-*/` and the exact shared files allowed by the contract.
 - Preserve the module's guiding question, experiment, procedure, learning goal, and completion condition from `curriculum/modules.json`.
 - Implement concept-first MATLAB with seeded synthetic data and intermediate plots. Prefer base MATLAB; toolbox alternatives must be optional and must not hide the underlying operation.
