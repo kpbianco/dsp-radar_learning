@@ -23,6 +23,17 @@ A real sinusoid is the projection of rotating complex motion; phase is an initia
 
 You can predict the time plot and IQ rotation direction before running the script.
 
+## Dependencies
+
+- Curriculum prerequisites: none; this is the first module.
+- Runtime: base MATLAB only.
+- Toolboxes, external data, helper functions, hardware, and network access: none.
+
+The script uses the explicit cosine and complex-exponential equations. Its
+retained outputs are labeled time/IQ figures, baseline projection and radius
+metrics, three one-variable parameter sweeps, and one deliberately
+undersampled alias case.
+
 ## Start or implement
 
 ```bash
