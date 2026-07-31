@@ -10,3 +10,8 @@ __pycache__/
 **/generated/
 docs/evidence/local/*
 !docs/evidence/local/.gitkeep
+
+# BEGIN PORTFOLIO-CONTROL MANAGED
+.codex-tmp/
+.agent-logs/
+# END PORTFOLIO-CONTROL MANAGED
