@@ -1,7 +1,7 @@
 # P02: See Sampling as Taking Measurements
 
 **Phase 1: Signals, Sampling, and Systems**  
-**Status:** Scaffolded; implementation batch `P02` is pending
+**Status:** Implemented by batch `P02`
 
 ## Guiding question
 
@@ -23,13 +23,26 @@ Samples do not contain the line between points; the sample rate determines which
 
 You can explain why two different continuous signals can produce the same sample sequence.
 
+## Dependencies
+
+- Curriculum prerequisite: P01, for sinusoid frequency and phase.
+- Runtime: base MATLAB only.
+- Toolboxes, external data, helper functions, hardware, and network access: none.
+
+The script writes the sampling equation explicitly, constructs its
+piecewise-linear interpolation from neighboring measurements, and proves that
+5, 7, and 19 Hz continuous sinusoids share one 12 samples/s sequence. Retained
+outputs include labeled baseline and interpolation views, a sample-rate sweep,
+a measurement-clock-offset sweep, and one deliberately undersampled case.
+
 ## Start or implement
 
 ```bash
 ./bin/learn start 2
 ```
 
-If this module is scaffolded, tutor mode may review this brief but must not pretend the experiment is complete. Activate Portfolio Control batch `P02` to add the runnable MATLAB experiment, explanation, walkthrough, checks, validation, and evidence.
+Tutor mode uses the runnable experiment, lesson, walkthrough, and checks added
+by Portfolio Control batch `P02`.
 
 ## AI chat prompt
 
@@ -38,3 +51,7 @@ Act as my hands-on DSP and radar lab mentor. Create a self-contained MATLAB mini
 ## Files currently present
 
 - `README.md`
+- `experiment.m`
+- `lesson.md`
+- `walkthrough.md`
+- `checks.md`

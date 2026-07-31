@@ -1,34 +1,43 @@
 schema_version: 1
 batch:
-  id: P01
-  title: 'Verify and harden P01: Build a Sinusoid and a Complex Phasor'
-  goal: Verify and harden Project 1 as an interactive MATLAB lesson answering 'How do amplitude, frequency, and
-    phase appear in time and in the complex plane?' through visible cause and effect.
+  id: P02
+  title: 'Implement P02: See Sampling as Taking Measurements'
+  goal: Implement Project 2 as an interactive MATLAB lesson answering 'What information is lost when a continuous-looking
+    signal is represented by discrete samples?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/01-build-a-sinusoid-and-a-complex-phasor/README.md
+  - modules/02-see-sampling-as-taking-measurements/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M1.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P01.yaml
-  control_plane_revision: 8e7d3ba46e3fd9b05c35754579880729e7e6de50
-dependencies: []
+  control_plane_path: products/dsp-radar-learning/batches/P02.yaml
+  control_plane_revision: 6927192720209c0f306824f238ec904cc0bf3d41
+dependencies:
+- P01
 scope:
   allowed_paths:
-  - modules/01-build-a-sinusoid-and-a-complex-phasor/**
+  - modules/02-see-sampling-as-taking-measurements/**
   - curriculum/modules.json
-  - docs/plans/P01-*.md
-  - docs/evidence/P01-*.md
-  - tests/test_p01*.py
+  - README.md
+  - START_HERE.md
+  - modules/README.md
+  - bin/learn
+  - docs/plans/P02-*.md
+  - docs/evidence/P02-*.md
+  - tests/test_p02*.py
+  - tests/**/test_p02*.py
+  - tests/p02/**
+  - tests/**/p02/**
+  - tests/test_curriculum.py
+  - tests/test_learn_cli.py
   forbidden_paths:
   - .github/**
   - .codex/**
   - .agents/**
   - AGENTS.md
-  - bin/**
   - contracts/**
   - curriculum/phases.md
   - docs/ARCHITECTURE.md
@@ -36,7 +45,8 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How do amplitude, frequency, and phase appear in time and in the complex plane?'
+- 'Preserve the guiding question: What information is lost when a continuous-looking signal is represented by discrete
+  samples?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -50,10 +60,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P01 artifact completeness and manifest identity
-  - P01 deterministic-input contract
-  - P01 sweep and broken-case markers
-  - P01 placeholder/black-box regression
+  - P02 artifact completeness and manifest identity
+  - P02 deterministic-input contract
+  - P02 sweep and broken-case markers
+  - P02 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -69,10 +79,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P01 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P02 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P01-<date>.md
+  - docs/evidence/P02-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

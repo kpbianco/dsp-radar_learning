@@ -36,12 +36,12 @@ def save_state(state: dict) -> None:
 
 def resolve(selector: str | None, modules: list[dict], state: dict) -> dict:
     if selector is None:
-        current = state.get("current")
-        if current:
-            for m in modules:
-                if m["id"] == current:
-                    return m
         completed = set(state.get("completed", []))
+        current = state.get("current")
+        if current and current not in completed:
+            for m in modules:
+                if m["id"] == current and m["status"] == "implemented":
+                    return m
         implemented = [m for m in modules if m["status"] == "implemented"]
         for m in implemented:
             if m["id"] not in completed:
@@ -123,14 +123,18 @@ def main() -> int:
         return cmd_list(modules, state)
     if args.command == "status":
         return cmd_status(modules, state)
-    if args.command in {"start", "continue"}:
-        selector = getattr(args, "selector", None) if args.command == "start" else None
-        return print_start(resolve(selector, modules, state), state)
+    if args.command == "start":
+        return print_start(resolve(args.selector, modules, state), state)
+    if args.command == "continue":
+        return print_start(resolve(state.get("current"), modules, state), state)
     if args.command == "path":
         print(ROOT / resolve(args.selector, modules, state)["folder"])
         return 0
     if args.command == "complete":
-        module = resolve(args.selector, modules, state)
+        selector = args.selector
+        if selector is None and state.get("current"):
+            selector = state["current"]
+        module = resolve(selector, modules, state)
         if module["status"] != "implemented":
             raise SystemExit(f"Cannot complete {module['id']}: implementation batch {module['implementation_batch']} is pending.")
         completed = state.setdefault("completed", [])

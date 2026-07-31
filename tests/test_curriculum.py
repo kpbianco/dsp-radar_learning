@@ -21,9 +21,9 @@ class CurriculumTests(unittest.TestCase):
             for name in ("README.md",):
                 self.assertTrue((folder / name).is_file(), f"{m['id']} missing {name}")
 
-    def test_only_reference_slice_is_initially_implemented(self):
+    def test_implemented_modules_follow_approved_batch_order(self):
         implemented = [m["id"] for m in self.data["modules"] if m["status"] == "implemented"]
-        self.assertEqual(implemented, ["P01"])
+        self.assertEqual(implemented, ["P01", "P02"])
 
 if __name__ == "__main__":
     unittest.main()
