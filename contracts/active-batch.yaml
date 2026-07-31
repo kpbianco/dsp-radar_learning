@@ -1,0 +1,81 @@
+schema_version: 1
+batch:
+  id: P01
+  title: 'Verify and harden P01: Build a Sinusoid and a Complex Phasor'
+  goal: Verify and harden Project 1 as an interactive MATLAB lesson answering 'How do amplitude, frequency, and
+    phase appear in time and in the complex plane?' through visible cause and effect.
+sources:
+  product: products/dsp-radar-learning/product.yaml
+  requirements:
+  - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
+  - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
+  - modules/01-build-a-sinusoid-and-a-complex-phasor/README.md
+  milestone: products/dsp-radar-learning/milestones/DRL-M1.md
+  baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
+  control_plane_repository: kpbianco/portfolio-control
+  control_plane_path: products/dsp-radar-learning/batches/P01.yaml
+  control_plane_revision: 8e7d3ba46e3fd9b05c35754579880729e7e6de50
+dependencies: []
+scope:
+  allowed_paths:
+  - modules/01-build-a-sinusoid-and-a-complex-phasor/**
+  - curriculum/modules.json
+  - docs/plans/P01-*.md
+  - docs/evidence/P01-*.md
+  - tests/test_p01*.py
+  forbidden_paths:
+  - .github/**
+  - .codex/**
+  - .agents/**
+  - AGENTS.md
+  - bin/**
+  - contracts/**
+  - curriculum/phases.md
+  - docs/ARCHITECTURE.md
+  - docs/IMPLEMENTATION_CONTRACT.md
+  - docs/TUTOR_PROTOCOL.md
+  - Makefile
+acceptance:
+- 'Preserve the guiding question: How do amplitude, frequency, and phase appear in time and in the complex plane?'
+- experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
+- lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
+- walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
+- checks.md tests interpretation and prediction.
+- Dependencies are declared and essential behavior is not hidden behind an unexplained black box.
+- Manifest status becomes implemented only after required files and checks pass.
+- Evidence separates static validation from MATLAB runtime actually performed.
+validation:
+  local:
+  - DSP_RADAR_VERIFY_PROFILE=contract python3 scripts/validate_curriculum.py
+  - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
+  - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
+  focused_tests_to_add:
+  - P01 artifact completeness and manifest identity
+  - P01 deterministic-input contract
+  - P01 sweep and broken-case markers
+  - P01 placeholder/black-box regression
+  required_ci:
+  - Control plane validation and target Quality validation
+risk:
+  class: moderate
+  hazards:
+  - wrong units or physical interpretation
+  - MATLAB mechanics displace the concept
+  - opaque toolbox use
+  - unrelated module changes
+  - unsupported runtime claims
+  stop_conditions:
+  - required data/toolbox has no approved fallback
+  - changes exceed allowed paths
+  - expected result conflicts with the governing model
+rollback:
+  strategy: Revert P01 implementation commits and restore only its manifest status to scaffolded.
+evidence:
+  output:
+  - docs/evidence/P01-<date>.md
+  - validation commands and exit results
+  - figure/metric inventory with units
+  - acceptance map and limitations
+  - MATLAB version/toolboxes/results when executed
+  claim_boundary: Module structure, deterministic contracts, and retained outputs only; no hardware, real-time,
+    operational radar, or field validation is implied.
