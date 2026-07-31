@@ -32,7 +32,11 @@ From a shell:
 ./bin/learn list
 ```
 
-Project 1 is the initial implemented reference lesson. Every module folder already contains its complete curriculum brief and ready-to-paste AI prompt. Projects 2–84 intentionally wait for separate Portfolio Control batches to add their MATLAB experiment, lesson, walkthrough, checks, and validation.
+Project 1 is the initial reference lesson, and Project 2 is now implemented.
+Every module folder already contains its complete curriculum brief and
+ready-to-paste AI prompt. Projects 3–84 intentionally wait for separate
+Portfolio Control batches to add their MATLAB experiment, lesson, walkthrough,
+checks, and validation.
 
 ## Module layout
 
