@@ -45,11 +45,14 @@ Interpret related commands as follows:
 <!-- BEGIN PORTFOLIO-CONTROL MANAGED -->
 ## Governed agentic delivery
 
-- Delivery profile: `product-data`; read `contracts/profile-requirements.yaml` before nontrivial work.
-- For approved implementation work, read the active batch contract before editing and stay within its allowed paths.
-- Run `./scripts/agent-verify.sh` before declaring a batch complete.
-- Record actual evidence under `docs/evidence/`; distinguish static, simulated, MATLAB-runtime, hardware-capture, and manual learning validation.
-- Do not claim unperformed MATLAB, hardware, performance, or educational-outcome validation.
-- Do not commit, push, merge, release, or change repository settings unless explicitly requested.
-- Deterministic validation remains authoritative for repository contracts.
+- Product: `dsp-radar-learning`; delivery profile: `product-data`.
+- Control revision: `f44d8c4bac8f837f8633c626cf2488dfc3a28648`; harness version: `2`.
+- Read `contracts/profile-requirements.yaml` and the approved
+  `contracts/active-batch.yaml` before implementation.
+- Stay inside active-batch allowed paths and preserve every forbidden path.
+- Run the repository-local verification contract before claiming completion.
+- Record exact evidence and distinguish static, simulated, protocol, bench,
+  field, playtest, staging, and production validation.
+- Do not claim physical, release, deployment, or production evidence that was
+  not actually produced.
 <!-- END PORTFOLIO-CONTROL MANAGED -->
