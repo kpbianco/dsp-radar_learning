@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P08
-  title: 'Implement P08: Use Correlation to Find a Hidden Pattern'
-  goal: Implement Project 8 as an interactive MATLAB lesson answering 'How can a known waveform be located inside
-    noise and delay?' through visible cause and effect.
+  id: P09
+  title: 'Implement P09: Compare FIR and IIR Filters by Behavior'
+  goal: Implement Project 9 as an interactive MATLAB lesson answering 'How can two filters with similar magnitude
+    response behave differently in time and phase?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/08-use-correlation-to-find-a-hidden-pattern/README.md
+  - modules/09-compare-fir-and-iir-filters-by-behavior/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M1.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P08.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P09.yaml
   control_plane_revision: c925e48af287a5cb812c225dfea454a0b43d82a6
 dependencies:
-- P07
+- P08
 scope:
   allowed_paths:
-  - modules/08-use-correlation-to-find-a-hidden-pattern/**
+  - modules/09-compare-fir-and-iir-filters-by-behavior/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P08-*.md
-  - docs/evidence/P08-*.md
-  - tests/test_p08*.py
-  - tests/**/test_p08*.py
-  - tests/p08/**
-  - tests/**/p08/**
+  - docs/plans/P09-*.md
+  - docs/evidence/P09-*.md
+  - tests/test_p09*.py
+  - tests/**/test_p09*.py
+  - tests/p09/**
+  - tests/**/p09/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,8 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How can a known waveform be located inside noise and delay?'
+- 'Preserve the guiding question: How can two filters with similar magnitude response behave differently in time
+  and phase?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +60,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P08 artifact completeness and manifest identity
-  - P08 deterministic-input contract
-  - P08 sweep and broken-case markers
-  - P08 placeholder/black-box regression
+  - P09 artifact completeness and manifest identity
+  - P09 deterministic-input contract
+  - P09 sweep and broken-case markers
+  - P09 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +79,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P08 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P09 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P08-<date>.md
+  - docs/evidence/P09-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
