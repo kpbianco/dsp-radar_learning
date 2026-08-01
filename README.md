@@ -34,9 +34,10 @@ From a shell:
 
 Project 1 is the initial reference lesson. Project 2 is now implemented, and
 Project 3 is now implemented as the latest lesson from its batch.
-Project 4 is now implemented as the latest lesson.
+Project 4 is now implemented as the latest lesson from its batch.
+Project 5 is now the latest implemented lesson.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 5–84 intentionally wait for separate
+ready-to-paste AI prompt. Projects 6–84 intentionally wait for separate
 Portfolio Control batches to add their MATLAB experiment, lesson, walkthrough,
 checks, and validation.
 
