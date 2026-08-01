@@ -109,7 +109,7 @@
       "phase_title": "Signals, Sampling, and Systems",
       "slug": "compare-fir-and-iir-filters-by-behavior",
       "folder": "modules/09-compare-fir-and-iir-filters-by-behavior",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P09"
     },
     {
