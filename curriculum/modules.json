@@ -121,7 +121,7 @@
       "phase_title": "Signals, Sampling, and Systems",
       "slug": "decimate-and-interpolate-without-creating-artifacts",
       "folder": "modules/10-decimate-and-interpolate-without-creating-artifacts",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P10"
     },
     {

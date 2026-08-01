@@ -14,5 +14,6 @@ Project 6 is the next lesson after P05.
 Project 7 is the next lesson after P06.
 Project 8 is the next lesson after P07.
 Project 9 is the next lesson after P08.
+Project 10 completes the first-phase sequence after P09.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

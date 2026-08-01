@@ -9,6 +9,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CLI = ROOT / "bin/learn"
+MANIFEST = json.loads((ROOT / "curriculum" / "modules.json").read_text(encoding="utf-8"))
+
+
+def implemented_modules() -> list[dict]:
+    return [module for module in MANIFEST["modules"] if module["status"] == "implemented"]
+
+
+def first_scaffolded_module() -> dict | None:
+    return next(
+        (module for module in MANIFEST["modules"] if module["status"] == "scaffolded"),
+        None,
+    )
 
 class LearnCliTests(unittest.TestCase):
     def run_cli(self, *args, initial_state=None, state_capture=None):
@@ -62,7 +74,7 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("status")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("curriculum: 84 modules", p.stdout)
-        self.assertIn("implemented: 9", p.stdout)
+        self.assertIn(f"implemented: {len(implemented_modules())}", p.stdout)
 
     def test_start_reference_module(self):
         p = self.run_cli("start", "1")
@@ -122,6 +134,13 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("start", "9")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P09", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
+    def test_start_p10_module(self):
+        p = self.run_cli("start", "10")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P10", p.stdout)
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
@@ -254,30 +273,55 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P09 — Compare FIR and IIR Filters by Behavior", p.stdout)
         self.assertIn("status: implemented", p.stdout)
 
-    def test_default_start_stays_at_p09_after_all_implemented_complete(self):
+    def test_default_start_advances_to_p10_after_p09_completion(self):
         p = self.run_cli(
             "start",
             initial_state={
                 "schema_version": 1,
                 "current": "P09",
                 "completed": [
-                    "P01",
-                    "P02",
-                    "P03",
-                    "P04",
-                    "P05",
-                    "P06",
-                    "P07",
-                    "P08",
-                    "P09",
+                    "P01", "P02", "P03", "P04", "P05",
+                    "P06", "P07", "P08", "P09",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P10 — Decimate and Interpolate Without Creating Artifacts", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+
+    def test_default_start_does_not_skip_p09_after_scaffolded_p10_becomes_implemented(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P10",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05",
+                    "P06", "P07", "P08",
                 ],
                 "notes": {},
             },
         )
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P09 — Compare FIR and IIR Filters by Behavior", p.stdout)
+        self.assertNotIn("P10 — Decimate and Interpolate Without Creating Artifacts", p.stdout)
+
+    def test_default_start_stays_at_manifest_frontier_after_all_implemented_complete(self):
+        implemented = implemented_modules()
+        frontier = implemented[-1]
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": frontier["id"],
+                "completed": [module["id"] for module in implemented],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn(f"{frontier['id']} — {frontier['title']}", p.stdout)
         self.assertIn("status: implemented", p.stdout)
-        self.assertNotIn("P10", p.stdout)
 
     def test_complete_p05_persists_current_completion_and_note(self):
         persisted_state = {}
@@ -414,6 +458,36 @@ class LearnCliTests(unittest.TestCase):
             "Chose FIR or IIR from delay, transient, stability, and cost needs.",
         )
 
+    def test_complete_p10_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "10",
+            "--note",
+            "Explained pre-decimation anti-aliasing and post-insertion reconstruction.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P09",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05",
+                    "P06", "P07", "P08", "P09",
+                ],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P10.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P10")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P10"],
+            "Explained pre-decimation anti-aliasing and post-insertion reconstruction.",
+        )
+
     def test_continue_resumes_the_current_module_even_when_completed(self):
         p = self.run_cli(
             "continue",
@@ -442,22 +516,30 @@ class LearnCliTests(unittest.TestCase):
         self.assertNotIn("P02", p.stdout)
 
     def test_default_start_skips_a_scaffolded_current_module(self):
+        implemented = implemented_modules()
+        pending = first_scaffolded_module()
+        if pending is None:
+            self.skipTest("all curriculum modules are implemented")
+        expected = implemented[-1]
         p = self.run_cli(
             "start",
             initial_state={
                 "schema_version": 1,
-                "current": "P10",
-                "completed": ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08"],
+                "current": pending["id"],
+                "completed": [module["id"] for module in implemented[:-1]],
                 "notes": {},
             },
         )
         self.assertEqual(p.returncode, 0, p.stderr)
-        self.assertIn("P09 — Compare FIR and IIR Filters by Behavior", p.stdout)
+        self.assertIn(f"{expected['id']} — {expected['title']}", p.stdout)
 
     def test_next_scaffolded_module_is_not_tutorable(self):
-        p = self.run_cli("start", "10")
+        pending = first_scaffolded_module()
+        if pending is None:
+            self.skipTest("all curriculum modules are implemented")
+        p = self.run_cli("start", pending["id"])
         self.assertEqual(p.returncode, 3)
-        self.assertIn("awaits Portfolio batch P10", p.stdout)
+        self.assertIn(f"awaits Portfolio batch {pending['implementation_batch']}", p.stdout)
 
     def test_doctor(self):
         p = self.run_cli("doctor")
