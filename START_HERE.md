@@ -10,5 +10,6 @@
 Project 1 is the reference implementation. Project 2 is the next available
 lesson after it. Project 3 is the next lesson after P02. Project 4 is the next lesson after P03.
 Project 5 is the next lesson after P04.
+Project 6 is the next lesson after P05.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

@@ -62,7 +62,7 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("status")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("curriculum: 84 modules", p.stdout)
-        self.assertIn("implemented: 5", p.stdout)
+        self.assertIn("implemented: 6", p.stdout)
 
     def test_start_reference_module(self):
         p = self.run_cli("start", "1")
@@ -94,6 +94,13 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("start", "5")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P05", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
+    def test_start_p06_module(self):
+        p = self.run_cli("start", "6")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P06", p.stdout)
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
@@ -170,7 +177,7 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
-    def test_default_start_stays_at_p05_after_all_implemented_complete(self):
+    def test_default_start_advances_to_p06_after_p05_completion(self):
         p = self.run_cli(
             "start",
             initial_state={
@@ -181,9 +188,23 @@ class LearnCliTests(unittest.TestCase):
             },
         )
         self.assertEqual(p.returncode, 0, p.stderr)
-        self.assertIn("P05 — Explore White, Colored, and Impulsive Noise", p.stdout)
+        self.assertIn("P06 — Use an Impulse to Reveal a System", p.stdout)
         self.assertIn("status: implemented", p.stdout)
-        self.assertNotIn("P06", p.stdout)
+
+    def test_default_start_stays_at_p06_after_all_implemented_complete(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P06",
+                "completed": ["P01", "P02", "P03", "P04", "P05", "P06"],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P06 — Use an Impulse to Reveal a System", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertNotIn("P07", p.stdout)
 
     def test_complete_p05_persists_current_completion_and_note(self):
         persisted_state = {}
@@ -210,6 +231,33 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(
             persisted_state["notes"]["P05"],
             "Distinguished equal-RMS noise by distribution and spectrum.",
+        )
+
+    def test_complete_p06_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "6",
+            "--note",
+            "Explained LTI output as weighted delayed input copies.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P05",
+                "completed": ["P01", "P02", "P03", "P04", "P05"],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P06.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P06")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P06"],
+            "Explained LTI output as weighted delayed input copies.",
         )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):
@@ -244,18 +292,18 @@ class LearnCliTests(unittest.TestCase):
             "start",
             initial_state={
                 "schema_version": 1,
-                "current": "P06",
-                "completed": ["P01", "P02", "P03", "P04"],
+                "current": "P07",
+                "completed": ["P01", "P02", "P03", "P04", "P05"],
                 "notes": {},
             },
         )
         self.assertEqual(p.returncode, 0, p.stderr)
-        self.assertIn("P05 — Explore White, Colored, and Impulsive Noise", p.stdout)
+        self.assertIn("P06 — Use an Impulse to Reveal a System", p.stdout)
 
     def test_next_scaffolded_module_is_not_tutorable(self):
-        p = self.run_cli("start", "6")
+        p = self.run_cli("start", "7")
         self.assertEqual(p.returncode, 3)
-        self.assertIn("awaits Portfolio batch P06", p.stdout)
+        self.assertIn("awaits Portfolio batch P07", p.stdout)
 
     def test_doctor(self):
         p = self.run_cli("doctor")
