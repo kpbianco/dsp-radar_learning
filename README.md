@@ -36,12 +36,13 @@ Project 1 is the initial reference lesson. Project 2 is now implemented, and
 Project 3 is now implemented as the latest lesson from its batch.
 Project 4 is now implemented as the latest lesson from its batch.
 Project 5 is now the latest implemented lesson from its own batch.
-Project 6 is now the latest implemented lesson.
+Project 6 is now the latest implemented lesson from its own batch.
+Project 7 is the latest implemented lesson overall.
 Every module folder already contains its complete curriculum brief and
 ready-to-paste AI prompt. Projects 6–84 intentionally wait for separate
-Portfolio Control batches; P06 has completed that wait, while Projects 7–84
-still wait for their MATLAB experiment, lesson, walkthrough, checks, and
-validation.
+Portfolio Control batches. Projects 7–84 follow the same rule after P06;
+P07 has now completed its batch, while Projects 8–84 still wait for their
+MATLAB experiment, lesson, walkthrough, checks, and validation.
 
 ## Module layout
 

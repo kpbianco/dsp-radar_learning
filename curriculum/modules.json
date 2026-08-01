@@ -85,7 +85,7 @@
       "phase_title": "Signals, Sampling, and Systems",
       "slug": "understand-convolution-as-echo-addition",
       "folder": "modules/07-understand-convolution-as-echo-addition",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P07"
     },
     {
