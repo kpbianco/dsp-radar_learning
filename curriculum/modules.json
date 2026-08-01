@@ -97,7 +97,7 @@
       "phase_title": "Signals, Sampling, and Systems",
       "slug": "use-correlation-to-find-a-hidden-pattern",
       "folder": "modules/08-use-correlation-to-find-a-hidden-pattern",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P08"
     },
     {

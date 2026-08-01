@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P07
-  title: 'Implement P07: Understand Convolution as Echo Addition'
-  goal: Implement Project 7 as an interactive MATLAB lesson answering 'What is convolution actually doing at each
-    output sample?' through visible cause and effect.
+  id: P08
+  title: 'Implement P08: Use Correlation to Find a Hidden Pattern'
+  goal: Implement Project 8 as an interactive MATLAB lesson answering 'How can a known waveform be located inside
+    noise and delay?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/07-understand-convolution-as-echo-addition/README.md
+  - modules/08-use-correlation-to-find-a-hidden-pattern/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M1.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P07.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P08.yaml
   control_plane_revision: c925e48af287a5cb812c225dfea454a0b43d82a6
 dependencies:
-- P06
+- P07
 scope:
   allowed_paths:
-  - modules/07-understand-convolution-as-echo-addition/**
+  - modules/08-use-correlation-to-find-a-hidden-pattern/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P07-*.md
-  - docs/evidence/P07-*.md
-  - tests/test_p07*.py
-  - tests/**/test_p07*.py
-  - tests/p07/**
-  - tests/**/p07/**
+  - docs/plans/P08-*.md
+  - docs/evidence/P08-*.md
+  - tests/test_p08*.py
+  - tests/**/test_p08*.py
+  - tests/p08/**
+  - tests/**/p08/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: What is convolution actually doing at each output sample?'
+- 'Preserve the guiding question: How can a known waveform be located inside noise and delay?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P07 artifact completeness and manifest identity
-  - P07 deterministic-input contract
-  - P07 sweep and broken-case markers
-  - P07 placeholder/black-box regression
+  - P08 artifact completeness and manifest identity
+  - P08 deterministic-input contract
+  - P08 sweep and broken-case markers
+  - P08 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P07 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P08 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P07-<date>.md
+  - docs/evidence/P08-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
