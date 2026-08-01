@@ -46,7 +46,7 @@ Interpret related commands as follows:
 ## Governed agentic delivery
 
 - Product: `dsp-radar-learning`; delivery profile: `product-data`.
-- Control revision: `c925e48af287a5cb812c225dfea454a0b43d82a6`; harness version: `2`.
+- Control revision: `052d2e6cdcab369caf611ab26ac14b22a8a8d441`; harness version: `2`.
 - Read `contracts/profile-requirements.yaml` and the approved
   `contracts/active-batch.yaml` before implementation.
 - Stay inside active-batch allowed paths and preserve every forbidden path.
