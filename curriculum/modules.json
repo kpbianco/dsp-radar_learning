@@ -73,7 +73,7 @@
       "phase_title": "Signals, Sampling, and Systems",
       "slug": "use-an-impulse-to-reveal-a-system",
       "folder": "modules/06-use-an-impulse-to-reveal-a-system",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P06"
     },
     {

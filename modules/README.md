@@ -7,7 +7,7 @@
 | [P03](../modules/03-make-aliasing-visually-obvious/) | implemented | 1 | Make Aliasing Visually Obvious |
 | [P04](../modules/04-quantize-a-signal-and-hear-see-the-error/) | implemented | 1 | Quantize a Signal and Hear/See the Error |
 | [P05](../modules/05-explore-white-colored-and-impulsive-noise/) | implemented | 1 | Explore White, Colored, and Impulsive Noise |
-| [P06](../modules/06-use-an-impulse-to-reveal-a-system/) | scaffolded | 1 | Use an Impulse to Reveal a System |
+| [P06](../modules/06-use-an-impulse-to-reveal-a-system/) | implemented | 1 | Use an Impulse to Reveal a System |
 | [P07](../modules/07-understand-convolution-as-echo-addition/) | scaffolded | 1 | Understand Convolution as Echo Addition |
 | [P08](../modules/08-use-correlation-to-find-a-hidden-pattern/) | scaffolded | 1 | Use Correlation to Find a Hidden Pattern |
 | [P09](../modules/09-compare-fir-and-iir-filters-by-behavior/) | scaffolded | 1 | Compare FIR and IIR Filters by Behavior |

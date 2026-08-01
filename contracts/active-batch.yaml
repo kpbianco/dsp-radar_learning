@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P05
-  title: 'Implement P05: Explore White, Colored, and Impulsive Noise'
-  goal: Implement Project 5 as an interactive MATLAB lesson answering 'What does the word noise hide about time
-    behavior and spectrum?' through visible cause and effect.
+  id: P06
+  title: 'Implement P06: Use an Impulse to Reveal a System'
+  goal: Implement Project 6 as an interactive MATLAB lesson answering 'Why does an impulse response describe an
+    LTI system?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/05-explore-white-colored-and-impulsive-noise/README.md
+  - modules/06-use-an-impulse-to-reveal-a-system/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M1.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P05.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P06.yaml
   control_plane_revision: c925e48af287a5cb812c225dfea454a0b43d82a6
 dependencies:
-- P04
+- P05
 scope:
   allowed_paths:
-  - modules/05-explore-white-colored-and-impulsive-noise/**
+  - modules/06-use-an-impulse-to-reveal-a-system/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P05-*.md
-  - docs/evidence/P05-*.md
-  - tests/test_p05*.py
-  - tests/**/test_p05*.py
-  - tests/p05/**
-  - tests/**/p05/**
+  - docs/plans/P06-*.md
+  - docs/evidence/P06-*.md
+  - tests/test_p06*.py
+  - tests/**/test_p06*.py
+  - tests/p06/**
+  - tests/**/p06/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: What does the word noise hide about time behavior and spectrum?'
+- 'Preserve the guiding question: Why does an impulse response describe an LTI system?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P05 artifact completeness and manifest identity
-  - P05 deterministic-input contract
-  - P05 sweep and broken-case markers
-  - P05 placeholder/black-box regression
+  - P06 artifact completeness and manifest identity
+  - P06 deterministic-input contract
+  - P06 sweep and broken-case markers
+  - P06 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P05 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P06 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P05-<date>.md
+  - docs/evidence/P06-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
