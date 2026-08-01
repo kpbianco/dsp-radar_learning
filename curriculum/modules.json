@@ -37,7 +37,7 @@
       "phase_title": "Signals, Sampling, and Systems",
       "slug": "make-aliasing-visually-obvious",
       "folder": "modules/03-make-aliasing-visually-obvious",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P03"
     },
     {

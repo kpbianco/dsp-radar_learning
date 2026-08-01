@@ -1,7 +1,7 @@
 # P03: Make Aliasing Visually Obvious
 
-**Phase 1: Signals, Sampling, and Systems**  
-**Status:** Scaffolded; implementation batch `P03` is pending
+**Phase 1: Signals, Sampling, and Systems**
+**Status:** Implemented by batch `P03`
 
 ## Guiding question
 
@@ -23,13 +23,26 @@ Aliasing is frequency folding around multiples of the sample rate, not random co
 
 You can predict the alias frequency for a tone above Nyquist.
 
+## Dependencies
+
+- Curriculum prerequisite: P02, for samples as timed measurements.
+- Runtime: base MATLAB only.
+- Toolboxes, external data, helper functions, hardware, and network access: none.
+
+The script writes frequency folding and the sample-recurrence estimator as
+explicit arithmetic. Retained outputs include a 700 Hz baseline sampled at
+1000 samples/s, an input-frequency sweep from DC through three sample-rate
+multiples, representative sequences around folds, a sample-rate sweep, and a
+deliberately broken reflected-phase model.
+
 ## Start or implement
 
 ```bash
 ./bin/learn start 3
 ```
 
-If this module is scaffolded, tutor mode may review this brief but must not pretend the experiment is complete. Activate Portfolio Control batch `P03` to add the runnable MATLAB experiment, explanation, walkthrough, checks, validation, and evidence.
+Tutor mode uses the runnable experiment, lesson, walkthrough, and checks added
+by Portfolio Control batch `P03`.
 
 ## AI chat prompt
 
@@ -38,3 +51,7 @@ Act as my hands-on DSP and radar lab mentor. Create a self-contained MATLAB mini
 ## Files currently present
 
 - `README.md`
+- `experiment.m`
+- `lesson.md`
+- `walkthrough.md`
+- `checks.md`

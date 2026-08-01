@@ -59,7 +59,7 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("status")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("curriculum: 84 modules", p.stdout)
-        self.assertIn("implemented: 2", p.stdout)
+        self.assertIn("implemented: 3", p.stdout)
 
     def test_start_reference_module(self):
         p = self.run_cli("start", "1")
@@ -71,6 +71,13 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("start", "2")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P02", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
+    def test_start_p03_module(self):
+        p = self.run_cli("start", "3")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P03", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
     def test_default_start_resumes_an_incomplete_current_module(self):
@@ -100,6 +107,37 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P02 — See Sampling as Taking Measurements", p.stdout)
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
+
+    def test_default_start_advances_to_p03_after_p02_completion(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P02",
+                "completed": ["P01", "P02"],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P03 — Make Aliasing Visually Obvious", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
+    def test_default_start_does_not_cross_into_p04_after_all_implemented_complete(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P03",
+                "completed": ["P01", "P02", "P03"],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P03 — Make Aliasing Visually Obvious", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+        self.assertNotIn("P04", p.stdout)
 
     def test_continue_resumes_the_current_module_even_when_completed(self):
         p = self.run_cli(
@@ -133,18 +171,18 @@ class LearnCliTests(unittest.TestCase):
             "start",
             initial_state={
                 "schema_version": 1,
-                "current": "P03",
-                "completed": ["P01"],
+                "current": "P04",
+                "completed": ["P01", "P02"],
                 "notes": {},
             },
         )
         self.assertEqual(p.returncode, 0, p.stderr)
-        self.assertIn("P02 — See Sampling as Taking Measurements", p.stdout)
+        self.assertIn("P03 — Make Aliasing Visually Obvious", p.stdout)
 
     def test_next_scaffolded_module_is_not_tutorable(self):
-        p = self.run_cli("start", "3")
+        p = self.run_cli("start", "4")
         self.assertEqual(p.returncode, 3)
-        self.assertIn("awaits Portfolio batch P03", p.stdout)
+        self.assertIn("awaits Portfolio batch P04", p.stdout)
 
     def test_doctor(self):
         p = self.run_cli("doctor")
