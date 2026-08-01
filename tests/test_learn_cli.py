@@ -62,7 +62,7 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("status")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("curriculum: 84 modules", p.stdout)
-        self.assertIn("implemented: 6", p.stdout)
+        self.assertIn("implemented: 7", p.stdout)
 
     def test_start_reference_module(self):
         p = self.run_cli("start", "1")
@@ -101,6 +101,13 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("start", "6")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P06", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
+    def test_start_p07_module(self):
+        p = self.run_cli("start", "7")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P07", p.stdout)
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
@@ -191,7 +198,7 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P06 — Use an Impulse to Reveal a System", p.stdout)
         self.assertIn("status: implemented", p.stdout)
 
-    def test_default_start_stays_at_p06_after_all_implemented_complete(self):
+    def test_default_start_advances_to_p07_after_p06_completion(self):
         p = self.run_cli(
             "start",
             initial_state={
@@ -202,9 +209,23 @@ class LearnCliTests(unittest.TestCase):
             },
         )
         self.assertEqual(p.returncode, 0, p.stderr)
-        self.assertIn("P06 — Use an Impulse to Reveal a System", p.stdout)
+        self.assertIn("P07 — Understand Convolution as Echo Addition", p.stdout)
         self.assertIn("status: implemented", p.stdout)
-        self.assertNotIn("P07", p.stdout)
+
+    def test_default_start_stays_at_p07_after_all_implemented_complete(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P07",
+                "completed": ["P01", "P02", "P03", "P04", "P05", "P06", "P07"],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P07 — Understand Convolution as Echo Addition", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertNotIn("P08", p.stdout)
 
     def test_complete_p05_persists_current_completion_and_note(self):
         persisted_state = {}
@@ -260,6 +281,33 @@ class LearnCliTests(unittest.TestCase):
             "Explained LTI output as weighted delayed input copies.",
         )
 
+    def test_complete_p07_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "7",
+            "--note",
+            "Explained every convolution sample as the sum of echo-path terms.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P06",
+                "completed": ["P01", "P02", "P03", "P04", "P05", "P06"],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P07.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P07")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06", "P07"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P07"],
+            "Explained every convolution sample as the sum of echo-path terms.",
+        )
+
     def test_continue_resumes_the_current_module_even_when_completed(self):
         p = self.run_cli(
             "continue",
@@ -292,18 +340,18 @@ class LearnCliTests(unittest.TestCase):
             "start",
             initial_state={
                 "schema_version": 1,
-                "current": "P07",
-                "completed": ["P01", "P02", "P03", "P04", "P05"],
+                "current": "P08",
+                "completed": ["P01", "P02", "P03", "P04", "P05", "P06"],
                 "notes": {},
             },
         )
         self.assertEqual(p.returncode, 0, p.stderr)
-        self.assertIn("P06 — Use an Impulse to Reveal a System", p.stdout)
+        self.assertIn("P07 — Understand Convolution as Echo Addition", p.stdout)
 
     def test_next_scaffolded_module_is_not_tutorable(self):
-        p = self.run_cli("start", "7")
+        p = self.run_cli("start", "8")
         self.assertEqual(p.returncode, 3)
-        self.assertIn("awaits Portfolio batch P07", p.stdout)
+        self.assertIn("awaits Portfolio batch P08", p.stdout)
 
     def test_doctor(self):
         p = self.run_cli("doctor")
