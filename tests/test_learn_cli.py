@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CLI = ROOT / "bin/learn"
 
 class LearnCliTests(unittest.TestCase):
-    def run_cli(self, *args, initial_state=None):
+    def run_cli(self, *args, initial_state=None, state_capture=None):
         with tempfile.TemporaryDirectory() as td:
             fixture_root = Path(td) / "repo"
             fixture_cli = fixture_root / "bin" / "learn"
@@ -45,6 +45,9 @@ class LearnCliTests(unittest.TestCase):
                 env=env,
                 timeout=10,
             )
+            if state_capture is not None:
+                fixture_state = fixture_root / ".learning" / "progress.json"
+                state_capture.update(json.loads(fixture_state.read_text(encoding="utf-8")))
             return proc
 
     def test_runs_are_isolated_from_repository_learning_state(self):
@@ -59,7 +62,7 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("status")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("curriculum: 84 modules", p.stdout)
-        self.assertIn("implemented: 4", p.stdout)
+        self.assertIn("implemented: 5", p.stdout)
 
     def test_start_reference_module(self):
         p = self.run_cli("start", "1")
@@ -84,6 +87,13 @@ class LearnCliTests(unittest.TestCase):
         p = self.run_cli("start", "4")
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P04", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
+    def test_start_p05_module(self):
+        p = self.run_cli("start", "5")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P05", p.stdout)
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
@@ -145,7 +155,7 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
-    def test_default_start_does_not_cross_into_p05_after_all_implemented_complete(self):
+    def test_default_start_advances_to_p05_after_p04_completion(self):
         p = self.run_cli(
             "start",
             initial_state={
@@ -156,10 +166,51 @@ class LearnCliTests(unittest.TestCase):
             },
         )
         self.assertEqual(p.returncode, 0, p.stderr)
-        self.assertIn("P04 — Quantize a Signal and Hear/See the Error", p.stdout)
+        self.assertIn("P05 — Explore White, Colored, and Impulsive Noise", p.stdout)
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
-        self.assertNotIn("P05", p.stdout)
+
+    def test_default_start_stays_at_p05_after_all_implemented_complete(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P05",
+                "completed": ["P01", "P02", "P03", "P04", "P05"],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P05 — Explore White, Colored, and Impulsive Noise", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertNotIn("P06", p.stdout)
+
+    def test_complete_p05_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "5",
+            "--note",
+            "Distinguished equal-RMS noise by distribution and spectrum.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P04",
+                "completed": ["P01", "P02", "P03", "P04"],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P05.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P05")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P05"],
+            "Distinguished equal-RMS noise by distribution and spectrum.",
+        )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):
         p = self.run_cli(
@@ -193,18 +244,18 @@ class LearnCliTests(unittest.TestCase):
             "start",
             initial_state={
                 "schema_version": 1,
-                "current": "P05",
-                "completed": ["P01", "P02", "P03"],
+                "current": "P06",
+                "completed": ["P01", "P02", "P03", "P04"],
                 "notes": {},
             },
         )
         self.assertEqual(p.returncode, 0, p.stderr)
-        self.assertIn("P04 — Quantize a Signal and Hear/See the Error", p.stdout)
+        self.assertIn("P05 — Explore White, Colored, and Impulsive Noise", p.stdout)
 
     def test_next_scaffolded_module_is_not_tutorable(self):
-        p = self.run_cli("start", "5")
+        p = self.run_cli("start", "6")
         self.assertEqual(p.returncode, 3)
-        self.assertIn("awaits Portfolio batch P05", p.stdout)
+        self.assertIn("awaits Portfolio batch P06", p.stdout)
 
     def test_doctor(self):
         p = self.run_cli("doctor")

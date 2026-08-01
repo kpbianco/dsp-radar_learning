@@ -61,7 +61,7 @@
       "phase_title": "Signals, Sampling, and Systems",
       "slug": "explore-white-colored-and-impulsive-noise",
       "folder": "modules/05-explore-white-colored-and-impulsive-noise",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P05"
     },
     {
