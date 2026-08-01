@@ -40,17 +40,18 @@ Project 6 is now the latest implemented lesson from its own batch.
 Project 7 is the latest implemented lesson prior to P08.
 Project 8 is the latest implemented lesson before P09 and is its prerequisite.
 Project 9 is the latest implemented lesson before P10 and is its prerequisite.
-Project 10 is the latest implemented lesson overall and completes Phase 1.
+Project 10 completes Phase 1 after P09.
+Project 11 is implemented and begins Phase 2 with the FFT bin-frequency map.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–10 have completed their separate governed
-implementation batches. Projects 11–84 remain scaffolded and wait for their own
+ready-to-paste AI prompt. Projects 1–11 have completed their separate governed
+implementation batches. Projects 12–84 remain scaffolded and wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P10.
+the current implementation frontier is P11.
 
 ## Module layout
 
