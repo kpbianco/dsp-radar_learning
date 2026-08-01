@@ -144,6 +144,13 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
+    def test_start_p11_module(self):
+        p = self.run_cli("start", "11")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P11", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
     def test_default_start_resumes_an_incomplete_current_module(self):
         p = self.run_cli(
             "start",
@@ -306,6 +313,40 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P09 — Compare FIR and IIR Filters by Behavior", p.stdout)
         self.assertNotIn("P10 — Decimate and Interpolate Without Creating Artifacts", p.stdout)
+
+    def test_default_start_does_not_skip_p10_after_scaffolded_p11_becomes_implemented(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P11",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05",
+                    "P06", "P07", "P08", "P09",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P10 — Decimate and Interpolate Without Creating Artifacts", p.stdout)
+        self.assertNotIn("P11 — Make FFT Bins Concrete", p.stdout)
+
+    def test_default_start_advances_to_p11_after_p10_completion(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P10",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06",
+                    "P07", "P08", "P09", "P10",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P11 — Make FFT Bins Concrete", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
 
     def test_default_start_stays_at_manifest_frontier_after_all_implemented_complete(self):
         implemented = implemented_modules()
@@ -486,6 +527,37 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(
             persisted_state["notes"]["P10"],
             "Explained pre-decimation anti-aliasing and post-insertion reconstruction.",
+        )
+
+    def test_complete_p11_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "11",
+            "--note",
+            "Mapped zero-based FFT bins to hertz and explained off-bin projections.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P10",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06",
+                    "P07", "P08", "P09", "P10",
+                ],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P11.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P11")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06",
+             "P07", "P08", "P09", "P10", "P11"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P11"],
+            "Mapped zero-based FFT bins to hertz and explained off-bin projections.",
         )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):

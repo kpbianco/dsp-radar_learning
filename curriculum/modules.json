@@ -133,7 +133,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "make-fft-bins-concrete",
       "folder": "modules/11-make-fft-bins-concrete",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P11"
     },
     {

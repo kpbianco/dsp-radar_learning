@@ -1,37 +1,36 @@
 schema_version: 1
 batch:
-  id: P10
-  title: 'Implement P10: Decimate and Interpolate Without Creating Artifacts'
-  goal: Implement Project 10 as an interactive MATLAB lesson answering 'Why must filtering accompany sample-rate
-    changes?' through visible cause and effect.
+  id: P11
+  title: 'Implement P11: Make FFT Bins Concrete'
+  goal: Implement Project 11 as an interactive MATLAB lesson answering 'What frequency does each FFT bin represent?'
+    through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/10-decimate-and-interpolate-without-creating-artifacts/README.md
-  milestone: products/dsp-radar-learning/milestones/DRL-M1.md
+  - modules/11-make-fft-bins-concrete/README.md
+  milestone: products/dsp-radar-learning/milestones/DRL-M2.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P10.yaml
-  control_plane_revision: a95a3884fa4db118d8a5e0674189c79c7f53c31b
+  control_plane_path: products/dsp-radar-learning/batches/P11.yaml
+  control_plane_revision: 052d2e6cdcab369caf611ab26ac14b22a8a8d441
 dependencies:
-- P09
+- P10
 scope:
   allowed_paths:
-  - modules/10-decimate-and-interpolate-without-creating-artifacts/**
+  - modules/11-make-fft-bins-concrete/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P10-*.md
-  - docs/evidence/P10-*.md
-  - tests/test_p10*.py
-  - tests/**/test_p10*.py
-  - tests/p10/**
-  - tests/**/p10/**
-  - tests/test_p09_module.py
+  - docs/plans/P11-*.md
+  - docs/evidence/P11-*.md
+  - tests/test_p11*.py
+  - tests/**/test_p11*.py
+  - tests/p11/**
+  - tests/**/p11/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -46,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: Why must filtering accompany sample-rate changes?'
+- 'Preserve the guiding question: What frequency does each FFT bin represent?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -60,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P10 artifact completeness and manifest identity
-  - P10 deterministic-input contract
-  - P10 sweep and broken-case markers
-  - P10 placeholder/black-box regression
+  - P11 artifact completeness and manifest identity
+  - P11 deterministic-input contract
+  - P11 sweep and broken-case markers
+  - P11 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -79,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P10 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P11 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P10-<date>.md
+  - docs/evidence/P11-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
