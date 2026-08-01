@@ -11,7 +11,7 @@
 | [P07](../modules/07-understand-convolution-as-echo-addition/) | implemented | 1 | Understand Convolution as Echo Addition |
 | [P08](../modules/08-use-correlation-to-find-a-hidden-pattern/) | implemented | 1 | Use Correlation to Find a Hidden Pattern |
 | [P09](../modules/09-compare-fir-and-iir-filters-by-behavior/) | implemented | 1 | Compare FIR and IIR Filters by Behavior |
-| [P10](../modules/10-decimate-and-interpolate-without-creating-artifacts/) | scaffolded | 1 | Decimate and Interpolate Without Creating Artifacts |
+| [P10](../modules/10-decimate-and-interpolate-without-creating-artifacts/) | implemented | 1 | Decimate and Interpolate Without Creating Artifacts |
 | [P11](../modules/11-make-fft-bins-concrete/) | scaffolded | 2 | Make FFT Bins Concrete |
 | [P12](../modules/12-separate-leakage-from-noise/) | scaffolded | 2 | Separate Leakage from Noise |
 | [P13](../modules/13-prove-zero-padding-does-not-improve-true-resolution/) | scaffolded | 2 | Prove Zero-Padding Does Not Improve True Resolution |

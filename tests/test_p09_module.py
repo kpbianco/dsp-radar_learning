@@ -195,7 +195,6 @@ class P09ModuleTests(unittest.TestCase):
         cls.lesson = (MODULE / "lesson.md").read_text(encoding="utf-8")
         cls.walkthrough = (MODULE / "walkthrough.md").read_text(encoding="utf-8")
         cls.checks = (MODULE / "checks.md").read_text(encoding="utf-8")
-        cls.root_readme = (ROOT / "README.md").read_text(encoding="utf-8")
         cls.start_here = (ROOT / "START_HERE.md").read_text(encoding="utf-8")
         cls.module_index = (ROOT / "modules" / "README.md").read_text(encoding="utf-8")
 
@@ -229,11 +228,10 @@ class P09ModuleTests(unittest.TestCase):
         self.assertIn("P08 is the declared prerequisite", self.lesson)
         self.assertIn("P08 is the prerequisite", self.walkthrough)
 
-    def test_manifest_and_public_catalogs_advance_only_p09(self):
-        implemented = [entry["id"] for entry in self.manifest["modules"] if entry["status"] == "implemented"]
-        self.assertEqual(implemented, [f"P{number:02d}" for number in range(1, 10)])
+    def test_manifest_and_public_catalogs_preserve_p09(self):
+        statuses = [entry["status"] for entry in self.manifest["modules"]]
+        self.assertEqual(statuses[:9], ["implemented"] * 9)
         self.assertRegex(self.module_index, r"\| \[P09\].*\| implemented \|")
-        self.assertIn("Project 9 is the latest implemented lesson overall.", self.root_readme)
         self.assertIn("Project 9 is the next lesson after P08.", self.start_here)
 
     def test_deterministic_input_contract_and_visible_parameters(self):
