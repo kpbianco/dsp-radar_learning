@@ -8,6 +8,6 @@
 6. Give a two- or three-sentence teach-back before the module is marked complete.
 
 Project 1 is the reference implementation. Project 2 is the next available
-lesson after it, and Project 3 is the next lesson after P02. When you reach a
-scaffolded module, implement it through its Portfolio Control `P##` batch rather
-than allowing tutor mode to invent ungoverned content.
+lesson after it. Project 3 is the next lesson after P02. Project 4 is the next lesson after P03.
+When you reach a scaffolded module, implement it through its Portfolio Control
+`P##` batch rather than allowing tutor mode to invent ungoverned content.

@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P03
-  title: 'Implement P03: Make Aliasing Visually Obvious'
-  goal: Implement Project 3 as an interactive MATLAB lesson answering 'Why does a high-frequency tone appear as
-    a lower-frequency tone after sampling?' through visible cause and effect.
+  id: P04
+  title: 'Implement P04: Quantize a Signal and Hear/See the Error'
+  goal: Implement Project 4 as an interactive MATLAB lesson answering 'How do ADC bit depth and full-scale range
+    change the measurement?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/03-make-aliasing-visually-obvious/README.md
+  - modules/04-quantize-a-signal-and-hear-see-the-error/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M1.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P03.yaml
-  control_plane_revision: cf753b86ff38cfb1fcef899408dc9c046ddabd2d
+  control_plane_path: products/dsp-radar-learning/batches/P04.yaml
+  control_plane_revision: c925e48af287a5cb812c225dfea454a0b43d82a6
 dependencies:
-- P02
+- P03
 scope:
   allowed_paths:
-  - modules/03-make-aliasing-visually-obvious/**
+  - modules/04-quantize-a-signal-and-hear-see-the-error/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P03-*.md
-  - docs/evidence/P03-*.md
-  - tests/test_p03*.py
-  - tests/**/test_p03*.py
-  - tests/p03/**
-  - tests/**/p03/**
+  - docs/plans/P04-*.md
+  - docs/evidence/P04-*.md
+  - tests/test_p04*.py
+  - tests/**/test_p04*.py
+  - tests/p04/**
+  - tests/**/p04/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: Why does a high-frequency tone appear as a lower-frequency tone after sampling?'
+- 'Preserve the guiding question: How do ADC bit depth and full-scale range change the measurement?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P03 artifact completeness and manifest identity
-  - P03 deterministic-input contract
-  - P03 sweep and broken-case markers
-  - P03 placeholder/black-box regression
+  - P04 artifact completeness and manifest identity
+  - P04 deterministic-input contract
+  - P04 sweep and broken-case markers
+  - P04 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P03 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P04 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P03-<date>.md
+  - docs/evidence/P04-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

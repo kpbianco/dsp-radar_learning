@@ -49,7 +49,7 @@
       "phase_title": "Signals, Sampling, and Systems",
       "slug": "quantize-a-signal-and-hear-see-the-error",
       "folder": "modules/04-quantize-a-signal-and-hear-see-the-error",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P04"
     },
     {
