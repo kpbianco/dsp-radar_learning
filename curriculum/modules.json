@@ -217,7 +217,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "contrast-real-and-complex-sampling",
       "folder": "modules/18-contrast-real-and-complex-sampling",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P18"
     },
     {
