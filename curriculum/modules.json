@@ -193,7 +193,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "create-an-analytic-signal-with-the-hilbert-transform",
       "folder": "modules/16-create-an-analytic-signal-with-the-hilbert-transform",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P16"
     },
     {
