@@ -16,5 +16,6 @@ Project 8 is the next lesson after P07.
 Project 9 is the next lesson after P08.
 Project 10 completes the first-phase sequence after P09.
 Project 11 begins Phase 2 after P10 and makes the FFT frequency grid concrete.
+Project 12 follows P11 and separates deterministic leakage from random noise.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
