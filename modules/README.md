@@ -13,7 +13,7 @@
 | [P09](../modules/09-compare-fir-and-iir-filters-by-behavior/) | implemented | 1 | Compare FIR and IIR Filters by Behavior |
 | [P10](../modules/10-decimate-and-interpolate-without-creating-artifacts/) | implemented | 1 | Decimate and Interpolate Without Creating Artifacts |
 | [P11](../modules/11-make-fft-bins-concrete/) | implemented | 2 | Make FFT Bins Concrete |
-| [P12](../modules/12-separate-leakage-from-noise/) | scaffolded | 2 | Separate Leakage from Noise |
+| [P12](../modules/12-separate-leakage-from-noise/) | implemented | 2 | Separate Leakage from Noise |
 | [P13](../modules/13-prove-zero-padding-does-not-improve-true-resolution/) | scaffolded | 2 | Prove Zero-Padding Does Not Improve True Resolution |
 | [P14](../modules/14-compare-periodogram-and-welch-psd-estimates/) | scaffolded | 2 | Compare Periodogram and Welch PSD Estimates |
 | [P15](../modules/15-use-a-spectrogram-to-see-time-varying-frequency/) | scaffolded | 2 | Use a Spectrogram to See Time-Varying Frequency |

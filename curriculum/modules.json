@@ -145,7 +145,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "separate-leakage-from-noise",
       "folder": "modules/12-separate-leakage-from-noise",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P12"
     },
     {
