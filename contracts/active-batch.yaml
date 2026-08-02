@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P19
-  title: 'Implement P19: Inject and Correct IQ Impairments'
-  goal: Implement Project 19 as an interactive MATLAB lesson answering 'How do DC offset, gain mismatch, and quadrature
-    error change an IQ spectrum?' through visible cause and effect.
+  id: P20
+  title: 'Implement P20: Estimate Tone Frequency and Phase from Noisy Samples'
+  goal: Implement Project 20 as an interactive MATLAB lesson answering 'How accurately can frequency and phase be
+    estimated from a finite noisy record?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/19-inject-and-correct-iq-impairments/README.md
+  - modules/20-estimate-tone-frequency-and-phase-from-noisy-samples/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M2.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P19.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P20.yaml
   control_plane_revision: aacf91301bff4dc4b52b52caf9d1cf1397ed693b
 dependencies:
-- P18
+- P19
 scope:
   allowed_paths:
-  - modules/19-inject-and-correct-iq-impairments/**
+  - modules/20-estimate-tone-frequency-and-phase-from-noisy-samples/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P19-*.md
-  - docs/evidence/P19-*.md
-  - tests/test_p19*.py
-  - tests/**/test_p19*.py
-  - tests/p19/**
-  - tests/**/p19/**
+  - docs/plans/P20-*.md
+  - docs/evidence/P20-*.md
+  - tests/test_p20*.py
+  - tests/**/test_p20*.py
+  - tests/p20/**
+  - tests/**/p20/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How do DC offset, gain mismatch, and quadrature error change an IQ spectrum?'
+- 'Preserve the guiding question: How accurately can frequency and phase be estimated from a finite noisy record?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P19 artifact completeness and manifest identity
-  - P19 deterministic-input contract
-  - P19 sweep and broken-case markers
-  - P19 placeholder/black-box regression
+  - P20 artifact completeness and manifest identity
+  - P20 deterministic-input contract
+  - P20 sweep and broken-case markers
+  - P20 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P19 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P20 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P19-<date>.md
+  - docs/evidence/P20-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

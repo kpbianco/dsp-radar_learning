@@ -241,7 +241,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "estimate-tone-frequency-and-phase-from-noisy-samples",
       "folder": "modules/20-estimate-tone-frequency-and-phase-from-noisy-samples",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P20"
     },
     {
