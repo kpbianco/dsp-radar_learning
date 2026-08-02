@@ -150,10 +150,12 @@ def validate_controls(**overrides: object) -> None:
 def build_pair(
     frequency_hz: float, fs_hz: float, count: int, phase_rad: float = 0.35
 ) -> tuple[list[complex], list[complex]]:
-    positive = [
-        cmath.exp(1j * (2 * math.pi * frequency_hz * index / fs_hz + phase_rad))
-        for index in range(count)
-    ]
+    phase_step = cmath.exp(2j * math.pi * frequency_hz / fs_hz)
+    sample = cmath.exp(1j * phase_rad)
+    positive = []
+    for _ in range(count):
+        positive.append(sample)
+        sample *= phase_step
     negative = [value.conjugate() for value in positive]
     return positive, negative
 
