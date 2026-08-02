@@ -157,7 +157,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "prove-zero-padding-does-not-improve-true-resolution",
       "folder": "modules/13-prove-zero-padding-does-not-improve-true-resolution",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P13"
     },
     {

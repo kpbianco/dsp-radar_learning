@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P12
-  title: 'Implement P12: Separate Leakage from Noise'
-  goal: Implement Project 12 as an interactive MATLAB lesson answering 'Why does a perfectly clean tone spread across
-    many FFT bins?' through visible cause and effect.
+  id: P13
+  title: 'Implement P13: Prove Zero-Padding Does Not Improve True Resolution'
+  goal: Implement Project 13 as an interactive MATLAB lesson answering 'Why does a smoother FFT plot not necessarily
+    contain more information?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/12-separate-leakage-from-noise/README.md
+  - modules/13-prove-zero-padding-does-not-improve-true-resolution/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M2.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P12.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P13.yaml
   control_plane_revision: 052d2e6cdcab369caf611ab26ac14b22a8a8d441
 dependencies:
-- P11
+- P12
 scope:
   allowed_paths:
-  - modules/12-separate-leakage-from-noise/**
+  - modules/13-prove-zero-padding-does-not-improve-true-resolution/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P12-*.md
-  - docs/evidence/P12-*.md
-  - tests/test_p12*.py
-  - tests/**/test_p12*.py
-  - tests/p12/**
-  - tests/**/p12/**
+  - docs/plans/P13-*.md
+  - docs/evidence/P13-*.md
+  - tests/test_p13*.py
+  - tests/**/test_p13*.py
+  - tests/p13/**
+  - tests/**/p13/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: Why does a perfectly clean tone spread across many FFT bins?'
+- 'Preserve the guiding question: Why does a smoother FFT plot not necessarily contain more information?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P12 artifact completeness and manifest identity
-  - P12 deterministic-input contract
-  - P12 sweep and broken-case markers
-  - P12 placeholder/black-box regression
+  - P13 artifact completeness and manifest identity
+  - P13 deterministic-input contract
+  - P13 sweep and broken-case markers
+  - P13 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P12 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P13 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P12-<date>.md
+  - docs/evidence/P13-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

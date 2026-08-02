@@ -158,6 +158,13 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
+    def test_start_p13_module(self):
+        p = self.run_cli("start", "13")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P13", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
     def test_default_start_resumes_an_incomplete_current_module(self):
         p = self.run_cli(
             "start",
@@ -355,6 +362,23 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P11 — Make FFT Bins Concrete", p.stdout)
         self.assertNotIn("P12 — Separate Leakage from Noise", p.stdout)
 
+    def test_default_start_does_not_skip_p12_after_scaffolded_p13_becomes_implemented(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P13",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06",
+                    "P07", "P08", "P09", "P10", "P11",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P12 — Separate Leakage from Noise", p.stdout)
+        self.assertNotIn("P13 — Prove Zero-Padding Does Not Improve True Resolution", p.stdout)
+
     def test_default_start_advances_to_p11_after_p10_completion(self):
         p = self.run_cli(
             "start",
@@ -387,6 +411,26 @@ class LearnCliTests(unittest.TestCase):
         )
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P12 — Separate Leakage from Noise", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+
+    def test_default_start_advances_to_p13_after_p12_completion(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P12",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06",
+                    "P07", "P08", "P09", "P10", "P11", "P12",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn(
+            "P13 — Prove Zero-Padding Does Not Improve True Resolution",
+            p.stdout,
+        )
         self.assertIn("status: implemented", p.stdout)
 
     def test_default_start_stays_at_manifest_frontier_after_all_implemented_complete(self):
@@ -630,6 +674,37 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(
             persisted_state["notes"]["P12"],
             "Separated deterministic leakage from noise and selected a window by tradeoff.",
+        )
+
+    def test_complete_p13_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "13",
+            "--note",
+            "Separated FFT display spacing from finite-observation resolution.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P12",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06",
+                    "P07", "P08", "P09", "P10", "P11", "P12",
+                ],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P13.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P13")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06",
+             "P07", "P08", "P09", "P10", "P11", "P12", "P13"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P13"],
+            "Separated FFT display spacing from finite-observation resolution.",
         )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):
