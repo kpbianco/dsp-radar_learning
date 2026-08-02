@@ -30,5 +30,8 @@ samples where phase is unreliable.
 Project 17 follows P16 and performs explicit complex downconversion, preserving
 signed difference frequency, relative phase, and real-input amplitude
 bookkeeping while its low-pass FIR selects the desired translated copy.
+Project 18 follows P17 and shows that I/Q rotation preserves positive/negative
+frequency and side-of-LO while a real projection collapses conjugate directions
+into the same cosine; it also exposes the complex-sampling Nyquist limit.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

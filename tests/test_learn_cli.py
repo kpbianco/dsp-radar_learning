@@ -193,6 +193,13 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
+    def test_start_p18_module(self):
+        p = self.run_cli("start", "18")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P18", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
     def test_default_start_resumes_an_incomplete_current_module(self):
         p = self.run_cli(
             "start",
@@ -479,6 +486,24 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P16 — Create an Analytic Signal with the Hilbert Transform", p.stdout)
         self.assertNotIn("P17 — Perform Complex Downconversion by Hand", p.stdout)
 
+    def test_default_start_does_not_skip_p17_after_p18_becomes_implemented(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P18",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P17 — Perform Complex Downconversion by Hand", p.stdout)
+        self.assertNotIn("P18 — Contrast Real and Complex Sampling", p.stdout)
+
     def test_default_start_advances_to_p11_after_p10_completion(self):
         p = self.run_cli(
             "start",
@@ -601,6 +626,24 @@ class LearnCliTests(unittest.TestCase):
         )
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P17 — Perform Complex Downconversion by Hand", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+
+    def test_default_start_advances_to_p18_after_p17_completion(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P17",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P18 — Contrast Real and Complex Sampling", p.stdout)
         self.assertIn("status: implemented", p.stdout)
 
     def test_default_start_stays_at_manifest_frontier_after_all_implemented_complete(self):
@@ -1003,6 +1046,39 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(
             persisted_state["notes"]["P17"],
             "Predicted signed LO difference and conjugate-side rotation.",
+        )
+
+    def test_complete_p18_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "18",
+            "--note",
+            "Explained why I/Q preserves rotation direction while real data does not.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P17",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17",
+                ],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P18.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P18")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08",
+             "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16",
+             "P17", "P18"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P18"],
+            "Explained why I/Q preserves rotation direction while real data does not.",
         )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):

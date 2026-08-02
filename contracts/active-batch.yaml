@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P17
-  title: 'Implement P17: Perform Complex Downconversion by Hand'
-  goal: Implement Project 17 as an interactive MATLAB lesson answering 'How does multiplying by a complex oscillator
-    move an RF/IF signal to baseband?' through visible cause and effect.
+  id: P18
+  title: 'Implement P18: Contrast Real and Complex Sampling'
+  goal: Implement Project 18 as an interactive MATLAB lesson answering 'Why can complex samples distinguish positive
+    and negative frequencies?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/17-perform-complex-downconversion-by-hand/README.md
+  - modules/18-contrast-real-and-complex-sampling/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M2.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P17.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P18.yaml
   control_plane_revision: 052d2e6cdcab369caf611ab26ac14b22a8a8d441
 dependencies:
-- P16
+- P17
 scope:
   allowed_paths:
-  - modules/17-perform-complex-downconversion-by-hand/**
+  - modules/18-contrast-real-and-complex-sampling/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P17-*.md
-  - docs/evidence/P17-*.md
-  - tests/test_p17*.py
-  - tests/**/test_p17*.py
-  - tests/p17/**
-  - tests/**/p17/**
+  - docs/plans/P18-*.md
+  - docs/evidence/P18-*.md
+  - tests/test_p18*.py
+  - tests/**/test_p18*.py
+  - tests/p18/**
+  - tests/**/p18/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How does multiplying by a complex oscillator move an RF/IF signal to baseband?'
+- 'Preserve the guiding question: Why can complex samples distinguish positive and negative frequencies?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P17 artifact completeness and manifest identity
-  - P17 deterministic-input contract
-  - P17 sweep and broken-case markers
-  - P17 placeholder/black-box regression
+  - P18 artifact completeness and manifest identity
+  - P18 deterministic-input contract
+  - P18 sweep and broken-case markers
+  - P18 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P17 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P18 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P17-<date>.md
+  - docs/evidence/P18-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

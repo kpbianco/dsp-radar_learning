@@ -57,16 +57,20 @@ low-amplitude limit where phase-derived frequency becomes unreliable.
 Project 17 multiplies a real passband tone by an explicit complex oscillator,
 builds its low-pass FIR by hand, preserves signed LO-offset rotation and phase,
 and exposes real-input mixer gain plus wrong-side conjugate selection.
+Project 18 contrasts conjugate positive/negative complex tones with their
+identical real projections, compares real and complex side-of-LO
+downconversion, and exposes signed aliasing plus the failure caused by
+discarding Q.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–17 have completed their separate governed
-implementation batches. Projects 18–84 wait for their own
+ready-to-paste AI prompt. Projects 1–18 have completed their separate governed
+implementation batches. Projects 19–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P17.
+the current implementation frontier is P18.
 
 ## Module layout
 
