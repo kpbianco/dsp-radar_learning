@@ -253,7 +253,7 @@
       "phase_title": "Modulation, Channels, and Statistical Estimation",
       "slug": "visualize-am-as-carrier-and-sidebands",
       "folder": "modules/21-visualize-am-as-carrier-and-sidebands",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P21"
     },
     {

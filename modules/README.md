@@ -22,7 +22,7 @@
 | [P18](../modules/18-contrast-real-and-complex-sampling/) | implemented | 2 | Contrast Real and Complex Sampling |
 | [P19](../modules/19-inject-and-correct-iq-impairments/) | implemented | 2 | Inject and Correct IQ Impairments |
 | [P20](../modules/20-estimate-tone-frequency-and-phase-from-noisy-samples/) | implemented | 2 | Estimate Tone Frequency and Phase from Noisy Samples |
-| [P21](../modules/21-visualize-am-as-carrier-and-sidebands/) | scaffolded | 3 | Visualize AM as Carrier and Sidebands |
+| [P21](../modules/21-visualize-am-as-carrier-and-sidebands/) | implemented | 3 | Visualize AM as Carrier and Sidebands |
 | [P22](../modules/22-relate-fm-deviation-to-bandwidth/) | scaffolded | 3 | Relate FM Deviation to Bandwidth |
 | [P23](../modules/23-build-bpsk-and-qpsk-constellation-intuition/) | scaffolded | 3 | Build BPSK and QPSK Constellation Intuition |
 | [P24](../modules/24-see-pulse-shaping-and-matched-filtering/) | scaffolded | 3 | See Pulse Shaping and Matched Filtering |

@@ -39,5 +39,8 @@ correcting mean, branch gain, and phase shear in stages.
 Project 20 follows P19 and compares explicit peak-bin, interpolated-FFT, and
 coherent phase-increment tone estimates across SNR and observation duration,
 including wrapped-phase and low-coherence failure cases.
+Project 21 follows P20 and begins Phase 3 by mapping single- and multitone
+messages to symmetric AM sidebands, then contrasts envelope and coherent
+recovery when over-modulation reverses the signed envelope.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

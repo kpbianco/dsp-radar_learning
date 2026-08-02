@@ -214,6 +214,13 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
+    def test_start_p21_module(self):
+        p = self.run_cli("start", "21")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P21", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
     def test_default_start_resumes_an_incomplete_current_module(self):
         p = self.run_cli(
             "start",
@@ -554,6 +561,24 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P19 — Inject and Correct IQ Impairments", p.stdout)
         self.assertNotIn("P20 — Estimate Tone Frequency and Phase from Noisy Samples", p.stdout)
 
+    def test_default_start_does_not_skip_p20_after_p21_becomes_implemented(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P21",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17", "P18", "P19",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P20 — Estimate Tone Frequency and Phase from Noisy Samples", p.stdout)
+        self.assertNotIn("P21 — Visualize AM as Carrier and Sidebands", p.stdout)
+
     def test_default_start_advances_to_p11_after_p10_completion(self):
         p = self.run_cli(
             "start",
@@ -730,6 +755,24 @@ class LearnCliTests(unittest.TestCase):
         )
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P20 — Estimate Tone Frequency and Phase from Noisy Samples", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+
+    def test_default_start_advances_to_p21_after_p20_completion(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P20",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17", "P18", "P19", "P20",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P21 — Visualize AM as Carrier and Sidebands", p.stdout)
         self.assertIn("status: implemented", p.stdout)
 
     def test_default_start_stays_at_manifest_frontier_after_all_implemented_complete(self):
@@ -1231,6 +1274,39 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(
             persisted_state["notes"]["P20"],
             "Compared tone estimators by SNR, duration, wrapping, and coherence.",
+        )
+
+    def test_complete_p21_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "21",
+            "--note",
+            "Mapped AM messages to sidebands and explained coherent recovery.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P20",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17", "P18", "P19", "P20",
+                ],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P21.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P21")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08",
+             "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16",
+             "P17", "P18", "P19", "P20", "P21"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P21"],
+            "Mapped AM messages to sidebands and explained coherent recovery.",
         )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):
