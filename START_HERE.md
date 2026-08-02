@@ -24,5 +24,8 @@ lower-variance Welch PSD estimate.
 Project 15 follows P14 and uses an explicit spectrogram to trade window-duration
 frequency visibility against transient timing while overlap controls report
 density.
+Project 16 follows P15 and forms an analytic signal explicitly to expose
+envelope, phase, and instantaneous frequency while identifying low-amplitude
+samples where phase is unreliable.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

@@ -179,6 +179,13 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
+    def test_start_p16_module(self):
+        p = self.run_cli("start", "16")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P16", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
     def test_default_start_resumes_an_incomplete_current_module(self):
         p = self.run_cli(
             "start",
@@ -430,6 +437,23 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P14 — Compare Periodogram and Welch PSD Estimates", p.stdout)
         self.assertNotIn("P15 — Use a Spectrogram to See Time-Varying Frequency", p.stdout)
 
+    def test_default_start_does_not_skip_p15_after_p16_becomes_implemented(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P16",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P15 — Use a Spectrogram to See Time-Varying Frequency", p.stdout)
+        self.assertNotIn("P16 — Create an Analytic Signal with the Hilbert Transform", p.stdout)
+
     def test_default_start_advances_to_p11_after_p10_completion(self):
         p = self.run_cli(
             "start",
@@ -516,6 +540,24 @@ class LearnCliTests(unittest.TestCase):
         )
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P15 — Use a Spectrogram to See Time-Varying Frequency", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+
+    def test_default_start_advances_to_p16_after_p15_completion(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P15",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P16 — Create an Analytic Signal with the Hilbert Transform", p.stdout)
         self.assertIn("status: implemented", p.stdout)
 
     def test_default_start_stays_at_manifest_frontier_after_all_implemented_complete(self):
@@ -852,6 +894,39 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(
             persisted_state["notes"]["P15"],
             "Balanced transient timing against close-frequency visibility.",
+        )
+
+    def test_complete_p16_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "16",
+            "--note",
+            "Rejected phase-derived frequency where analytic magnitude vanished.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P15",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15",
+                ],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P16.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P16")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06", "P07",
+             "P08", "P09", "P10", "P11", "P12", "P13", "P14", "P15",
+             "P16"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P16"],
+            "Rejected phase-derived frequency where analytic magnitude vanished.",
         )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):

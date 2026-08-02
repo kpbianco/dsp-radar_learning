@@ -51,16 +51,19 @@ including segment-length, overlap, repeated-seed, and averaging-domain effects.
 Project 15 builds an explicit short-time Fourier transform and compares window
 duration, overlap, transient capture, close-frequency visibility, and the
 zero-padding resolution trap.
+Project 16 constructs the analytic signal with an explicit FFT Hilbert mask,
+then exposes envelope, unwrapped phase, instantaneous frequency, and the
+low-amplitude limit where phase-derived frequency becomes unreliable.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–15 have completed their separate governed
-implementation batches. Projects 16–84 wait for their own
+ready-to-paste AI prompt. Projects 1–16 have completed their separate governed
+implementation batches. Projects 17–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P15.
+the current implementation frontier is P16.
 
 ## Module layout
 

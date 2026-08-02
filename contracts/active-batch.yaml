@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P15
-  title: 'Implement P15: Use a Spectrogram to See Time-Varying Frequency'
-  goal: Implement Project 15 as an interactive MATLAB lesson answering 'How do window duration and overlap control
-    time-frequency visibility?' through visible cause and effect.
+  id: P16
+  title: 'Implement P16: Create an Analytic Signal with the Hilbert Transform'
+  goal: Implement Project 16 as an interactive MATLAB lesson answering 'How can a real waveform be represented by
+    a complex envelope?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/15-use-a-spectrogram-to-see-time-varying-frequency/README.md
+  - modules/16-create-an-analytic-signal-with-the-hilbert-transform/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M2.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P15.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P16.yaml
   control_plane_revision: 052d2e6cdcab369caf611ab26ac14b22a8a8d441
 dependencies:
-- P14
+- P15
 scope:
   allowed_paths:
-  - modules/15-use-a-spectrogram-to-see-time-varying-frequency/**
+  - modules/16-create-an-analytic-signal-with-the-hilbert-transform/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P15-*.md
-  - docs/evidence/P15-*.md
-  - tests/test_p15*.py
-  - tests/**/test_p15*.py
-  - tests/p15/**
-  - tests/**/p15/**
+  - docs/plans/P16-*.md
+  - docs/evidence/P16-*.md
+  - tests/test_p16*.py
+  - tests/**/test_p16*.py
+  - tests/p16/**
+  - tests/**/p16/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How do window duration and overlap control time-frequency visibility?'
+- 'Preserve the guiding question: How can a real waveform be represented by a complex envelope?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P15 artifact completeness and manifest identity
-  - P15 deterministic-input contract
-  - P15 sweep and broken-case markers
-  - P15 placeholder/black-box regression
+  - P16 artifact completeness and manifest identity
+  - P16 deterministic-input contract
+  - P16 sweep and broken-case markers
+  - P16 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P15 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P16 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P15-<date>.md
+  - docs/evidence/P16-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
