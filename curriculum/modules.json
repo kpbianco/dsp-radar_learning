@@ -181,7 +181,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "use-a-spectrogram-to-see-time-varying-frequency",
       "folder": "modules/15-use-a-spectrogram-to-see-time-varying-frequency",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P15"
     },
     {

@@ -21,5 +21,8 @@ Project 13 follows P12 and separates FFT display-grid density from true
 finite-observation resolution.
 Project 14 follows P13 and trades segment-duration frequency resolution for a
 lower-variance Welch PSD estimate.
+Project 15 follows P14 and uses an explicit spectrogram to trade window-duration
+frequency visibility against transient timing while overlap controls report
+density.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
