@@ -200,6 +200,13 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
+    def test_start_p19_module(self):
+        p = self.run_cli("start", "19")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P19", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
     def test_default_start_resumes_an_incomplete_current_module(self):
         p = self.run_cli(
             "start",
@@ -504,6 +511,24 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P17 — Perform Complex Downconversion by Hand", p.stdout)
         self.assertNotIn("P18 — Contrast Real and Complex Sampling", p.stdout)
 
+    def test_default_start_does_not_skip_p18_after_p19_becomes_implemented(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P19",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P18 — Contrast Real and Complex Sampling", p.stdout)
+        self.assertNotIn("P19 — Inject and Correct IQ Impairments", p.stdout)
+
     def test_default_start_advances_to_p11_after_p10_completion(self):
         p = self.run_cli(
             "start",
@@ -644,6 +669,24 @@ class LearnCliTests(unittest.TestCase):
         )
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P18 — Contrast Real and Complex Sampling", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+
+    def test_default_start_advances_to_p19_after_p18_completion(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P18",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17", "P18",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P19 — Inject and Correct IQ Impairments", p.stdout)
         self.assertIn("status: implemented", p.stdout)
 
     def test_default_start_stays_at_manifest_frontier_after_all_implemented_complete(self):
@@ -1079,6 +1122,39 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(
             persisted_state["notes"]["P18"],
             "Explained why I/Q preserves rotation direction while real data does not.",
+        )
+
+    def test_complete_p19_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "19",
+            "--note",
+            "Mapped IQ impairments to center, image, and ellipse signatures.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P18",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17", "P18",
+                ],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P19.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P19")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08",
+             "P09", "P10", "P11", "P12", "P13", "P14", "P15", "P16",
+             "P17", "P18", "P19"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P19"],
+            "Mapped IQ impairments to center, image, and ellipse signatures.",
         )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):
