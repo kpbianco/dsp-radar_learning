@@ -44,16 +44,18 @@ Project 10 completes Phase 1 after P09.
 Project 11 is implemented and begins Phase 2 with the FFT bin-frequency map.
 Project 12 separates deterministic finite-record leakage from random noise and
 compares five explicit window tradeoffs after P11.
+Project 13 proves that zero-padding densifies the displayed FFT grid without
+narrowing the finite-record response, then compares a four-times-longer record.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–12 have completed their separate governed
-implementation batches. Projects 13–84 wait for their own
+ready-to-paste AI prompt. Projects 1–13 have completed their separate governed
+implementation batches. Projects 14–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P12.
+the current implementation frontier is P13.
 
 ## Module layout
 
