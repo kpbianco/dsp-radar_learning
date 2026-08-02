@@ -27,5 +27,8 @@ density.
 Project 16 follows P15 and forms an analytic signal explicitly to expose
 envelope, phase, and instantaneous frequency while identifying low-amplitude
 samples where phase is unreliable.
+Project 17 follows P16 and performs explicit complex downconversion, preserving
+signed difference frequency, relative phase, and real-input amplitude
+bookkeeping while its low-pass FIR selects the desired translated copy.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
