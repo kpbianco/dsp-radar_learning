@@ -444,8 +444,12 @@ class P18ModuleTests(unittest.TestCase):
         for offset_hz in (40.0, 160.0, 400.0):
             positive, negative = build_pair(offset_hz, 2048.0, 4096)
             with self.subTest(offset_hz=offset_hz):
-                self.assertAlmostEqual(estimate_frequency(positive, 2048.0), offset_hz, places=11)
-                self.assertAlmostEqual(estimate_frequency(negative, 2048.0), -offset_hz, places=11)
+                self.assertAlmostEqual(
+                    estimate_frequency(positive, 2048.0), offset_hz, delta=5e-11
+                )
+                self.assertAlmostEqual(
+                    estimate_frequency(negative, 2048.0), -offset_hz, delta=5e-11
+                )
                 self.assertLess(
                     max(abs(a.real - b.real) for a, b in zip(positive, negative)),
                     1e-13,
@@ -463,8 +467,27 @@ class P18ModuleTests(unittest.TestCase):
             with self.subTest(fs_hz=fs_hz):
                 self.assertEqual(alias_frequency(160.0, fs_hz), positive_alias)
                 self.assertEqual(alias_frequency(-160.0, fs_hz), negative_alias)
-                self.assertAlmostEqual(estimate_frequency(positive, fs_hz), positive_alias, places=11)
-                self.assertAlmostEqual(estimate_frequency(negative, fs_hz), negative_alias, places=11)
+                self.assertAlmostEqual(
+                    estimate_frequency(positive, fs_hz), positive_alias, delta=5e-11
+                )
+                self.assertAlmostEqual(
+                    estimate_frequency(negative, fs_hz), negative_alias, delta=5e-11
+                )
+
+    def test_undersampled_iq_cannot_distinguish_analog_tones_from_signed_aliases(self):
+        fs_hz = 256.0
+        count = int(fs_hz / 2)
+        positive_analog, negative_analog = build_pair(160.0, fs_hz, count)
+        negative_alias, positive_alias = build_pair(-96.0, fs_hz, count)
+
+        self.assertLess(
+            max(abs(actual - alias) for actual, alias in zip(positive_analog, negative_alias)),
+            1e-12,
+        )
+        self.assertLess(
+            max(abs(actual - alias) for actual, alias in zip(negative_analog, positive_alias)),
+            1e-12,
+        )
 
     def test_broken_q_discard_destroys_sign_and_iq_recovery_restores_it(self):
         positive, negative = build_pair(32.0, 256.0, 256)

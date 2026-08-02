@@ -14,7 +14,7 @@ sources:
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
   control_plane_path: products/dsp-radar-learning/batches/P18.yaml
-  control_plane_revision: 052d2e6cdcab369caf611ab26ac14b22a8a8d441
+  control_plane_revision: aacf91301bff4dc4b52b52caf9d1cf1397ed693b
 dependencies:
 - P17
 scope:
