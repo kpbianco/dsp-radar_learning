@@ -36,5 +36,8 @@ into the same cosine; it also exposes the complex-sampling Nyquist limit.
 Project 19 follows P18 and maps DC offset, I/Q gain mismatch, and quadrature
 error to center spikes, conjugate images, and distorted I/Q trajectories before
 correcting mean, branch gain, and phase shear in stages.
+Project 20 follows P19 and compares explicit peak-bin, interpolated-FFT, and
+coherent phase-increment tone estimates across SNR and observation duration,
+including wrapped-phase and low-coherence failure cases.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
