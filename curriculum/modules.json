@@ -229,7 +229,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "inject-and-correct-iq-impairments",
       "folder": "modules/19-inject-and-correct-iq-impairments",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P19"
     },
     {

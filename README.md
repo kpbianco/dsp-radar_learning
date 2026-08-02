@@ -61,16 +61,19 @@ Project 18 contrasts conjugate positive/negative complex tones with their
 identical real projections, compares real and complex side-of-LO
 downconversion, and exposes signed aliasing plus the failure caused by
 discarding Q.
+Project 19 injects DC offset, unequal I/Q gains, and quadrature-axis error,
+then diagnoses their center/image/ellipse signatures and corrects mean, branch
+scale, and phase shear in explicit stages.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–18 have completed their separate governed
-implementation batches. Projects 19–84 wait for their own
+ready-to-paste AI prompt. Projects 1–19 have completed their separate governed
+implementation batches. Projects 20–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P18.
+the current implementation frontier is P19.
 
 ## Module layout
 
