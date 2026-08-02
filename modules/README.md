@@ -18,7 +18,7 @@
 | [P14](../modules/14-compare-periodogram-and-welch-psd-estimates/) | implemented | 2 | Compare Periodogram and Welch PSD Estimates |
 | [P15](../modules/15-use-a-spectrogram-to-see-time-varying-frequency/) | implemented | 2 | Use a Spectrogram to See Time-Varying Frequency |
 | [P16](../modules/16-create-an-analytic-signal-with-the-hilbert-transform/) | implemented | 2 | Create an Analytic Signal with the Hilbert Transform |
-| [P17](../modules/17-perform-complex-downconversion-by-hand/) | scaffolded | 2 | Perform Complex Downconversion by Hand |
+| [P17](../modules/17-perform-complex-downconversion-by-hand/) | implemented | 2 | Perform Complex Downconversion by Hand |
 | [P18](../modules/18-contrast-real-and-complex-sampling/) | scaffolded | 2 | Contrast Real and Complex Sampling |
 | [P19](../modules/19-inject-and-correct-iq-impairments/) | scaffolded | 2 | Inject and Correct IQ Impairments |
 | [P20](../modules/20-estimate-tone-frequency-and-phase-from-noisy-samples/) | scaffolded | 2 | Estimate Tone Frequency and Phase from Noisy Samples |

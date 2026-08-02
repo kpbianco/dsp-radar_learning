@@ -205,7 +205,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "perform-complex-downconversion-by-hand",
       "folder": "modules/17-perform-complex-downconversion-by-hand",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P17"
     },
     {
