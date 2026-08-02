@@ -169,7 +169,7 @@
       "phase_title": "Fourier, Spectral, and I/Q Intuition",
       "slug": "compare-periodogram-and-welch-psd-estimates",
       "folder": "modules/14-compare-periodogram-and-welch-psd-estimates",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P14"
     },
     {

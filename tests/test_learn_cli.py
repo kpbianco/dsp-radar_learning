@@ -165,6 +165,13 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
+    def test_start_p14_module(self):
+        p = self.run_cli("start", "14")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P14", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
     def test_default_start_resumes_an_incomplete_current_module(self):
         p = self.run_cli(
             "start",
@@ -379,6 +386,26 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P12 — Separate Leakage from Noise", p.stdout)
         self.assertNotIn("P13 — Prove Zero-Padding Does Not Improve True Resolution", p.stdout)
 
+    def test_default_start_does_not_skip_p13_after_p14_becomes_implemented(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P14",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn(
+            "P13 — Prove Zero-Padding Does Not Improve True Resolution",
+            p.stdout,
+        )
+        self.assertNotIn("P14 — Compare Periodogram and Welch PSD Estimates", p.stdout)
+
     def test_default_start_advances_to_p11_after_p10_completion(self):
         p = self.run_cli(
             "start",
@@ -431,6 +458,23 @@ class LearnCliTests(unittest.TestCase):
             "P13 — Prove Zero-Padding Does Not Improve True Resolution",
             p.stdout,
         )
+        self.assertIn("status: implemented", p.stdout)
+
+    def test_default_start_advances_to_p14_after_p13_completion(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P13",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P14 — Compare Periodogram and Welch PSD Estimates", p.stdout)
         self.assertIn("status: implemented", p.stdout)
 
     def test_default_start_stays_at_manifest_frontier_after_all_implemented_complete(self):
@@ -705,6 +749,37 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(
             persisted_state["notes"]["P13"],
             "Separated FFT display spacing from finite-observation resolution.",
+        )
+
+    def test_complete_p14_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "14",
+            "--note",
+            "Balanced Welch variance reduction against segment resolution.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P13",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13",
+                ],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P14.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P14")
+        self.assertEqual(
+            persisted_state["completed"],
+            ["P01", "P02", "P03", "P04", "P05", "P06", "P07",
+             "P08", "P09", "P10", "P11", "P12", "P13", "P14"],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P14"],
+            "Balanced Welch variance reduction against segment resolution.",
         )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):

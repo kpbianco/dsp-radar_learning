@@ -15,7 +15,7 @@
 | [P11](../modules/11-make-fft-bins-concrete/) | implemented | 2 | Make FFT Bins Concrete |
 | [P12](../modules/12-separate-leakage-from-noise/) | implemented | 2 | Separate Leakage from Noise |
 | [P13](../modules/13-prove-zero-padding-does-not-improve-true-resolution/) | implemented | 2 | Prove Zero-Padding Does Not Improve True Resolution |
-| [P14](../modules/14-compare-periodogram-and-welch-psd-estimates/) | scaffolded | 2 | Compare Periodogram and Welch PSD Estimates |
+| [P14](../modules/14-compare-periodogram-and-welch-psd-estimates/) | implemented | 2 | Compare Periodogram and Welch PSD Estimates |
 | [P15](../modules/15-use-a-spectrogram-to-see-time-varying-frequency/) | scaffolded | 2 | Use a Spectrogram to See Time-Varying Frequency |
 | [P16](../modules/16-create-an-analytic-signal-with-the-hilbert-transform/) | scaffolded | 2 | Create an Analytic Signal with the Hilbert Transform |
 | [P17](../modules/17-perform-complex-downconversion-by-hand/) | scaffolded | 2 | Perform Complex Downconversion by Hand |

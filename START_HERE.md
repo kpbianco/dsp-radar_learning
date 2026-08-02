@@ -19,5 +19,7 @@ Project 11 begins Phase 2 after P10 and makes the FFT frequency grid concrete.
 Project 12 follows P11 and separates deterministic leakage from random noise.
 Project 13 follows P12 and separates FFT display-grid density from true
 finite-observation resolution.
+Project 14 follows P13 and trades segment-duration frequency resolution for a
+lower-variance Welch PSD estimate.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
