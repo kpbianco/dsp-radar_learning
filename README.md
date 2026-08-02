@@ -68,16 +68,20 @@ Project 20 estimates fractional-bin tone frequency and initial phase with
 peak-bin, interpolated-FFT, and coherent phase-increment methods, then maps
 their bias and spread across SNR and observation duration and rejects
 low-coherence estimates.
+Project 21 begins Phase 3 by constructing conventional AM explicitly, mapping
+single- and multitone baseband components to symmetric carrier sidebands, and
+showing why over-modulation folds envelope recovery while coherent detection
+retains sign.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–20 have completed their separate governed
-implementation batches. Projects 21–84 wait for their own
+ready-to-paste AI prompt. Projects 1–21 have completed their separate governed
+implementation batches. Projects 22–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P20.
+the current implementation frontier is P21.
 
 ## Module layout
 
