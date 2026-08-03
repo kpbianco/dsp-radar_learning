@@ -30,6 +30,10 @@ def validate_implementation_frontier(modules: list[dict]) -> list[str]:
 def historical_module_test_policy_errors(source: str) -> list[str]:
     forbidden = (
         (r"(?i)latest implemented lesson overall", "permanent latest-module wording"),
+        (
+            r"(?i)current implementation frontier is P\d{2}",
+            "hard-coded implementation frontier",
+        ),
         (r"(?i)\bremains? scaffolded\b", "permanent future-scaffold wording"),
         (r"\bstatuses\s*\[\s*\d+\s*:\s*\]", "future status-tail assertion"),
         (r"\[\s*[\"']scaffolded[\"']\s*\]\s*\*", "exact scaffolded-tail snapshot"),
@@ -96,6 +100,7 @@ class CurriculumTests(unittest.TestCase):
     def test_historical_module_test_policy_rejects_time_relative_examples(self):
         examples = (
             'self.assertIn("Project 10 is the latest implemented lesson overall", readme)',
+            'self.assertIn("current implementation frontier is P10.", readme)',
             'self.assertIn("Projects 11–84 remain scaffolded", readme)',
             'self.assertEqual(statuses[10:], ["scaffolded"] * 74)',
             'implemented = [entry["id"] for entry in modules if entry["status"] == "implemented"]',

@@ -1,7 +1,7 @@
 # P27: Use Monte Carlo Trials Instead of One Lucky Run
 
 **Phase 3: Modulation, Channels, and Statistical Estimation**  
-**Status:** Scaffolded; implementation batch `P27` is pending
+**Status:** Implemented by governed batch `P27`
 
 ## Guiding question
 
@@ -9,32 +9,66 @@ Why is one noise realization not enough to judge an algorithm?
 
 ## Experiment
 
-Choose a simple detector or estimator and repeat it over hundreds or thousands of random trials.
+Send known BPSK symbols through independent additive white Gaussian noise,
+apply an explicit unit-energy matched filter, and record whether each hard
+decision is correct. Compare the empirical bit-error probability with the
+analytic AWGN result over thousands of independent trials.
 
 ## Procedure
 
-Plot trial outcomes, running mean, confidence interval, and final empirical distribution. Repeat with too few trials and compare apparent conclusions.
+Plot individual error outcomes, running error probability, a 95% Wilson
+confidence interval, and the final empirical distributions. Sweep trial count
+and energy-per-bit to noise-density ratio while holding all other inputs fixed.
+Then deliberately reuse one lucky noise realization as if it were thousands of
+independent trials, diagnose the false certainty, and recover with a clean
+private-seed rerun.
 
 ## What this should teach
 
-Random algorithms must be characterized statistically; reproducible seeds and sufficient trial count prevent misleading examples.
+Random algorithms must be characterized statistically. A reproducible seed
+makes a run auditable; it does not make one realization representative.
+Independent trials, uncertainty intervals, and enough error events prevent a
+lucky example from becoming an unsupported performance claim.
 
 ## Completion condition
 
-Your reported probability or RMSE stabilizes as trials increase and repeats with the same seed.
+Your reported BER approaches the analytic reference as the independent trial
+count grows, the confidence interval narrows without being mistaken for a
+guarantee, and a rerun with seed 2701 exactly reproduces the retained outcomes.
 
-## Start or implement
+## Prerequisites and dependencies
+
+- P23 supplies the BPSK symbol and hard-decision picture.
+- P24 supplies the matched-filter interpretation.
+- P27 uses base MATLAB only. It does not require Communications Toolbox,
+  Statistics and Machine Learning Toolbox, files, network access, or hardware.
+
+## Run the lesson
 
 ```bash
 ./bin/learn start 27
 ```
 
-If this module is scaffolded, tutor mode may review this brief but must not pretend the experiment is complete. Activate Portfolio Control batch `P27` to add the runnable MATLAB experiment, explanation, walkthrough, checks, validation, and evidence.
+Then run `experiment.m` from this folder and follow `walkthrough.md` one
+observation at a time. Use `checks.md` for the final interpretation and
+teach-back.
+
+## Files
+
+- `experiment.m` — seeded BPSK Monte Carlo experiment, two sweeps, broken
+  pseudo-replication case, and deterministic recovery
+- `lesson.md` — physical/statistical model, equations, limits, and mistakes
+- `walkthrough.md` — guided baseline, controlled changes, failure, and recovery
+- `checks.md` — observation, prediction, operational, and teach-back checks
 
 ## AI chat prompt
 
-Act as my hands-on DSP and radar lab mentor. Create a self-contained MATLAB mini-project titled "Use Monte Carlo Trials Instead of One Lucky Run". The guiding question is: "Why is one noise realization not enough to judge an algorithm?" Use this experiment: Choose a simple detector or estimator and repeat it over hundreds or thousands of random trials. Have me perform these actions: Plot trial outcomes, running mean, confidence interval, and final empirical distribution. Repeat with too few trials and compare apparent conclusions. The main concept I must learn is: Random algorithms must be characterized statistically; reproducible seeds and sufficient trial count prevent misleading examples. Assume I am a beginner in DSP/radar but can run and edit MATLAB scripts. Focus on physical meaning, signal flow, and visual intuition rather than MATLAB syntax or library instruction. Use seeded synthetic data, one runnable script organized into clear sections, and plots after every important processing step. Show the underlying equation or operation before using any toolbox convenience function; use base MATLAB where practical and give an optional toolbox version only when it adds real value. Include expected observations, two parameter sweeps that make the concept visually obvious, one intentionally broken case, common interpretation mistakes, and a short completion checklist. Do not turn it into homework or ask me to derive long equations before seeing the experiment.
-
-## Files currently present
-
-- `README.md`
+Act as my hands-on DSP and radar lab mentor. Use the implemented P27 artifacts
+to guide one plot or processing transition at a time. Begin with the question
+“Why is one noise realization not enough to judge an algorithm?”, give a short
+physical model of repeated noisy BPSK measurements, inspect the independent-
+trial baseline, and ask one concrete observation question. Tie every trial-
+count or Eb/N0 change to error-probability uncertainty rather than MATLAB
+syntax. Include the deliberately reused-noise case, correct any claim that
+zero observed errors proves zero BER, and finish with the teach-back in
+`checks.md`.
