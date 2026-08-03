@@ -62,5 +62,8 @@ failure of reused noise, and deterministic independent-trial recovery.
 Project 28 follows P27 and closes Phase 3 by sweeping a known-pulse detector
 threshold into an ROC, comparing amplitude-estimator bias and variance with a
 known-model CRLB across SNR, and exposing detected-only selection bias.
+Project 29 follows P28 and begins Phase 4 by applying the monostatic radar
+range equation, connecting two-way `R^-4` spreading to noise-floor margin,
+one-variable budget changes, and the 16-times-power cost of doubling range.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

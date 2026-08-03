@@ -349,7 +349,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "build-a-radar-power-budget-experiment",
       "folder": "modules/29-build-a-radar-power-budget-experiment",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P29"
     },
     {
