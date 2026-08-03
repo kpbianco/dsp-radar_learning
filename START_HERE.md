@@ -99,5 +99,8 @@ against slow-target loss and noise gain, and exposing the wrong-axis failure.
 Project 39 follows P38 by mapping the two-pulse response to radial velocity,
 marking each PRF's blind-speed grid, and recovering nonzero blind targets with
 separately processed staggered-PRF dwells and noncoherent max/OR fusion.
+Project 40 follows P39 by comparing phase-aligned complex addition with
+phase-insensitive power accumulation, then exposing coherent loss from phase
+jitter and recovering it with a valid pulse-by-pulse phase reference.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
