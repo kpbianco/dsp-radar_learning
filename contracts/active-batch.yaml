@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P41
-  title: 'Implement P41: Model Ground Clutter and Swerling Targets'
-  goal: Implement Project 41 as an interactive MATLAB lesson answering 'Why do clutter and target amplitude fluctuate
-    differently from white noise?' through visible cause and effect.
+  id: P42
+  title: 'Implement P42: Create a Full Range-Doppler Map'
+  goal: Implement Project 42 as an interactive MATLAB lesson answering 'How do matched filtering and slow-time FFT
+    combine to separate targets?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/41-model-ground-clutter-and-swerling-targets/README.md
+  - modules/42-create-a-full-range-doppler-map/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M4.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P41.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P42.yaml
   control_plane_revision: efce57ce87ced607e14837973afcda5a1ba34b91
 dependencies:
-- P40
+- P41
 scope:
   allowed_paths:
-  - modules/41-model-ground-clutter-and-swerling-targets/**
+  - modules/42-create-a-full-range-doppler-map/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P41-*.md
-  - docs/evidence/P41-*.md
-  - tests/test_p41*.py
-  - tests/**/test_p41*.py
-  - tests/p41/**
-  - tests/**/p41/**
+  - docs/plans/P42-*.md
+  - docs/evidence/P42-*.md
+  - tests/test_p42*.py
+  - tests/**/test_p42*.py
+  - tests/p42/**
+  - tests/**/p42/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: Why do clutter and target amplitude fluctuate differently from white noise?'
+- 'Preserve the guiding question: How do matched filtering and slow-time FFT combine to separate targets?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P41 artifact completeness and manifest identity
-  - P41 deterministic-input contract
-  - P41 sweep and broken-case markers
-  - P41 placeholder/black-box regression
+  - P42 artifact completeness and manifest identity
+  - P42 deterministic-input contract
+  - P42 sweep and broken-case markers
+  - P42 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P41 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P42 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P41-<date>.md
+  - docs/evidence/P42-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

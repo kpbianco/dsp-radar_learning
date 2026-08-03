@@ -505,7 +505,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "create-a-full-range-doppler-map",
       "folder": "modules/42-create-a-full-range-doppler-map",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P42"
     },
     {
