@@ -265,7 +265,7 @@
       "phase_title": "Modulation, Channels, and Statistical Estimation",
       "slug": "relate-fm-deviation-to-bandwidth",
       "folder": "modules/22-relate-fm-deviation-to-bandwidth",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P22"
     },
     {

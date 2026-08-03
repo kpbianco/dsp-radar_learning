@@ -72,16 +72,20 @@ Project 21 begins Phase 3 by constructing conventional AM explicitly, mapping
 single- and multitone baseband components to symmetric carrier sidebands, and
 showing why over-modulation folds envelope recovery while coherent detection
 retains sign.
+Project 22 constructs sinusoidal FM from an explicit phase law, connects phase
+slope to instantaneous frequency, compares 98%-occupied line power with
+Carson's bandwidth estimate, and exposes Nyquist folding when the intended
+frequency excursion exceeds the sample-rate limit.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–21 have completed their separate governed
-implementation batches. Projects 22–84 wait for their own
+ready-to-paste AI prompt. Projects 1–22 have completed their separate governed
+implementation batches. Projects 23–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P21.
+the current implementation frontier is P22.
 
 ## Module layout
 
