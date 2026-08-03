@@ -373,7 +373,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "separate-range-resolution-from-range-accuracy",
       "folder": "modules/31-separate-range-resolution-from-range-accuracy",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P31"
     },
     {

@@ -109,16 +109,20 @@ Project 30 sends a finite pulse through explicit zero-extended fractional
 delay, locates echoes with lag-by-lag correlation, converts round-trip time to
 `c*tau/2` range, sweeps sample rate and fractional delay, separates merged from
 visible two-target peaks, and recovers the factor-of-two ranging failure.
+Project 31 separates bandwidth-driven two-target resolution from single-target
+accuracy using an explicit Gaussian-envelope matched filter, measured response
+width, bandwidth and spacing sweeps, SNR-dependent error metrics, and a broken
+dense-display peak rule that recovers only when physical bandwidth increases.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–30 have completed their separate governed
-implementation batches. Projects 31–84 wait for their own
+ready-to-paste AI prompt. Projects 1–31 have completed their separate governed
+implementation batches. Projects 32–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P30.
+the current implementation frontier is P31.
 
 ## Module layout
 
