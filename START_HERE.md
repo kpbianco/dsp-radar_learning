@@ -50,5 +50,8 @@ crossings.
 Project 24 follows P23 and turns QPSK points into rectangular and RRC
 waveforms, then exposes bandwidth, matched-filter, finite-span, eye-opening,
 and symbol-timing tradeoffs.
+Project 25 follows P24 and adds explicit delayed channel paths, connecting
+frequency-selective fading to eye closure and constellation ISI before
+contrasting ZF noise enhancement with MMSE regularization near a deep null.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

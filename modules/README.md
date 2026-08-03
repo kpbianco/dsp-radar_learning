@@ -26,7 +26,7 @@
 | [P22](../modules/22-relate-fm-deviation-to-bandwidth/) | implemented | 3 | Relate FM Deviation to Bandwidth |
 | [P23](../modules/23-build-bpsk-and-qpsk-constellation-intuition/) | implemented | 3 | Build BPSK and QPSK Constellation Intuition |
 | [P24](../modules/24-see-pulse-shaping-and-matched-filtering/) | implemented | 3 | See Pulse Shaping and Matched Filtering |
-| [P25](../modules/25-create-and-equalize-a-multipath-channel/) | scaffolded | 3 | Create and Equalize a Multipath Channel |
+| [P25](../modules/25-create-and-equalize-a-multipath-channel/) | implemented | 3 | Create and Equalize a Multipath Channel |
 | [P26](../modules/26-use-lms-to-cancel-an-interferer/) | scaffolded | 3 | Use LMS to Cancel an Interferer |
 | [P27](../modules/27-use-monte-carlo-trials-instead-of-one-lucky-run/) | scaffolded | 3 | Use Monte Carlo Trials Instead of One Lucky Run |
 | [P28](../modules/28-connect-thresholds-to-roc-curves-and-estimator-limits/) | scaffolded | 3 | Connect Thresholds to ROC Curves and Estimator Limits |
