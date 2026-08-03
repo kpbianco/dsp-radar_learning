@@ -40,7 +40,7 @@
 | [P36](../modules/36-measure-doppler-from-pulse-to-pulse-phase/) | implemented | 4 | Measure Doppler from Pulse-to-Pulse Phase |
 | [P37](../modules/37-build-a-pulse-doppler-data-matrix/) | implemented | 4 | Build a Pulse-Doppler Data Matrix |
 | [P38](../modules/38-implement-a-two-pulse-and-three-pulse-mti-canceller/) | implemented | 4 | Implement a Two-Pulse and Three-Pulse MTI Canceller |
-| [P39](../modules/39-expose-blind-speeds-and-use-staggered-prf/) | scaffolded | 4 | Expose Blind Speeds and Use Staggered PRF |
+| [P39](../modules/39-expose-blind-speeds-and-use-staggered-prf/) | implemented | 4 | Expose Blind Speeds and Use Staggered PRF |
 | [P40](../modules/40-compare-coherent-and-noncoherent-integration/) | scaffolded | 4 | Compare Coherent and Noncoherent Integration |
 | [P41](../modules/41-model-ground-clutter-and-swerling-targets/) | scaffolded | 4 | Model Ground Clutter and Swerling Targets |
 | [P42](../modules/42-create-a-full-range-doppler-map/) | scaffolded | 4 | Create a Full Range-Doppler Map |
