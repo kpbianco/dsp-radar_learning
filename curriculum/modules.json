@@ -481,7 +481,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "compare-coherent-and-noncoherent-integration",
       "folder": "modules/40-compare-coherent-and-noncoherent-integration",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P40"
     },
     {

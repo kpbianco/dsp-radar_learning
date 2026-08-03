@@ -143,16 +143,20 @@ and noise gain, and exposes why differencing range rows is not MTI.
 Project 39 maps the two-pulse response into radial velocity, marks the blind
 speeds for two PRFs, and shows why separately processed staggered-PRF dwells
 recover nonzero blind targets only when their null grids differ.
+Project 40 aligns predictable pulse phase before complex addition, contrasts
+its pulse-count gain with an explicit phase-insensitive power statistic, and
+shows how phase jitter removes coherent benefit until a valid phase reference
+is restored.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–39 have completed their separate governed
-implementation batches. Projects 40–84 wait for their own
+ready-to-paste AI prompt. Projects 1–40 have completed their separate governed
+implementation batches. Projects 41–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P39.
+the current implementation frontier is P40.
 
 ## Module layout
 
