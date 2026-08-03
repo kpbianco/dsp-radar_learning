@@ -385,7 +385,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "perform-lfm-pulse-compression",
       "folder": "modules/32-perform-lfm-pulse-compression",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P32"
     },
     {

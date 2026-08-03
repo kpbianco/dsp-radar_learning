@@ -72,5 +72,8 @@ separation.
 Project 31 follows P30 by holding scene geometry or waveform bandwidth fixed in
 turn, measuring the matched-response width, and showing that a precise
 single-target estimate does not imply that a close pair is resolvable.
+Project 32 follows P31 by encoding a long pulse with a linear frequency sweep,
+compressing delayed echoes through explicit matched filtering, and separating
+bandwidth-controlled response width from duration-controlled coherent energy.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
