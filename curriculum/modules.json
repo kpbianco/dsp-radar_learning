@@ -361,7 +361,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "measure-range-from-echo-delay",
       "folder": "modules/30-measure-range-from-echo-delay",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P30"
     },
     {
