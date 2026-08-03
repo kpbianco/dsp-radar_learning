@@ -325,7 +325,7 @@
       "phase_title": "Modulation, Channels, and Statistical Estimation",
       "slug": "use-monte-carlo-trials-instead-of-one-lucky-run",
       "folder": "modules/27-use-monte-carlo-trials-instead-of-one-lucky-run",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P27"
     },
     {

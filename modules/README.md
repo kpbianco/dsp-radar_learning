@@ -28,7 +28,7 @@
 | [P24](../modules/24-see-pulse-shaping-and-matched-filtering/) | implemented | 3 | See Pulse Shaping and Matched Filtering |
 | [P25](../modules/25-create-and-equalize-a-multipath-channel/) | implemented | 3 | Create and Equalize a Multipath Channel |
 | [P26](../modules/26-use-lms-to-cancel-an-interferer/) | implemented | 3 | Use LMS to Cancel an Interferer |
-| [P27](../modules/27-use-monte-carlo-trials-instead-of-one-lucky-run/) | scaffolded | 3 | Use Monte Carlo Trials Instead of One Lucky Run |
+| [P27](../modules/27-use-monte-carlo-trials-instead-of-one-lucky-run/) | implemented | 3 | Use Monte Carlo Trials Instead of One Lucky Run |
 | [P28](../modules/28-connect-thresholds-to-roc-curves-and-estimator-limits/) | scaffolded | 3 | Connect Thresholds to ROC Curves and Estimator Limits |
 | [P29](../modules/29-build-a-radar-power-budget-experiment/) | scaffolded | 4 | Build a Radar Power-Budget Experiment |
 | [P30](../modules/30-measure-range-from-echo-delay/) | scaffolded | 4 | Measure Range from Echo Delay |
