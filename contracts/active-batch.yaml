@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P25
-  title: 'Implement P25: Create and Equalize a Multipath Channel'
-  goal: Implement Project 25 as an interactive MATLAB lesson answering 'How do delayed copies distort symbols even
-    when noise is small?' through visible cause and effect.
+  id: P26
+  title: 'Implement P26: Use LMS to Cancel an Interferer'
+  goal: Implement Project 26 as an interactive MATLAB lesson answering 'How can an adaptive filter learn an unknown
+    coupling path?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/25-create-and-equalize-a-multipath-channel/README.md
+  - modules/26-use-lms-to-cancel-an-interferer/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M3.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P25.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P26.yaml
   control_plane_revision: aacf91301bff4dc4b52b52caf9d1cf1397ed693b
 dependencies:
-- P24
+- P25
 scope:
   allowed_paths:
-  - modules/25-create-and-equalize-a-multipath-channel/**
+  - modules/26-use-lms-to-cancel-an-interferer/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P25-*.md
-  - docs/evidence/P25-*.md
-  - tests/test_p25*.py
-  - tests/**/test_p25*.py
-  - tests/p25/**
-  - tests/**/p25/**
+  - docs/plans/P26-*.md
+  - docs/evidence/P26-*.md
+  - tests/test_p26*.py
+  - tests/**/test_p26*.py
+  - tests/p26/**
+  - tests/**/p26/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How do delayed copies distort symbols even when noise is small?'
+- 'Preserve the guiding question: How can an adaptive filter learn an unknown coupling path?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P25 artifact completeness and manifest identity
-  - P25 deterministic-input contract
-  - P25 sweep and broken-case markers
-  - P25 placeholder/black-box regression
+  - P26 artifact completeness and manifest identity
+  - P26 deterministic-input contract
+  - P26 sweep and broken-case markers
+  - P26 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P25 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P26 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P25-<date>.md
+  - docs/evidence/P26-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
