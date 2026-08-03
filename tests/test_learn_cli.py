@@ -235,6 +235,13 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("status: implemented", p.stdout)
         self.assertIn("Tutor entry", p.stdout)
 
+    def test_start_p24_module(self):
+        p = self.run_cli("start", "24")
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P24", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+        self.assertIn("Tutor entry", p.stdout)
+
     def test_default_start_resumes_an_incomplete_current_module(self):
         p = self.run_cli(
             "start",
@@ -629,6 +636,25 @@ class LearnCliTests(unittest.TestCase):
         self.assertIn("P22 — Relate FM Deviation to Bandwidth", p.stdout)
         self.assertNotIn("P23 — Build BPSK and QPSK Constellation Intuition", p.stdout)
 
+    def test_default_start_does_not_skip_p23_after_p24_becomes_implemented(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P24",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17", "P18", "P19", "P20", "P21",
+                    "P22",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P23 — Build BPSK and QPSK Constellation Intuition", p.stdout)
+        self.assertNotIn("P24 — See Pulse Shaping and Matched Filtering", p.stdout)
+
     def test_default_start_advances_to_p11_after_p10_completion(self):
         p = self.run_cli(
             "start",
@@ -860,6 +886,25 @@ class LearnCliTests(unittest.TestCase):
         )
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertIn("P23 — Build BPSK and QPSK Constellation Intuition", p.stdout)
+        self.assertIn("status: implemented", p.stdout)
+
+    def test_default_start_advances_to_p24_after_p23_completion(self):
+        p = self.run_cli(
+            "start",
+            initial_state={
+                "schema_version": 1,
+                "current": "P23",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17", "P18", "P19", "P20", "P21",
+                    "P22", "P23",
+                ],
+                "notes": {},
+            },
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("P24 — See Pulse Shaping and Matched Filtering", p.stdout)
         self.assertIn("status: implemented", p.stdout)
 
     def test_default_start_stays_at_manifest_frontier_after_all_implemented_complete(self):
@@ -1461,6 +1506,43 @@ class LearnCliTests(unittest.TestCase):
         self.assertEqual(
             persisted_state["notes"]["P23"],
             "Separated IQ noise spread from phase rotation and recovered decisions.",
+        )
+
+    def test_complete_p24_persists_current_completion_and_note(self):
+        persisted_state = {}
+        p = self.run_cli(
+            "complete",
+            "24",
+            "--note",
+            "Connected pulse bandwidth, matched filtering, and symbol timing.",
+            initial_state={
+                "schema_version": 1,
+                "current": "P23",
+                "completed": [
+                    "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                    "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                    "P15", "P16", "P17", "P18", "P19", "P20", "P21",
+                    "P22", "P23",
+                ],
+                "notes": {},
+            },
+            state_capture=persisted_state,
+        )
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertIn("Recorded local completion for P24.", p.stdout)
+        self.assertEqual(persisted_state["current"], "P24")
+        self.assertEqual(
+            persisted_state["completed"],
+            [
+                "P01", "P02", "P03", "P04", "P05", "P06", "P07",
+                "P08", "P09", "P10", "P11", "P12", "P13", "P14",
+                "P15", "P16", "P17", "P18", "P19", "P20", "P21",
+                "P22", "P23", "P24",
+            ],
+        )
+        self.assertEqual(
+            persisted_state["notes"]["P24"],
+            "Connected pulse bandwidth, matched filtering, and symbol timing.",
         )
 
     def test_continue_resumes_the_current_module_even_when_completed(self):
