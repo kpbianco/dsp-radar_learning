@@ -493,7 +493,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "model-ground-clutter-and-swerling-targets",
       "folder": "modules/41-model-ground-clutter-and-swerling-targets",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P41"
     },
     {

@@ -42,7 +42,7 @@
 | [P38](../modules/38-implement-a-two-pulse-and-three-pulse-mti-canceller/) | implemented | 4 | Implement a Two-Pulse and Three-Pulse MTI Canceller |
 | [P39](../modules/39-expose-blind-speeds-and-use-staggered-prf/) | implemented | 4 | Expose Blind Speeds and Use Staggered PRF |
 | [P40](../modules/40-compare-coherent-and-noncoherent-integration/) | implemented | 4 | Compare Coherent and Noncoherent Integration |
-| [P41](../modules/41-model-ground-clutter-and-swerling-targets/) | scaffolded | 4 | Model Ground Clutter and Swerling Targets |
+| [P41](../modules/41-model-ground-clutter-and-swerling-targets/) | implemented | 4 | Model Ground Clutter and Swerling Targets |
 | [P42](../modules/42-create-a-full-range-doppler-map/) | scaffolded | 4 | Create a Full Range-Doppler Map |
 | [P43](../modules/43-use-a-fixed-detection-threshold/) | scaffolded | 5 | Use a Fixed Detection Threshold |
 | [P44](../modules/44-build-an-empirical-radar-roc-curve/) | scaffolded | 5 | Build an Empirical Radar ROC Curve |
