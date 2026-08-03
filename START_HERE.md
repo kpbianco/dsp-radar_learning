@@ -42,5 +42,7 @@ including wrapped-phase and low-coherence failure cases.
 Project 21 follows P20 and begins Phase 3 by mapping single- and multitone
 messages to symmetric AM sidebands, then contrasts envelope and coherent
 recovery when over-modulation reverses the signed envelope.
+Project 22 follows P21 and relates fixed-envelope phase-slope motion to an FM
+sideband ladder, measured and Carson-style bandwidth, and the Nyquist limit.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
