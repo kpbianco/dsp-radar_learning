@@ -113,16 +113,20 @@ Project 31 separates bandwidth-driven two-target resolution from single-target
 accuracy using an explicit Gaussian-envelope matched filter, measured response
 width, bandwidth and spacing sweeps, SNR-dependent error metrics, and a broken
 dense-display peak rule that recovers only when physical bandwidth increases.
+Project 32 builds a complex-baseband LFM pulse from its phase law, inserts two
+overlapping long echoes, compresses them with an explicit conjugate
+time-reversed matched-filter sum, separates bandwidth-controlled width from
+duration-controlled energy, and recovers from a mismatched chirp-rate replica.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–31 have completed their separate governed
-implementation batches. Projects 32–84 wait for their own
+ready-to-paste AI prompt. Projects 1–32 have completed their separate governed
+implementation batches. Projects 33–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P31.
+the current implementation frontier is P32.
 
 ## Module layout
 
