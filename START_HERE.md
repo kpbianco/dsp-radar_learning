@@ -75,5 +75,8 @@ single-target estimate does not imply that a close pair is resolvable.
 Project 32 follows P31 by encoding a long pulse with a linear frequency sweep,
 compressing delayed echoes through explicit matched filtering, and separating
 bandwidth-controlled response width from duration-controlled coherent energy.
+Project 33 follows P32 by placing a weak target under a strong target's
+compressed sidelobes, then trading receive-weighting sidelobe suppression
+against mainlobe width and output SNR at several target separations.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

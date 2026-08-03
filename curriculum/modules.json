@@ -397,7 +397,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "control-pulse-compression-sidelobes",
       "folder": "modules/33-control-pulse-compression-sidelobes",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P33"
     },
     {

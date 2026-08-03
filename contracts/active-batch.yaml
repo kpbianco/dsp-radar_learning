@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P32
-  title: 'Implement P32: Perform LFM Pulse Compression'
-  goal: Implement Project 32 as an interactive MATLAB lesson answering 'How can a long energetic pulse achieve short-pulse
-    range resolution?' through visible cause and effect.
+  id: P33
+  title: 'Implement P33: Control Pulse-Compression Sidelobes'
+  goal: Implement Project 33 as an interactive MATLAB lesson answering 'Why can a strong target hide a weak nearby
+    target after matched filtering?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/32-perform-lfm-pulse-compression/README.md
+  - modules/33-control-pulse-compression-sidelobes/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M4.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P32.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P33.yaml
   control_plane_revision: efce57ce87ced607e14837973afcda5a1ba34b91
 dependencies:
-- P31
+- P32
 scope:
   allowed_paths:
-  - modules/32-perform-lfm-pulse-compression/**
+  - modules/33-control-pulse-compression-sidelobes/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P32-*.md
-  - docs/evidence/P32-*.md
-  - tests/test_p32*.py
-  - tests/**/test_p32*.py
-  - tests/p32/**
-  - tests/**/p32/**
+  - docs/plans/P33-*.md
+  - docs/evidence/P33-*.md
+  - tests/test_p33*.py
+  - tests/**/test_p33*.py
+  - tests/p33/**
+  - tests/**/p33/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How can a long energetic pulse achieve short-pulse range resolution?'
+- 'Preserve the guiding question: Why can a strong target hide a weak nearby target after matched filtering?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P32 artifact completeness and manifest identity
-  - P32 deterministic-input contract
-  - P32 sweep and broken-case markers
-  - P32 placeholder/black-box regression
+  - P33 artifact completeness and manifest identity
+  - P33 deterministic-input contract
+  - P33 sweep and broken-case markers
+  - P33 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P32 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P33 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P32-<date>.md
+  - docs/evidence/P33-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
