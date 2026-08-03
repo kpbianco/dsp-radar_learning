@@ -78,5 +78,9 @@ bandwidth-controlled response width from duration-controlled coherent energy.
 Project 33 follows P32 by placing a weak target under a strong target's
 compressed sidelobes, then trading receive-weighting sidelobe suppression
 against mainlobe width and output SNR at several target separations.
+Project 34 follows P33 by evaluating explicit zero-filled delay and Doppler
+mismatch for rectangular, LFM, and phase-coded pulses, then connecting pulse
+duration, swept bandwidth, chip/code length, sidelobes, and LFM coupling to the
+visible ambiguity surface.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

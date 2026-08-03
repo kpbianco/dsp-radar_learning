@@ -121,16 +121,20 @@ Project 33 places a weak echo beneath a strong target's LFM sidelobe, constructs
 cosine receive weighting explicitly, measures sidelobe, mainlobe-width, SNR,
 and visibility tradeoffs, and exposes why lowest-PSLR weighting can fail for a
 target inside the widened mainlobe.
+Project 34 evaluates the normalized narrowband ambiguity sum explicitly for
+equal-duration rectangular, LFM, and seeded phase-coded pulses, compares joint
+delay-Doppler surfaces and cuts, sweeps duration, bandwidth, and code length,
+and exposes false wraparound response from a circular-delay model.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–33 have completed their separate governed
-implementation batches. Projects 34–84 wait for their own
+ready-to-paste AI prompt. Projects 1–34 have completed their separate governed
+implementation batches. Projects 35–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P33.
+the current implementation frontier is P34.
 
 ## Module layout
 

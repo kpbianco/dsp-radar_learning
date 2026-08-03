@@ -409,7 +409,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "plot-and-interpret-the-ambiguity-function",
       "folder": "modules/34-plot-and-interpret-the-ambiguity-function",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P34"
     },
     {
