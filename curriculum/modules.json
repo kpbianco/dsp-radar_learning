@@ -445,7 +445,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "build-a-pulse-doppler-data-matrix",
       "folder": "modules/37-build-a-pulse-doppler-data-matrix",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P37"
     },
     {

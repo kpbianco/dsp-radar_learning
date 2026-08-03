@@ -133,16 +133,20 @@ Project 36 samples one complex range bin across coherent pulses, connects
 signed radial velocity to pulse-to-pulse phase and a slow-time FFT, sweeps
 velocity, carrier, and coherent pulse count, and exposes why magnitude-only
 processing loses Doppler sign.
+Project 37 arranges range-resolved complex samples as fast-time rows by
+slow-time pulse columns, traces independent targets through range and phase,
+sweeps range and velocity separately, and exposes why magnitude alone cannot
+carry coherent Doppler history.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–36 have completed their separate governed
-implementation batches. Projects 37–84 wait for their own
+ready-to-paste AI prompt. Projects 1–37 have completed their separate governed
+implementation batches. Projects 38–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P36.
+the current implementation frontier is P37.
 
 ## Module layout
 
