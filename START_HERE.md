@@ -110,5 +110,8 @@ Project 42 follows P41 and closes Phase 4 by applying an explicit LFM matched
 filter down fast-time columns, then a windowed FFT across slow-time rows to
 separate targets in range and signed velocity while exposing CPI, window, and
 wrong-axis behavior.
+Project 43 follows P42 and begins Phase 5 by applying one explicit fixed
+amplitude threshold, then changing noise RMS and a clutter pedestal separately
+to expose false-alarm and missed-detection drift without hidden retuning.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

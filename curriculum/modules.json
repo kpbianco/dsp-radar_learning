@@ -517,7 +517,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "use-a-fixed-detection-threshold",
       "folder": "modules/43-use-a-fixed-detection-threshold",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P43"
     },
     {
