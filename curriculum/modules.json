@@ -433,7 +433,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "measure-doppler-from-pulse-to-pulse-phase",
       "folder": "modules/36-measure-doppler-from-pulse-to-pulse-phase",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P36"
     },
     {

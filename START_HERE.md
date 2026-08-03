@@ -86,5 +86,9 @@ Project 35 follows P34 by repeating transmissions at a fixed PRF, folding a
 distant target's round-trip delay into one listening interval, sweeping PRF
 and true range, and exposing the missing transmit-pulse identity behind an
 apparently short false range.
+Project 36 follows P35 by sampling a coherent target range bin once per pulse,
+turning signed radial motion into I/Q rotation, phase slope, and a Doppler FFT,
+then separating carrier sensitivity and pulse-count resolution from PRF
+aliasing.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
