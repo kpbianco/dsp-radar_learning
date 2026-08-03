@@ -47,5 +47,8 @@ sideband ladder, measured and Carson-style bandwidth, and the Nyquist limit.
 Project 23 follows P22 and maps BPSK/QPSK bits to IQ geometry, then separates
 noise-driven cluster spread from phase-driven rotation and decision-boundary
 crossings.
+Project 24 follows P23 and turns QPSK points into rectangular and RRC
+waveforms, then exposes bandwidth, matched-filter, finite-span, eye-opening,
+and symbol-timing tradeoffs.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

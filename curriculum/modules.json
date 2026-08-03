@@ -289,7 +289,7 @@
       "phase_title": "Modulation, Channels, and Statistical Estimation",
       "slug": "see-pulse-shaping-and-matched-filtering",
       "folder": "modules/24-see-pulse-shaping-and-matched-filtering",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P24"
     },
     {
