@@ -90,5 +90,8 @@ Project 36 follows P35 by sampling a coherent target range bin once per pulse,
 turning signed radial motion into I/Q rotation, phase slope, and a Doppler FFT,
 then separating carrier sensitivity and pulse-count resolution from PRF
 aliasing.
+Project 37 follows P36 by stacking fast-time range samples into rows and
+coherent pulse looks into columns, then changing range and velocity separately
+to show which matrix dimension carries each physical effect.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

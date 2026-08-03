@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P36
-  title: 'Implement P36: Measure Doppler from Pulse-to-Pulse Phase'
-  goal: Implement Project 36 as an interactive MATLAB lesson answering 'How does target velocity create coherent
-    phase progression across pulses?' through visible cause and effect.
+  id: P37
+  title: 'Implement P37: Build a Pulse-Doppler Data Matrix'
+  goal: Implement Project 37 as an interactive MATLAB lesson answering 'What are fast time and slow time in a radar
+    data block?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/36-measure-doppler-from-pulse-to-pulse-phase/README.md
+  - modules/37-build-a-pulse-doppler-data-matrix/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M4.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P36.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P37.yaml
   control_plane_revision: efce57ce87ced607e14837973afcda5a1ba34b91
 dependencies:
-- P35
+- P36
 scope:
   allowed_paths:
-  - modules/36-measure-doppler-from-pulse-to-pulse-phase/**
+  - modules/37-build-a-pulse-doppler-data-matrix/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P36-*.md
-  - docs/evidence/P36-*.md
-  - tests/test_p36*.py
-  - tests/**/test_p36*.py
-  - tests/p36/**
-  - tests/**/p36/**
+  - docs/plans/P37-*.md
+  - docs/evidence/P37-*.md
+  - tests/test_p37*.py
+  - tests/**/test_p37*.py
+  - tests/p37/**
+  - tests/**/p37/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How does target velocity create coherent phase progression across pulses?'
+- 'Preserve the guiding question: What are fast time and slow time in a radar data block?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P36 artifact completeness and manifest identity
-  - P36 deterministic-input contract
-  - P36 sweep and broken-case markers
-  - P36 placeholder/black-box regression
+  - P37 artifact completeness and manifest identity
+  - P37 deterministic-input contract
+  - P37 sweep and broken-case markers
+  - P37 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P36 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P37 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P36-<date>.md
+  - docs/evidence/P37-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
