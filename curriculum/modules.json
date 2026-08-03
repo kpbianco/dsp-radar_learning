@@ -301,7 +301,7 @@
       "phase_title": "Modulation, Channels, and Statistical Estimation",
       "slug": "create-and-equalize-a-multipath-channel",
       "folder": "modules/25-create-and-equalize-a-multipath-channel",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P25"
     },
     {

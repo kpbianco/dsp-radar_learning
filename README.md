@@ -84,16 +84,20 @@ Project 24 shapes seeded QPSK symbols with explicit rectangular and
 root-raised-cosine pulses, compares time and spectral containment, forms the
 conjugate time-reversed matched filter, sweeps roll-off and finite span, and
 breaks then recovers symbol timing.
+Project 25 passes that pulse-shaped QPSK waveform through explicit delayed FIR
+paths, exposes eye closure, constellation ISI, and frequency-selective fading,
+then compares causal ZF inversion with regularized MMSE recovery at a deep
+spectral null.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–24 have completed their separate governed
-implementation batches. Projects 25–84 wait for their own
+ready-to-paste AI prompt. Projects 1–25 have completed their separate governed
+implementation batches. Projects 26–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P24.
+the current implementation frontier is P25.
 
 ## Module layout
 
