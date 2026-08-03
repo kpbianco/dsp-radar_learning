@@ -44,5 +44,8 @@ messages to symmetric AM sidebands, then contrasts envelope and coherent
 recovery when over-modulation reverses the signed envelope.
 Project 22 follows P21 and relates fixed-envelope phase-slope motion to an FM
 sideband ladder, measured and Carson-style bandwidth, and the Nyquist limit.
+Project 23 follows P22 and maps BPSK/QPSK bits to IQ geometry, then separates
+noise-driven cluster spread from phase-driven rotation and decision-boundary
+crossings.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

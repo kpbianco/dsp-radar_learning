@@ -277,7 +277,7 @@
       "phase_title": "Modulation, Channels, and Statistical Estimation",
       "slug": "build-bpsk-and-qpsk-constellation-intuition",
       "folder": "modules/23-build-bpsk-and-qpsk-constellation-intuition",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P23"
     },
     {

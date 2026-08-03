@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P22
-  title: 'Implement P22: Relate FM Deviation to Bandwidth'
-  goal: Implement Project 22 as an interactive MATLAB lesson answering 'How does instantaneous frequency motion
-    create an FM spectrum?' through visible cause and effect.
+  id: P23
+  title: 'Implement P23: Build BPSK and QPSK Constellation Intuition'
+  goal: Implement Project 23 as an interactive MATLAB lesson answering 'What do symbols, phase states, and decision
+    regions look like in IQ?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/22-relate-fm-deviation-to-bandwidth/README.md
+  - modules/23-build-bpsk-and-qpsk-constellation-intuition/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M3.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P22.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P23.yaml
   control_plane_revision: aacf91301bff4dc4b52b52caf9d1cf1397ed693b
 dependencies:
-- P21
+- P22
 scope:
   allowed_paths:
-  - modules/22-relate-fm-deviation-to-bandwidth/**
+  - modules/23-build-bpsk-and-qpsk-constellation-intuition/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P22-*.md
-  - docs/evidence/P22-*.md
-  - tests/test_p22*.py
-  - tests/**/test_p22*.py
-  - tests/p22/**
-  - tests/**/p22/**
+  - docs/plans/P23-*.md
+  - docs/evidence/P23-*.md
+  - tests/test_p23*.py
+  - tests/**/test_p23*.py
+  - tests/p23/**
+  - tests/**/p23/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How does instantaneous frequency motion create an FM spectrum?'
+- 'Preserve the guiding question: What do symbols, phase states, and decision regions look like in IQ?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P22 artifact completeness and manifest identity
-  - P22 deterministic-input contract
-  - P22 sweep and broken-case markers
-  - P22 placeholder/black-box regression
+  - P23 artifact completeness and manifest identity
+  - P23 deterministic-input contract
+  - P23 sweep and broken-case markers
+  - P23 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P22 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P23 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P22-<date>.md
+  - docs/evidence/P23-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
