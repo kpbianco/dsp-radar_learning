@@ -30,7 +30,7 @@
 | [P26](../modules/26-use-lms-to-cancel-an-interferer/) | implemented | 3 | Use LMS to Cancel an Interferer |
 | [P27](../modules/27-use-monte-carlo-trials-instead-of-one-lucky-run/) | implemented | 3 | Use Monte Carlo Trials Instead of One Lucky Run |
 | [P28](../modules/28-connect-thresholds-to-roc-curves-and-estimator-limits/) | implemented | 3 | Connect Thresholds to ROC Curves and Estimator Limits |
-| [P29](../modules/29-build-a-radar-power-budget-experiment/) | scaffolded | 4 | Build a Radar Power-Budget Experiment |
+| [P29](../modules/29-build-a-radar-power-budget-experiment/) | implemented | 4 | Build a Radar Power-Budget Experiment |
 | [P30](../modules/30-measure-range-from-echo-delay/) | scaffolded | 4 | Measure Range from Echo Delay |
 | [P31](../modules/31-separate-range-resolution-from-range-accuracy/) | scaffolded | 4 | Separate Range Resolution from Range Accuracy |
 | [P32](../modules/32-perform-lfm-pulse-compression/) | scaffolded | 4 | Perform LFM Pulse Compression |
