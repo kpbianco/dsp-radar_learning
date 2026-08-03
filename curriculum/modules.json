@@ -313,7 +313,7 @@
       "phase_title": "Modulation, Channels, and Statistical Estimation",
       "slug": "use-lms-to-cancel-an-interferer",
       "folder": "modules/26-use-lms-to-cancel-an-interferer",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P26"
     },
     {

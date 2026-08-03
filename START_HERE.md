@@ -53,5 +53,8 @@ and symbol-timing tradeoffs.
 Project 25 follows P24 and adds explicit delayed channel paths, connecting
 frequency-selective fading to eye closure and constellation ISI before
 contrasting ZF noise enhancement with MMSE regularization near a deep null.
+Project 26 follows P25 and learns an unknown interference coupling with an
+explicit LMS update, then exposes step-size convergence, reference-quality,
+path-change reacquisition, and guarded-instability behavior.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

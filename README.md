@@ -88,16 +88,21 @@ Project 25 passes that pulse-shaped QPSK waveform through explicit delayed FIR
 paths, exposes eye closure, constellation ISI, and frequency-selective fading,
 then compares causal ZF inversion with regularized MMSE recovery at a deep
 spectral null.
+Project 26 uses an explicit sample-by-sample LMS predictor to learn an unknown
+reference-to-primary FIR coupling, shows coefficient and residual-power
+reacquisition after a midpoint path change, separates step-size behavior from
+reference quality, and bounds an intentionally unstable update before a clean
+deterministic recovery.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–25 have completed their separate governed
-implementation batches. Projects 26–84 wait for their own
+ready-to-paste AI prompt. Projects 1–26 have completed their separate governed
+implementation batches. Projects 27–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P25.
+the current implementation frontier is P26.
 
 ## Module layout
 
