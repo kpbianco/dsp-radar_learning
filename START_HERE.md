@@ -93,5 +93,8 @@ aliasing.
 Project 37 follows P36 by stacking fast-time range samples into rows and
 coherent pulse looks into columns, then changing range and velocity separately
 to show which matrix dimension carries each physical effect.
+Project 38 follows P37 by differencing coherent pulse columns with transparent
+two-pulse and three-pulse cancellers, comparing the stationary-clutter null
+against slow-target loss and noise gain, and exposing the wrong-axis failure.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
