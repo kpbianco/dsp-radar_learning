@@ -421,7 +421,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "create-unambiguous-range-aliasing",
       "folder": "modules/35-create-unambiguous-range-aliasing",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P35"
     },
     {

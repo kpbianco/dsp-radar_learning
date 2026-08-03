@@ -82,5 +82,9 @@ Project 34 follows P33 by evaluating explicit zero-filled delay and Doppler
 mismatch for rectangular, LFM, and phase-coded pulses, then connecting pulse
 duration, swept bandwidth, chip/code length, sidelobes, and LFM coupling to the
 visible ambiguity surface.
+Project 35 follows P34 by repeating transmissions at a fixed PRF, folding a
+distant target's round-trip delay into one listening interval, sweeping PRF
+and true range, and exposing the missing transmit-pulse identity behind an
+apparently short false range.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

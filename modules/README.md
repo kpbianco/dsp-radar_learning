@@ -36,7 +36,7 @@
 | [P32](../modules/32-perform-lfm-pulse-compression/) | implemented | 4 | Perform LFM Pulse Compression |
 | [P33](../modules/33-control-pulse-compression-sidelobes/) | implemented | 4 | Control Pulse-Compression Sidelobes |
 | [P34](../modules/34-plot-and-interpret-the-ambiguity-function/) | implemented | 4 | Plot and Interpret the Ambiguity Function |
-| [P35](../modules/35-create-unambiguous-range-aliasing/) | scaffolded | 4 | Create Unambiguous-Range Aliasing |
+| [P35](../modules/35-create-unambiguous-range-aliasing/) | implemented | 4 | Create Unambiguous-Range Aliasing |
 | [P36](../modules/36-measure-doppler-from-pulse-to-pulse-phase/) | scaffolded | 4 | Measure Doppler from Pulse-to-Pulse Phase |
 | [P37](../modules/37-build-a-pulse-doppler-data-matrix/) | scaffolded | 4 | Build a Pulse-Doppler Data Matrix |
 | [P38](../modules/38-implement-a-two-pulse-and-three-pulse-mti-canceller/) | scaffolded | 4 | Implement a Two-Pulse and Three-Pulse MTI Canceller |
