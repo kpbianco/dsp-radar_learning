@@ -106,5 +106,9 @@ Project 41 follows P40 by separating stationary white noise from
 range-dependent correlated ground clutter, comparing nonfluctuating and
 Swerling I-IV target powers at equal ensemble-average SNR, and exposing the
 range bias caused by a false global-background assumption.
+Project 42 follows P41 and closes Phase 4 by applying an explicit LFM matched
+filter down fast-time columns, then a windowed FFT across slow-time rows to
+separate targets in range and signed velocity while exposing CPI, window, and
+wrong-axis behavior.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
