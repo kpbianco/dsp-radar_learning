@@ -457,7 +457,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "implement-a-two-pulse-and-three-pulse-mti-canceller",
       "folder": "modules/38-implement-a-two-pulse-and-three-pulse-mti-canceller",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P38"
     },
     {
