@@ -65,5 +65,9 @@ known-model CRLB across SNR, and exposing detected-only selection bias.
 Project 29 follows P28 and begins Phase 4 by applying the monostatic radar
 range equation, connecting two-way `R^-4` spreading to noise-floor margin,
 one-variable budget changes, and the 16-times-power cost of doubling range.
+Project 30 follows P29 by inserting continuous fractional echo delay before
+sampling, locating the echo with explicit correlation, converting lag through
+`R = c*tau/2`, and contrasting sample-grid precision with two-target peak
+separation.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

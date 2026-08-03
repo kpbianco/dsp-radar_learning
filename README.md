@@ -105,16 +105,20 @@ Project 29 begins Phase 4 with the explicit monostatic radar range equation,
 thermal-noise and required-SNR margins, RCS/frequency/transmit-power sweeps,
 one-at-a-time budget sensitivities, and an anchored inverse-square failure that
 recovers the two-way fourth-power range law.
+Project 30 sends a finite pulse through explicit zero-extended fractional
+delay, locates echoes with lag-by-lag correlation, converts round-trip time to
+`c*tau/2` range, sweeps sample rate and fractional delay, separates merged from
+visible two-target peaks, and recovers the factor-of-two ranging failure.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–29 have completed their separate governed
-implementation batches. Projects 30–84 wait for their own
+ready-to-paste AI prompt. Projects 1–30 have completed their separate governed
+implementation batches. Projects 31–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P29.
+the current implementation frontier is P30.
 
 ## Module layout
 
