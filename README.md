@@ -129,16 +129,20 @@ Project 35 repeats pulses at a fixed PRF, follows an old echo across newer
 transmissions, folds its round-trip delay into one listening interval with an
 explicit quotient and remainder, sweeps PRF and true range, and rejects a
 broken answer that relies on an unavailable transmit-pulse label.
+Project 36 samples one complex range bin across coherent pulses, connects
+signed radial velocity to pulse-to-pulse phase and a slow-time FFT, sweeps
+velocity, carrier, and coherent pulse count, and exposes why magnitude-only
+processing loses Doppler sign.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–35 have completed their separate governed
-implementation batches. Projects 36–84 wait for their own
+ready-to-paste AI prompt. Projects 1–36 have completed their separate governed
+implementation batches. Projects 37–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P35.
+the current implementation frontier is P36.
 
 ## Module layout
 
