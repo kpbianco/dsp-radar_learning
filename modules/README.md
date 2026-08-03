@@ -34,7 +34,7 @@
 | [P30](../modules/30-measure-range-from-echo-delay/) | implemented | 4 | Measure Range from Echo Delay |
 | [P31](../modules/31-separate-range-resolution-from-range-accuracy/) | implemented | 4 | Separate Range Resolution from Range Accuracy |
 | [P32](../modules/32-perform-lfm-pulse-compression/) | implemented | 4 | Perform LFM Pulse Compression |
-| [P33](../modules/33-control-pulse-compression-sidelobes/) | scaffolded | 4 | Control Pulse-Compression Sidelobes |
+| [P33](../modules/33-control-pulse-compression-sidelobes/) | implemented | 4 | Control Pulse-Compression Sidelobes |
 | [P34](../modules/34-plot-and-interpret-the-ambiguity-function/) | scaffolded | 4 | Plot and Interpret the Ambiguity Function |
 | [P35](../modules/35-create-unambiguous-range-aliasing/) | scaffolded | 4 | Create Unambiguous-Range Aliasing |
 | [P36](../modules/36-measure-doppler-from-pulse-to-pulse-phase/) | scaffolded | 4 | Measure Doppler from Pulse-to-Pulse Phase |
