@@ -337,7 +337,7 @@
       "phase_title": "Modulation, Channels, and Statistical Estimation",
       "slug": "connect-thresholds-to-roc-curves-and-estimator-limits",
       "folder": "modules/28-connect-thresholds-to-roc-curves-and-estimator-limits",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P28"
     },
     {

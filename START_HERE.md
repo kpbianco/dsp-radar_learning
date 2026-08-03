@@ -59,5 +59,8 @@ path-change reacquisition, and guarded-instability behavior.
 Project 27 follows P26 and turns repeated BPSK matched-filter decisions into a
 statistical experiment, showing trial-count uncertainty, Eb/N0 behavior, the
 failure of reused noise, and deterministic independent-trial recovery.
+Project 28 follows P27 and closes Phase 3 by sweeping a known-pulse detector
+threshold into an ROC, comparing amplitude-estimator bias and variance with a
+known-model CRLB across SNR, and exposing detected-only selection bias.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

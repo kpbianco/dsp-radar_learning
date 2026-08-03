@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P27
-  title: 'Implement P27: Use Monte Carlo Trials Instead of One Lucky Run'
-  goal: Implement Project 27 as an interactive MATLAB lesson answering 'Why is one noise realization not enough
-    to judge an algorithm?' through visible cause and effect.
+  id: P28
+  title: 'Implement P28: Connect Thresholds to ROC Curves and Estimator Limits'
+  goal: Implement Project 28 as an interactive MATLAB lesson answering 'How do false alarms, detections, bias, variance,
+    and theoretical bounds relate?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/27-use-monte-carlo-trials-instead-of-one-lucky-run/README.md
+  - modules/28-connect-thresholds-to-roc-curves-and-estimator-limits/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M3.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P27.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P28.yaml
   control_plane_revision: aacf91301bff4dc4b52b52caf9d1cf1397ed693b
 dependencies:
-- P26
+- P27
 scope:
   allowed_paths:
-  - modules/27-use-monte-carlo-trials-instead-of-one-lucky-run/**
+  - modules/28-connect-thresholds-to-roc-curves-and-estimator-limits/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P27-*.md
-  - docs/evidence/P27-*.md
-  - tests/test_p27*.py
-  - tests/**/test_p27*.py
-  - tests/p27/**
-  - tests/**/p27/**
+  - docs/plans/P28-*.md
+  - docs/evidence/P28-*.md
+  - tests/test_p28*.py
+  - tests/**/test_p28*.py
+  - tests/p28/**
+  - tests/**/p28/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: Why is one noise realization not enough to judge an algorithm?'
+- 'Preserve the guiding question: How do false alarms, detections, bias, variance, and theoretical bounds relate?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P27 artifact completeness and manifest identity
-  - P27 deterministic-input contract
-  - P27 sweep and broken-case markers
-  - P27 placeholder/black-box regression
+  - P28 artifact completeness and manifest identity
+  - P28 deterministic-input contract
+  - P28 sweep and broken-case markers
+  - P28 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P27 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P28 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P27-<date>.md
+  - docs/evidence/P28-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
