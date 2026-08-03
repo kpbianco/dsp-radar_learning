@@ -69,5 +69,8 @@ Project 30 follows P29 by inserting continuous fractional echo delay before
 sampling, locating the echo with explicit correlation, converting lag through
 `R = c*tau/2`, and contrasting sample-grid precision with two-target peak
 separation.
+Project 31 follows P30 by holding scene geometry or waveform bandwidth fixed in
+turn, measuring the matched-response width, and showing that a precise
+single-target estimate does not imply that a close pair is resolvable.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
