@@ -96,5 +96,8 @@ to show which matrix dimension carries each physical effect.
 Project 38 follows P37 by differencing coherent pulse columns with transparent
 two-pulse and three-pulse cancellers, comparing the stationary-clutter null
 against slow-target loss and noise gain, and exposing the wrong-axis failure.
+Project 39 follows P38 by mapping the two-pulse response to radial velocity,
+marking each PRF's blind-speed grid, and recovering nonzero blind targets with
+separately processed staggered-PRF dwells and noncoherent max/OR fusion.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

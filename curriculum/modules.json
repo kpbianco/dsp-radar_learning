@@ -469,7 +469,7 @@
       "phase_title": "Pulsed and Pulse-Doppler Radar Foundations",
       "slug": "expose-blind-speeds-and-use-staggered-prf",
       "folder": "modules/39-expose-blind-speeds-and-use-staggered-prf",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P39"
     },
     {

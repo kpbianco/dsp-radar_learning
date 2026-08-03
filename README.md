@@ -140,16 +140,19 @@ carry coherent Doppler history.
 Project 38 applies explicit first and second differences across those coherent
 pulse columns, measures stationary-clutter rejection, moving-target response,
 and noise gain, and exposes why differencing range rows is not MTI.
+Project 39 maps the two-pulse response into radial velocity, marks the blind
+speeds for two PRFs, and shows why separately processed staggered-PRF dwells
+recover nonzero blind targets only when their null grids differ.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–38 have completed their separate governed
-implementation batches. Projects 39–84 wait for their own
+ready-to-paste AI prompt. Projects 1–39 have completed their separate governed
+implementation batches. Projects 40–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P38.
+the current implementation frontier is P39.
 
 ## Module layout
 

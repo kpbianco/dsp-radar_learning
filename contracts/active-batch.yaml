@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P38
-  title: 'Implement P38: Implement a Two-Pulse and Three-Pulse MTI Canceller'
-  goal: Implement Project 38 as an interactive MATLAB lesson answering 'How do simple delay-line cancellers remove
-    stationary clutter?' through visible cause and effect.
+  id: P39
+  title: 'Implement P39: Expose Blind Speeds and Use Staggered PRF'
+  goal: Implement Project 39 as an interactive MATLAB lesson answering 'Why can a moving target vanish in an MTI
+    radar?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/38-implement-a-two-pulse-and-three-pulse-mti-canceller/README.md
+  - modules/39-expose-blind-speeds-and-use-staggered-prf/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M4.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P38.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P39.yaml
   control_plane_revision: efce57ce87ced607e14837973afcda5a1ba34b91
 dependencies:
-- P37
+- P38
 scope:
   allowed_paths:
-  - modules/38-implement-a-two-pulse-and-three-pulse-mti-canceller/**
+  - modules/39-expose-blind-speeds-and-use-staggered-prf/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P38-*.md
-  - docs/evidence/P38-*.md
-  - tests/test_p38*.py
-  - tests/**/test_p38*.py
-  - tests/p38/**
-  - tests/**/p38/**
+  - docs/plans/P39-*.md
+  - docs/evidence/P39-*.md
+  - tests/test_p39*.py
+  - tests/**/test_p39*.py
+  - tests/p39/**
+  - tests/**/p39/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How do simple delay-line cancellers remove stationary clutter?'
+- 'Preserve the guiding question: Why can a moving target vanish in an MTI radar?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P38 artifact completeness and manifest identity
-  - P38 deterministic-input contract
-  - P38 sweep and broken-case markers
-  - P38 placeholder/black-box regression
+  - P39 artifact completeness and manifest identity
+  - P39 deterministic-input contract
+  - P39 sweep and broken-case markers
+  - P39 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P38 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P39 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P38-<date>.md
+  - docs/evidence/P39-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
