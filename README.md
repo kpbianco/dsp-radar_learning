@@ -192,16 +192,20 @@ Project 51 combines a clutter edge, explicit strong-target sidelobes, weak
 neighbors, crowded targets, and a smooth noise swell, then compares separately
 calibrated CA, GO, SO, and rank-18 OS masks while classifying disagreements from
 their training-cell contents and exposing the unfair shared-alpha shortcut.
+Project 52 closes Phase 5 by counting valid noise-only CA-CFAR decisions across
+seeded Monte Carlo trials, attaching Wilson intervals, sweeping requested Pfa
+and training count, and exposing correlated, heavy-tailed, and miscalibrated
+departures from the homogeneous exponential model.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–51 have completed their separate governed
-implementation batches. Projects 52–84 wait for their own
+ready-to-paste AI prompt. Projects 1–52 have completed their separate governed
+implementation batches. Projects 53–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P51.
+the current implementation frontier is P52.
 
 ## Module layout
 

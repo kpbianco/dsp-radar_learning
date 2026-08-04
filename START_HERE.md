@@ -145,5 +145,9 @@ Project 51 follows P50 by placing CA, GO, SO, and rank-18 OS CFAR on one
 combined clutter-edge, sidelobe, weak-neighbor, crowded-target, and nonuniform
 noise scene, calibrating each statistic to the same nominal homogeneous Pfa,
 and tracing every major mask disagreement back to its training-cell contents.
+Project 52 follows P51 by defining one valid noise-only CUT decision per Monte
+Carlo trial, measuring false alarms with Wilson intervals, sweeping requested
+Pfa and training count, and separating finite-N scaling errors from correlated
+and heavy-tailed model mismatch.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
