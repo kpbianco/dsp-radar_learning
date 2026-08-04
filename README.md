@@ -201,16 +201,21 @@ grouping 8-connected threshold cells, filtering small nuisance components, and
 forming excess-power weighted range/velocity reports with strength, extent,
 and clearly uncalibrated shape-uncertainty fields; a peak-only broken path shows
 why local maxima are not yet physical target reports.
+Project 54 follows P53 by feeding one already-associated noisy scalar position
+report into an explicit fixed-gain alpha-beta predictor. It contrasts position
+smoothing with velocity-change lag, coasts through bounded report dropouts,
+sweeps alpha and beta independently, and exposes the beta-zero failure that
+cannot learn target velocity.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–53 have completed their separate governed
-implementation batches. Projects 54–84 wait for their own
+ready-to-paste AI prompt. Projects 1–54 have completed their separate governed
+implementation batches. Projects 55–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P53.
+the current implementation frontier is P54.
 
 ## Module layout
 

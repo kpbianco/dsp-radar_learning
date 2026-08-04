@@ -649,7 +649,7 @@
       "phase_title": "Radar Tracking and Data Association",
       "slug": "build-an-alpha-beta-tracker",
       "folder": "modules/54-build-an-alpha-beta-tracker",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P54"
     },
     {

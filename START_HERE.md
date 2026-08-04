@@ -153,5 +153,9 @@ Project 53 follows P52 and begins Phase 6 by turning extended range-Doppler
 threshold blobs into one report per accepted 8-connected component, using
 explicit local maxima, minimum-size filtering, and excess-power centroids while
 exposing the false-report failure of treating every peak as a target.
+Project 54 follows P53 by predicting scalar position from estimated velocity,
+correcting position and velocity from the same innovation, coasting through
+missing reports, and using independent alpha and beta sweeps to make the
+smoothing-versus-maneuver-lag tradeoff visible.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

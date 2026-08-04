@@ -55,7 +55,7 @@
 | [P51](../modules/51-stress-cfar-with-clutter-edges-sidelobes-and-multiple-targets/) | implemented | 5 | Stress CFAR with Clutter Edges, Sidelobes, and Multiple Targets |
 | [P52](../modules/52-validate-cfar-pfa-by-monte-carlo/) | implemented | 5 | Validate CFAR Pfa by Monte Carlo |
 | [P53](../modules/53-group-detection-cells-into-target-reports/) | implemented | 6 | Group Detection Cells into Target Reports |
-| [P54](../modules/54-build-an-alpha-beta-tracker/) | scaffolded | 6 | Build an Alpha-Beta Tracker |
+| [P54](../modules/54-build-an-alpha-beta-tracker/) | implemented | 6 | Build an Alpha-Beta Tracker |
 | [P55](../modules/55-implement-a-constant-velocity-kalman-filter/) | scaffolded | 6 | Implement a Constant-Velocity Kalman Filter |
 | [P56](../modules/56-use-an-ekf-for-range-bearing-measurements/) | scaffolded | 6 | Use an EKF for Range-Bearing Measurements |
 | [P57](../modules/57-gate-and-associate-detections-by-nearest-neighbor/) | scaffolded | 6 | Gate and Associate Detections by Nearest Neighbor |

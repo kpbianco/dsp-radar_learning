@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P53
-  title: 'Implement P53: Group Detection Cells into Target Reports'
-  goal: Implement Project 53 as an interactive MATLAB lesson answering 'How do several threshold-crossing cells
-    become one physical detection?' through visible cause and effect.
+  id: P54
+  title: 'Implement P54: Build an Alpha-Beta Tracker'
+  goal: Implement Project 54 as an interactive MATLAB lesson answering 'How can a simple predictor smooth noisy
+    position while following constant velocity?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/53-group-detection-cells-into-target-reports/README.md
+  - modules/54-build-an-alpha-beta-tracker/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M6.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P53.yaml
-  control_plane_revision: 32bce8800bd3c14518f336786d3ee01e2cdeae58  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P54.yaml
+  control_plane_revision: cc442f88cf361f8cefd31df58a2dce5e5d86d7a0  # pragma: allowlist secret
 dependencies:
-- P52
+- P53
 scope:
   allowed_paths:
-  - modules/53-group-detection-cells-into-target-reports/**
+  - modules/54-build-an-alpha-beta-tracker/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P53-*.md
-  - docs/evidence/P53-*.md
-  - tests/test_p53*.py
-  - tests/**/test_p53*.py
-  - tests/p53/**
-  - tests/**/p53/**
+  - docs/plans/P54-*.md
+  - docs/evidence/P54-*.md
+  - tests/test_p54*.py
+  - tests/**/test_p54*.py
+  - tests/p54/**
+  - tests/**/p54/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How do several threshold-crossing cells become one physical detection?'
+- 'Preserve the guiding question: How can a simple predictor smooth noisy position while following constant velocity?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P53 artifact completeness and manifest identity
-  - P53 deterministic-input contract
-  - P53 sweep and broken-case markers
-  - P53 placeholder/black-box regression
+  - P54 artifact completeness and manifest identity
+  - P54 deterministic-input contract
+  - P54 sweep and broken-case markers
+  - P54 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P53 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P54 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P53-<date>.md
+  - docs/evidence/P54-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
