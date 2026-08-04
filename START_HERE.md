@@ -116,5 +116,9 @@ to expose false-alarm and missed-detection drift without hidden retuning.
 Project 44 follows P43 by sweeping a normalized matched-filter threshold into
 empirical ROC curves at several SNRs, pricing one low-`Pfa` operating point at
 scan scale, and exposing finite-trial and tune-on-test false confidence.
+Project 45 follows P44 by estimating local square-law background power from
+explicit guarded training cells, scaling it for requested `Pfa`, excluding
+unsupported edges, and showing that uniform scene-power changes move the
+threshold without changing normalized decisions.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

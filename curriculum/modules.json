@@ -541,7 +541,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "implement-1-d-cell-averaging-cfar",
       "folder": "modules/45-implement-1-d-cell-averaging-cfar",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P45"
     },
     {
