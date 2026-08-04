@@ -206,16 +206,21 @@ report into an explicit fixed-gain alpha-beta predictor. It contrasts position
 smoothing with velocity-change lag, coasts through bounded report dropouts,
 sweeps alpha and beta independently, and exposes the beta-zero failure that
 cannot learn target velocity.
+Project 55 follows P54 by propagating position, velocity, and covariance through
+an explicit nearly-constant-velocity Kalman filter. It reuses one seeded report
+record while sweeping Q and R independently, plots state and innovation
+uncertainty with time-varying gains, and exposes separate under-Q and under-R
+overconfidence before deterministic recovery.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–54 have completed their separate governed
-implementation batches. Projects 55–84 wait for their own
+ready-to-paste AI prompt. Projects 1–55 have completed their separate governed
+implementation batches. Projects 56–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P54.
+the current implementation frontier is P55.
 
 ## Module layout
 
