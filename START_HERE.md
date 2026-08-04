@@ -120,5 +120,9 @@ Project 45 follows P44 by estimating local square-law background power from
 explicit guarded training cells, scaling it for requested `Pfa`, excluding
 unsupported edges, and showing that uniform scene-power changes move the
 threshold without changing normalized decisions.
+Project 46 follows P45 by varying guard and training geometry around an
+extended target and a gradual background transition, exposing self-masking,
+estimate variance, loss of locality, and a contaminated-reference miss before
+a bounded geometry recovery.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
