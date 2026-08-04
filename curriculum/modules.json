@@ -613,7 +613,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "stress-cfar-with-clutter-edges-sidelobes-and-multiple-targets",
       "folder": "modules/51-stress-cfar-with-clutter-edges-sidelobes-and-multiple-targets",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P51"
     },
     {
