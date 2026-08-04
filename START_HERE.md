@@ -141,5 +141,9 @@ Project 50 follows P49 by sliding a rectangular guarded CA-CFAR training
 annulus across the range-Doppler map, changing range and Doppler extents one at
 a time, and distinguishing calibrated interior decisions from an intentionally
 broken zero-padded boundary policy.
+Project 51 follows P50 by placing CA, GO, SO, and rank-18 OS CFAR on one
+combined clutter-edge, sidelobe, weak-neighbor, crowded-target, and nonuniform
+noise scene, calibrating each statistic to the same nominal homogeneous Pfa,
+and tracing every major mask disagreement back to its training-cell contents.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
