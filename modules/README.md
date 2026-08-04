@@ -45,7 +45,7 @@
 | [P41](../modules/41-model-ground-clutter-and-swerling-targets/) | implemented | 4 | Model Ground Clutter and Swerling Targets |
 | [P42](../modules/42-create-a-full-range-doppler-map/) | implemented | 4 | Create a Full Range-Doppler Map |
 | [P43](../modules/43-use-a-fixed-detection-threshold/) | implemented | 5 | Use a Fixed Detection Threshold |
-| [P44](../modules/44-build-an-empirical-radar-roc-curve/) | scaffolded | 5 | Build an Empirical Radar ROC Curve |
+| [P44](../modules/44-build-an-empirical-radar-roc-curve/) | implemented | 5 | Build an Empirical Radar ROC Curve |
 | [P45](../modules/45-implement-1-d-cell-averaging-cfar/) | scaffolded | 5 | Implement 1-D Cell-Averaging CFAR |
 | [P46](../modules/46-vary-cfar-guard-and-training-cells/) | scaffolded | 5 | Vary CFAR Guard and Training Cells |
 | [P47](../modules/47-measure-cfar-loss/) | scaffolded | 5 | Measure CFAR Loss |

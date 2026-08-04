@@ -159,16 +159,20 @@ Project 43 begins Phase 5 with an explicit one-sided Gaussian amplitude
 detector, holds one native-unit threshold fixed while noise RMS and a clutter
 pedestal change, and exposes hidden background normalization as adaptation
 rather than fixed-threshold behavior.
+Project 44 forms independent normalized matched-filter H0/H1 banks, sweeps one
+threshold into empirical ROC curves at several SNRs, marks a low-`Pfa`
+operating point and its million-cell alarm burden, and exposes finite-trial and
+tune-on-test false confidence before deterministic recovery.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–43 have completed their separate governed
-implementation batches. Projects 44–84 wait for their own
+ready-to-paste AI prompt. Projects 1–44 have completed their separate governed
+implementation batches. Projects 45–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P43.
+the current implementation frontier is P44.
 
 ## Module layout
 
