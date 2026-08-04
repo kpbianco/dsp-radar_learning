@@ -175,16 +175,20 @@ Project 47 compares a fixed known-noise square-law threshold with finite-N
 CA-CFAR on shared homogeneous Monte Carlo trials, measures extra required SNR
 at equal `Pd` and `Pfa`, sweeps training count and false-alarm stringency, and
 rejects an apparently low-loss detector that quietly overspends false alarms.
+Project 48 forms separate leading and lagging square-law reference means at an
+abrupt clutter step, calibrates GO and SO independently at equal homogeneous
+`Pfa`, sweeps clutter contrast and one-sided target contamination, and exposes
+both the high-side SO false-alarm cost and the GO masking cost.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–47 have completed their separate governed
-implementation batches. Projects 48–84 wait for their own
+ready-to-paste AI prompt. Projects 1–48 have completed their separate governed
+implementation batches. Projects 49–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P47.
+the current implementation frontier is P48.
 
 ## Module layout
 
