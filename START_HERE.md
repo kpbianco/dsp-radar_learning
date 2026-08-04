@@ -137,5 +137,9 @@ separately calibrating an ascending order statistic, and comparing it with the
 CA mean as nearby interfering targets change in count and strength; it exposes
 the finite `N-k` outlier capacity and the failure caused by changing rank
 without recalibration.
+Project 50 follows P49 by sliding a rectangular guarded CA-CFAR training
+annulus across the range-Doppler map, changing range and Doppler extents one at
+a time, and distinguishing calibrated interior decisions from an intentionally
+broken zero-padded boundary policy.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

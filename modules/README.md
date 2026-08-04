@@ -51,7 +51,7 @@
 | [P47](../modules/47-measure-cfar-loss/) | implemented | 5 | Measure CFAR Loss |
 | [P48](../modules/48-compare-go-cfar-and-so-cfar-at-a-clutter-edge/) | implemented | 5 | Compare GO-CFAR and SO-CFAR at a Clutter Edge |
 | [P49](../modules/49-use-ordered-statistic-cfar-with-interfering-targets/) | implemented | 5 | Use Ordered-Statistic CFAR with Interfering Targets |
-| [P50](../modules/50-apply-2-d-cfar-to-a-range-doppler-map/) | scaffolded | 5 | Apply 2-D CFAR to a Range-Doppler Map |
+| [P50](../modules/50-apply-2-d-cfar-to-a-range-doppler-map/) | implemented | 5 | Apply 2-D CFAR to a Range-Doppler Map |
 | [P51](../modules/51-stress-cfar-with-clutter-edges-sidelobes-and-multiple-targets/) | scaffolded | 5 | Stress CFAR with Clutter Edges, Sidelobes, and Multiple Targets |
 | [P52](../modules/52-validate-cfar-pfa-by-monte-carlo/) | scaffolded | 5 | Validate CFAR Pfa by Monte Carlo |
 | [P53](../modules/53-group-detection-cells-into-target-reports/) | scaffolded | 6 | Group Detection Cells into Target Reports |

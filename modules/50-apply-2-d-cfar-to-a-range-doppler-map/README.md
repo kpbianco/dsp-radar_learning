@@ -1,7 +1,7 @@
 # P50: Apply 2-D CFAR to a Range-Doppler Map
 
 **Phase 5: Detection and CFAR**  
-**Status:** Scaffolded; implementation batch `P50` is pending
+**Status:** Implemented by governed batch `P50`
 
 ## Guiding question
 
@@ -9,32 +9,76 @@ How does local thresholding extend from one range profile to two dimensions?
 
 ## Experiment
 
-Use the range-Doppler map from Project 42 and build rectangular guard/training windows around each cell.
+Start from a compact, seeded square-law range-Doppler map with the same row
+(range) and column (signed Doppler) convention established in Project 42.
+Slide an explicit rectangular 2-D CA-CFAR stencil over every cell whose full
+window fits. The stencil excludes a guarded rectangle around the cell under
+test (CUT), averages the remaining training powers, scales that estimate for a
+requested homogeneous false-alarm probability, and compares the CUT with the
+local threshold.
 
 ## Procedure
 
-Implement 2-D CA-CFAR, visualize the threshold surface, and overlay detections. Vary the Doppler and range window sizes independently.
+1. Inspect the range-Doppler power map, its range-varying background, the
+   zero-Doppler clutter ridge, three interior targets, and one deliberately
+   untestable edge target.
+2. Read the visible training/guard/CUT stencil and verify its training-cell
+   count.
+3. Inspect the local noise estimate, threshold surface, normalized CUT ratio,
+   and detection overlay.
+4. Change only the range training half-width, then only the Doppler training
+   half-width. Compare estimator error, target decisions, and the shrinking
+   eligible region.
+5. Run the intentionally broken zero-padding case, which treats missing
+   boundary references as zero and falsely labels every border cell as
+   calibrated. Recover by requiring the complete stencil.
 
-## What this should teach
+## What this teaches
 
-2-D CFAR adapts to local background in both dimensions but must account for target spread, sidelobes, and map boundaries.
+Two-dimensional CFAR is the same local comparison learned in P45, but its
+neighborhood now spans range and Doppler. The range and Doppler widths control
+different physical neighborhoods. Target mainlobes and sidelobes require guard
+space, and map boundaries are not testable under a full rectangular stencil.
 
 ## Completion condition
 
-Targets are detected at expected cells and you understand which border regions are not testable.
+You can identify all three testable target CUTs, explain why the edge target
+has no baseline decision, count the training cells from the two rectangles,
+and predict which border grows when only one window dimension is enlarged.
 
-## Start or implement
+## Dependencies and boundaries
 
-```bash
-./bin/learn start 50
+- [P42](../42-create-a-full-range-doppler-map/) establishes the range-row,
+  signed-Doppler-column map and window-spread interpretation.
+- [P45](../45-implement-1-d-cell-averaging-cfar/) establishes square-law
+  CA-CFAR estimation, guard cells, and finite-training calibration.
+- [P46](../46-vary-cfar-guard-and-training-cells/) establishes guard/training
+  geometry tradeoffs.
+- [P49](../49-use-ordered-statistic-cfar-with-interfering-targets/) is the
+  direct implemented prerequisite and contrasts a robust order statistic with
+  the CA mean used here.
+- P51 owns deliberate clutter-edge, sidelobe, and multiple-target stress
+  testing; P52 owns rare-event validation of achieved `Pfa`.
+
+The experiment uses base MATLAB, a private deterministic random stream,
+bounded arrays and loops, and no external files, network, workers, timers, or
+hardware. Its compact post-processing map is self-contained; it does not load
+P42 workspace state or claim an operational radar data product.
+
+## Run
+
+```matlab
+cd modules/50-apply-2-d-cfar-to-a-range-doppler-map
+experiment
 ```
 
-If this module is scaffolded, tutor mode may review this brief but must not pretend the experiment is complete. Activate Portfolio Control batch `P50` to add the runnable MATLAB experiment, explanation, walkthrough, checks, validation, and evidence.
+Run the script section by section with [walkthrough.md](walkthrough.md), then
+use [checks.md](checks.md) for the observation and teach-back gate.
 
-## AI chat prompt
+## Files
 
-Act as my hands-on DSP and radar lab mentor. Create a self-contained MATLAB mini-project titled "Apply 2-D CFAR to a Range-Doppler Map". The guiding question is: "How does local thresholding extend from one range profile to two dimensions?" Use this experiment: Use the range-Doppler map from Project 42 and build rectangular guard/training windows around each cell. Have me perform these actions: Implement 2-D CA-CFAR, visualize the threshold surface, and overlay detections. Vary the Doppler and range window sizes independently. The main concept I must learn is: 2-D CFAR adapts to local background in both dimensions but must account for target spread, sidelobes, and map boundaries. Assume I am a beginner in DSP/radar but can run and edit MATLAB scripts. Focus on physical meaning, signal flow, and visual intuition rather than MATLAB syntax or library instruction. Use seeded synthetic data, one runnable script organized into clear sections, and plots after every important processing step. Show the underlying equation or operation before using any toolbox convenience function; use base MATLAB where practical and give an optional toolbox version only when it adds real value. Include expected observations, two parameter sweeps that make the concept visually obvious, one intentionally broken case, common interpretation mistakes, and a short completion checklist. Do not turn it into homework or ask me to derive long equations before seeing the experiment.
-
-## Files currently present
-
-- `README.md`
+- `README.md` — learning contract and dependencies
+- `experiment.m` — seeded range-Doppler map and explicit 2-D CA-CFAR
+- `lesson.md` — physical model, equations, limits, and interpretation
+- `walkthrough.md` — baseline, two one-variable sweeps, broken case, recovery
+- `checks.md` — observation, prediction, interpretation, and teach-back checks
