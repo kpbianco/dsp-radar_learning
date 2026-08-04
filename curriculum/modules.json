@@ -601,7 +601,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "apply-2-d-cfar-to-a-range-doppler-map",
       "folder": "modules/50-apply-2-d-cfar-to-a-range-doppler-map",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P50"
     },
     {

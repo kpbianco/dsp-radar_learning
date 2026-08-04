@@ -184,16 +184,20 @@ calibrated ascending rank, compares that OS-CFAR threshold with CA-CFAR while
 nearby targets vary in count and strength, and exposes both the finite `N-k`
 high-outlier capacity and the false-alarm failure from reusing a multiplier
 after changing rank.
+Project 50 slides an explicit rectangular CA-CFAR annulus across a seeded
+range-Doppler power map, varies range and Doppler training widths independently,
+and exposes the invalid edge detections created by zero-padding missing
+reference cells before recovering a full-stencil no-decision border.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–49 have completed their separate governed
-implementation batches. Projects 50–84 wait for their own
+ready-to-paste AI prompt. Projects 1–50 have completed their separate governed
+implementation batches. Projects 51–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P49.
+the current implementation frontier is P50.
 
 ## Module layout
 

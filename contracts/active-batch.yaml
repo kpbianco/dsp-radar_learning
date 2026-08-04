@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P49
-  title: 'Implement P49: Use Ordered-Statistic CFAR with Interfering Targets'
-  goal: Implement Project 49 as an interactive MATLAB lesson answering 'How can CFAR resist several contaminated
-    training cells?' through visible cause and effect.
+  id: P50
+  title: 'Implement P50: Apply 2-D CFAR to a Range-Doppler Map'
+  goal: Implement Project 50 as an interactive MATLAB lesson answering 'How does local thresholding extend from
+    one range profile to two dimensions?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/49-use-ordered-statistic-cfar-with-interfering-targets/README.md
+  - modules/50-apply-2-d-cfar-to-a-range-doppler-map/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M5.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P49.yaml
-  control_plane_revision: 91a840f38900b618f471b77fe8d385df1e38a957  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P50.yaml
+  control_plane_revision: 874b4e016217e08b297e3b33e79a6f04a9ffd2a6  # pragma: allowlist secret
 dependencies:
-- P48
+- P49
 scope:
   allowed_paths:
-  - modules/49-use-ordered-statistic-cfar-with-interfering-targets/**
+  - modules/50-apply-2-d-cfar-to-a-range-doppler-map/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P49-*.md
-  - docs/evidence/P49-*.md
-  - tests/test_p49*.py
-  - tests/**/test_p49*.py
-  - tests/p49/**
-  - tests/**/p49/**
+  - docs/plans/P50-*.md
+  - docs/evidence/P50-*.md
+  - tests/test_p50*.py
+  - tests/**/test_p50*.py
+  - tests/p50/**
+  - tests/**/p50/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How can CFAR resist several contaminated training cells?'
+- 'Preserve the guiding question: How does local thresholding extend from one range profile to two dimensions?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P49 artifact completeness and manifest identity
-  - P49 deterministic-input contract
-  - P49 sweep and broken-case markers
-  - P49 placeholder/black-box regression
+  - P50 artifact completeness and manifest identity
+  - P50 deterministic-input contract
+  - P50 sweep and broken-case markers
+  - P50 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P49 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P50 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P49-<date>.md
+  - docs/evidence/P50-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
