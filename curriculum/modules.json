@@ -625,7 +625,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "validate-cfar-pfa-by-monte-carlo",
       "folder": "modules/52-validate-cfar-pfa-by-monte-carlo",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P52"
     },
     {

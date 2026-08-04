@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P51
-  title: 'Implement P51: Stress CFAR with Clutter Edges, Sidelobes, and Multiple Targets'
-  goal: Implement Project 51 as an interactive MATLAB lesson answering 'Where do standard CFAR assumptions break?'
-    through visible cause and effect.
+  id: P52
+  title: 'Implement P52: Validate CFAR Pfa by Monte Carlo'
+  goal: Implement Project 52 as an interactive MATLAB lesson answering 'Does the implemented detector actually achieve
+    the requested false-alarm probability?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/51-stress-cfar-with-clutter-edges-sidelobes-and-multiple-targets/README.md
+  - modules/52-validate-cfar-pfa-by-monte-carlo/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M5.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P51.yaml
-  control_plane_revision: 8f7421c9853ea8214619e9b593e699b0b6392fd3  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P52.yaml
+  control_plane_revision: cf2efd75036ff2db17da6fdb60d9988089959eeb  # pragma: allowlist secret
 dependencies:
-- P50
+- P51
 scope:
   allowed_paths:
-  - modules/51-stress-cfar-with-clutter-edges-sidelobes-and-multiple-targets/**
+  - modules/52-validate-cfar-pfa-by-monte-carlo/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P51-*.md
-  - docs/evidence/P51-*.md
-  - tests/test_p51*.py
-  - tests/**/test_p51*.py
-  - tests/p51/**
-  - tests/**/p51/**
+  - docs/plans/P52-*.md
+  - docs/evidence/P52-*.md
+  - tests/test_p52*.py
+  - tests/**/test_p52*.py
+  - tests/p52/**
+  - tests/**/p52/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: Where do standard CFAR assumptions break?'
+- 'Preserve the guiding question: Does the implemented detector actually achieve the requested false-alarm probability?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P51 artifact completeness and manifest identity
-  - P51 deterministic-input contract
-  - P51 sweep and broken-case markers
-  - P51 placeholder/black-box regression
+  - P52 artifact completeness and manifest identity
+  - P52 deterministic-input contract
+  - P52 sweep and broken-case markers
+  - P52 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P51 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P52 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P51-<date>.md
+  - docs/evidence/P52-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
