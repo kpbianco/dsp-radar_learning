@@ -163,16 +163,20 @@ Project 44 forms independent normalized matched-filter H0/H1 banks, sweeps one
 threshold into empirical ROC curves at several SNRs, marks a low-`Pfa`
 operating point and its million-cell alarm burden, and exposes finite-trial and
 tune-on-test false confidence before deterministic recovery.
+Project 45 applies an explicit square-law CA-CFAR stencil to a slowly varying
+range background, derives its finite-training-cell exponential-noise scale
+factor, excludes guards and edge CUTs, and exposes exact scene-scale adaptation
+plus the failure caused by averaging power in dB.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–44 have completed their separate governed
-implementation batches. Projects 45–84 wait for their own
+ready-to-paste AI prompt. Projects 1–45 have completed their separate governed
+implementation batches. Projects 46–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P44.
+the current implementation frontier is P45.
 
 ## Module layout
 
