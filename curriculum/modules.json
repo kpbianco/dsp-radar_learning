@@ -553,7 +553,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "vary-cfar-guard-and-training-cells",
       "folder": "modules/46-vary-cfar-guard-and-training-cells",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P46"
     },
     {

@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P45
-  title: 'Implement P45: Implement 1-D Cell-Averaging CFAR'
-  goal: Implement Project 45 as an interactive MATLAB lesson answering 'How can the threshold adapt to the local
-    noise level?' through visible cause and effect.
+  id: P46
+  title: 'Implement P46: Vary CFAR Guard and Training Cells'
+  goal: Implement Project 46 as an interactive MATLAB lesson answering 'What happens when the CFAR reference window
+    is too small, too large, or contaminated?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/45-implement-1-d-cell-averaging-cfar/README.md
+  - modules/46-vary-cfar-guard-and-training-cells/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M5.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P45.yaml
-  control_plane_revision: a230987df0e276e0df58b0a48ec8d388d50262d6  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P46.yaml
+  control_plane_revision: 46a9b03a02db8f8654828f4c1003389c7eee80a0  # pragma: allowlist secret
 dependencies:
-- P44
+- P45
 scope:
   allowed_paths:
-  - modules/45-implement-1-d-cell-averaging-cfar/**
+  - modules/46-vary-cfar-guard-and-training-cells/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P45-*.md
-  - docs/evidence/P45-*.md
-  - tests/test_p45*.py
-  - tests/**/test_p45*.py
-  - tests/p45/**
-  - tests/**/p45/**
+  - docs/plans/P46-*.md
+  - docs/evidence/P46-*.md
+  - tests/test_p46*.py
+  - tests/**/test_p46*.py
+  - tests/p46/**
+  - tests/**/p46/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How can the threshold adapt to the local noise level?'
+- 'Preserve the guiding question: What happens when the CFAR reference window is too small, too large, or contaminated?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P45 artifact completeness and manifest identity
-  - P45 deterministic-input contract
-  - P45 sweep and broken-case markers
-  - P45 placeholder/black-box regression
+  - P46 artifact completeness and manifest identity
+  - P46 deterministic-input contract
+  - P46 sweep and broken-case markers
+  - P46 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P45 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P46 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P45-<date>.md
+  - docs/evidence/P46-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
