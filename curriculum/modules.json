@@ -529,7 +529,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "build-an-empirical-radar-roc-curve",
       "folder": "modules/44-build-an-empirical-radar-roc-curve",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P44"
     },
     {

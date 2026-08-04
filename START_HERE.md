@@ -113,5 +113,8 @@ wrong-axis behavior.
 Project 43 follows P42 and begins Phase 5 by applying one explicit fixed
 amplitude threshold, then changing noise RMS and a clutter pedestal separately
 to expose false-alarm and missed-detection drift without hidden retuning.
+Project 44 follows P43 by sweeping a normalized matched-filter threshold into
+empirical ROC curves at several SNRs, pricing one low-`Pfa` operating point at
+scan scale, and exposing finite-trial and tune-on-test false confidence.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
