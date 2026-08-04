@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P47
-  title: 'Implement P47: Measure CFAR Loss'
-  goal: Implement Project 47 as an interactive MATLAB lesson answering 'How much extra SNR does adaptive threshold
-    estimation cost?' through visible cause and effect.
+  id: P48
+  title: 'Implement P48: Compare GO-CFAR and SO-CFAR at a Clutter Edge'
+  goal: Implement Project 48 as an interactive MATLAB lesson answering 'Which side of a changing background should
+    control the threshold?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/47-measure-cfar-loss/README.md
+  - modules/48-compare-go-cfar-and-so-cfar-at-a-clutter-edge/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M5.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P47.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P48.yaml
   control_plane_revision: 0c206c273b262fd7532633d3d05a9f2727a198ee  # pragma: allowlist secret
 dependencies:
-- P46
+- P47
 scope:
   allowed_paths:
-  - modules/47-measure-cfar-loss/**
+  - modules/48-compare-go-cfar-and-so-cfar-at-a-clutter-edge/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P47-*.md
-  - docs/evidence/P47-*.md
-  - tests/test_p47*.py
-  - tests/**/test_p47*.py
-  - tests/p47/**
-  - tests/**/p47/**
+  - docs/plans/P48-*.md
+  - docs/evidence/P48-*.md
+  - tests/test_p48*.py
+  - tests/**/test_p48*.py
+  - tests/p48/**
+  - tests/**/p48/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How much extra SNR does adaptive threshold estimation cost?'
+- 'Preserve the guiding question: Which side of a changing background should control the threshold?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P47 artifact completeness and manifest identity
-  - P47 deterministic-input contract
-  - P47 sweep and broken-case markers
-  - P47 placeholder/black-box regression
+  - P48 artifact completeness and manifest identity
+  - P48 deterministic-input contract
+  - P48 sweep and broken-case markers
+  - P48 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P47 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P48 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P47-<date>.md
+  - docs/evidence/P48-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

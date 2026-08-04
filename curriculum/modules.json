@@ -577,7 +577,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "compare-go-cfar-and-so-cfar-at-a-clutter-edge",
       "folder": "modules/48-compare-go-cfar-and-so-cfar-at-a-clutter-edge",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P48"
     },
     {

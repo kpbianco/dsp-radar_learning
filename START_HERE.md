@@ -128,5 +128,9 @@ Project 47 follows P46 by comparing a known-noise square-law detector with
 finite-training CA-CFAR at equal `Pfa` and `Pd`, measuring the horizontal SNR
 penalty while training count and requested false-alarm probability change, and
 exposing the unfair gain from a miscalibrated adaptive multiplier.
+Project 48 follows P47 by separating leading and lagging reference means at a
+clutter edge, comparing calibrated greatest-of and smallest-of thresholds, and
+showing why edge false-alarm protection and one-sided target contamination
+favor different selectors.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
