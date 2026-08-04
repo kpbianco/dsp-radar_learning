@@ -565,7 +565,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "measure-cfar-loss",
       "folder": "modules/47-measure-cfar-loss",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P47"
     },
     {

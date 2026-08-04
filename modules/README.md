@@ -48,7 +48,7 @@
 | [P44](../modules/44-build-an-empirical-radar-roc-curve/) | implemented | 5 | Build an Empirical Radar ROC Curve |
 | [P45](../modules/45-implement-1-d-cell-averaging-cfar/) | implemented | 5 | Implement 1-D Cell-Averaging CFAR |
 | [P46](../modules/46-vary-cfar-guard-and-training-cells/) | implemented | 5 | Vary CFAR Guard and Training Cells |
-| [P47](../modules/47-measure-cfar-loss/) | scaffolded | 5 | Measure CFAR Loss |
+| [P47](../modules/47-measure-cfar-loss/) | implemented | 5 | Measure CFAR Loss |
 | [P48](../modules/48-compare-go-cfar-and-so-cfar-at-a-clutter-edge/) | scaffolded | 5 | Compare GO-CFAR and SO-CFAR at a Clutter Edge |
 | [P49](../modules/49-use-ordered-statistic-cfar-with-interfering-targets/) | scaffolded | 5 | Use Ordered-Statistic CFAR with Interfering Targets |
 | [P50](../modules/50-apply-2-d-cfar-to-a-range-doppler-map/) | scaffolded | 5 | Apply 2-D CFAR to a Range-Doppler Map |

@@ -124,5 +124,9 @@ Project 46 follows P45 by varying guard and training geometry around an
 extended target and a gradual background transition, exposing self-masking,
 estimate variance, loss of locality, and a contaminated-reference miss before
 a bounded geometry recovery.
+Project 47 follows P46 by comparing a known-noise square-law detector with
+finite-training CA-CFAR at equal `Pfa` and `Pd`, measuring the horizontal SNR
+penalty while training count and requested false-alarm probability change, and
+exposing the unfair gain from a miscalibrated adaptive multiplier.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
