@@ -157,5 +157,8 @@ Project 54 follows P53 by predicting scalar position from estimated velocity,
 correcting position and velocity from the same innovation, coasting through
 missing reports, and using independent alpha and beta sweeps to make the
 smoothing-versus-maneuver-lag tradeoff visible.
+Project 55 follows P54 by replacing fixed gains with explicit covariance
+prediction and correction, then varying Q and R independently to show how
+model and measurement uncertainty set Kalman trust and expose overconfidence.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

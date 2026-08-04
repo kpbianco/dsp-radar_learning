@@ -661,7 +661,7 @@
       "phase_title": "Radar Tracking and Data Association",
       "slug": "implement-a-constant-velocity-kalman-filter",
       "folder": "modules/55-implement-a-constant-velocity-kalman-filter",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P55"
     },
     {
