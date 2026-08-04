@@ -132,5 +132,10 @@ Project 48 follows P47 by separating leading and lagging reference means at a
 clutter edge, comparing calibrated greatest-of and smallest-of thresholds, and
 showing why edge false-alarm protection and one-sided target contamination
 favor different selectors.
+Project 49 follows P48 by sorting the combined training powers, selecting and
+separately calibrating an ascending order statistic, and comparing it with the
+CA mean as nearby interfering targets change in count and strength; it exposes
+the finite `N-k` outlier capacity and the failure caused by changing rank
+without recalibration.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

@@ -589,7 +589,7 @@
       "phase_title": "Detection and CFAR",
       "slug": "use-ordered-statistic-cfar-with-interfering-targets",
       "folder": "modules/49-use-ordered-statistic-cfar-with-interfering-targets",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P49"
     },
     {

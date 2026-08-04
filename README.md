@@ -179,16 +179,21 @@ Project 48 forms separate leading and lagging square-law reference means at an
 abrupt clutter step, calibrates GO and SO independently at equal homogeneous
 `Pfa`, sweeps clutter contrast and one-sided target contamination, and exposes
 both the high-side SO false-alarm cost and the GO masking cost.
+Project 49 sorts all square-law training powers and selects a separately
+calibrated ascending rank, compares that OS-CFAR threshold with CA-CFAR while
+nearby targets vary in count and strength, and exposes both the finite `N-k`
+high-outlier capacity and the false-alarm failure from reusing a multiplier
+after changing rank.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–48 have completed their separate governed
-implementation batches. Projects 49–84 wait for their own
+ready-to-paste AI prompt. Projects 1–49 have completed their separate governed
+implementation batches. Projects 50–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P48.
+the current implementation frontier is P49.
 
 ## Module layout
 
