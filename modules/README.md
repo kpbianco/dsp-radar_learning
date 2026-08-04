@@ -54,7 +54,7 @@
 | [P50](../modules/50-apply-2-d-cfar-to-a-range-doppler-map/) | implemented | 5 | Apply 2-D CFAR to a Range-Doppler Map |
 | [P51](../modules/51-stress-cfar-with-clutter-edges-sidelobes-and-multiple-targets/) | implemented | 5 | Stress CFAR with Clutter Edges, Sidelobes, and Multiple Targets |
 | [P52](../modules/52-validate-cfar-pfa-by-monte-carlo/) | implemented | 5 | Validate CFAR Pfa by Monte Carlo |
-| [P53](../modules/53-group-detection-cells-into-target-reports/) | scaffolded | 6 | Group Detection Cells into Target Reports |
+| [P53](../modules/53-group-detection-cells-into-target-reports/) | implemented | 6 | Group Detection Cells into Target Reports |
 | [P54](../modules/54-build-an-alpha-beta-tracker/) | scaffolded | 6 | Build an Alpha-Beta Tracker |
 | [P55](../modules/55-implement-a-constant-velocity-kalman-filter/) | scaffolded | 6 | Implement a Constant-Velocity Kalman Filter |
 | [P56](../modules/56-use-an-ekf-for-range-bearing-measurements/) | scaffolded | 6 | Use an EKF for Range-Bearing Measurements |

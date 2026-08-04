@@ -637,7 +637,7 @@
       "phase_title": "Radar Tracking and Data Association",
       "slug": "group-detection-cells-into-target-reports",
       "folder": "modules/53-group-detection-cells-into-target-reports",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P53"
     },
     {

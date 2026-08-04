@@ -196,16 +196,21 @@ Project 52 closes Phase 5 by counting valid noise-only CA-CFAR decisions across
 seeded Monte Carlo trials, attaching Wilson intervals, sweeping requested Pfa
 and training count, and exposing correlated, heavy-tailed, and miscalibrated
 departures from the homogeneous exponential model.
+Project 53 begins Phase 6 by selecting deterministic local maxima, explicitly
+grouping 8-connected threshold cells, filtering small nuisance components, and
+forming excess-power weighted range/velocity reports with strength, extent,
+and clearly uncalibrated shape-uncertainty fields; a peak-only broken path shows
+why local maxima are not yet physical target reports.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–52 have completed their separate governed
-implementation batches. Projects 53–84 wait for their own
+ready-to-paste AI prompt. Projects 1–53 have completed their separate governed
+implementation batches. Projects 54–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P52.
+the current implementation frontier is P53.
 
 ## Module layout
 

@@ -149,5 +149,9 @@ Project 52 follows P51 by defining one valid noise-only CUT decision per Monte
 Carlo trial, measuring false alarms with Wilson intervals, sweeping requested
 Pfa and training count, and separating finite-N scaling errors from correlated
 and heavy-tailed model mismatch.
+Project 53 follows P52 and begins Phase 6 by turning extended range-Doppler
+threshold blobs into one report per accepted 8-connected component, using
+explicit local maxima, minimum-size filtering, and excess-power centroids while
+exposing the false-report failure of treating every peak as a target.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
