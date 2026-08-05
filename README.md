@@ -233,16 +233,22 @@ greedy association, and adding a normalized velocity feature that lowers the
 failure rate across position-noise, update-interval, and closest-approach
 sweeps. An independent-nearest broken path reuses one report before exact
 one-to-one recovery on the same arrays.
+Project 60 follows P59 with an explicit two-model IMM for one target that
+alternates between straight motion and acceleration bursts. It exposes state
+and covariance interaction, innovation likelihoods, mode probabilities, and
+combined estimates; compares against a poorly matched fixed straight model;
+sweeps maneuver strength and mode persistence; and recovers exactly from a
+zero-support mode lockout on unchanged reports.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–59 have completed their separate governed
-implementation batches. Projects 60–84 wait for their own
+ready-to-paste AI prompt. Projects 1–60 have completed their separate governed
+implementation batches. Projects 61–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P59.
+the current implementation frontier is P60.
 
 ## Module layout
 

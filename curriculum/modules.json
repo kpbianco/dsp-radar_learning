@@ -721,7 +721,7 @@
       "phase_title": "Radar Tracking and Data Association",
       "slug": "use-an-imm-for-a-maneuvering-target",
       "folder": "modules/60-use-an-imm-for-a-maneuvering-target",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P60"
     },
     {

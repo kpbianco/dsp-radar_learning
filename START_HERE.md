@@ -179,5 +179,10 @@ crossing, showing how position-only greedy association can exchange their
 histories, then adding a normalized velocity feature and sweeping measurement
 noise, update interval, and closest approach. Its broken path lets both tracks
 reuse one report before deterministic one-to-one recovery.
+Project 60 follows P59 by mixing explicit straight-motion and
+persistent-acceleration Kalman filters for one maneuvering target. Innovation
+likelihood moves mode probability, two sweeps expose maneuver-strength and
+persistence tradeoffs, and a zero-support broken mode is recovered exactly on
+the same reports.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
