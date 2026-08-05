@@ -194,5 +194,10 @@ linear and dB patterns. It measures beamwidth and sidelobes, varies aperture
 and spacing independently, compares uniform and Hamming illumination, and
 removes an exact equal-height grating lobe by restoring half-wavelength
 spatial sampling.
+Project 63 follows P62 by applying fixed conjugate ULA steering weights to
+noisy two-source array data. It compares one look with covariance averaging,
+varies source separation, array size, SNR, and snapshot count independently,
+and recovers an exact mirrored-angle failure caused by reversing the steering
+phase convention.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
