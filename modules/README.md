@@ -63,7 +63,7 @@
 | [P59](../modules/59-track-crossing-targets-and-observe-association-failure/) | implemented | 6 | Track Crossing Targets and Observe Association Failure |
 | [P60](../modules/60-use-an-imm-for-a-maneuvering-target/) | implemented | 6 | Use an IMM for a Maneuvering Target |
 | [P61](../modules/61-see-phase-steering-in-a-uniform-linear-array/) | implemented | 7 | See Phase Steering in a Uniform Linear Array |
-| [P62](../modules/62-plot-array-factor-beamwidth-and-grating-lobes/) | scaffolded | 7 | Plot Array Factor, Beamwidth, and Grating Lobes |
+| [P62](../modules/62-plot-array-factor-beamwidth-and-grating-lobes/) | implemented | 7 | Plot Array Factor, Beamwidth, and Grating Lobes |
 | [P63](../modules/63-implement-conventional-delay-and-sum-beamforming/) | scaffolded | 7 | Implement Conventional Delay-and-Sum Beamforming |
 | [P64](../modules/64-build-an-amplitude-comparison-monopulse-experiment/) | scaffolded | 7 | Build an Amplitude-Comparison Monopulse Experiment |
 | [P65](../modules/65-use-mvdr-capon-adaptive-beamforming/) | scaffolded | 7 | Use MVDR/Capon Adaptive Beamforming |

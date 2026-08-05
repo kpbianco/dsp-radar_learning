@@ -745,7 +745,7 @@
       "phase_title": "Arrays, Beamforming, DOA, and STAP",
       "slug": "plot-array-factor-beamwidth-and-grating-lobes",
       "folder": "modules/62-plot-array-factor-beamwidth-and-grating-lobes",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P62"
     },
     {

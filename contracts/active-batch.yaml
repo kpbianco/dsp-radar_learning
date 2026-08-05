@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P61
-  title: 'Implement P61: See Phase Steering in a Uniform Linear Array'
-  goal: Implement Project 61 as an interactive MATLAB lesson answering 'How does a direction of arrival become a
-    phase slope across sensors?' through visible cause and effect.
+  id: P62
+  title: 'Implement P62: Plot Array Factor, Beamwidth, and Grating Lobes'
+  goal: Implement Project 62 as an interactive MATLAB lesson answering 'How do aperture size and element spacing
+    shape a beam pattern?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/61-see-phase-steering-in-a-uniform-linear-array/README.md
+  - modules/62-plot-array-factor-beamwidth-and-grating-lobes/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M7.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P61.yaml
-  control_plane_revision: c20779022286e2f9f45eb433760f4886df70e68f  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P62.yaml
+  control_plane_revision: e00e41f067672bfe98209746ce4fc30780fdd160  # pragma: allowlist secret
 dependencies:
-- P60
+- P61
 scope:
   allowed_paths:
-  - modules/61-see-phase-steering-in-a-uniform-linear-array/**
+  - modules/62-plot-array-factor-beamwidth-and-grating-lobes/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P61-*.md
-  - docs/evidence/P61-*.md
-  - tests/test_p61*.py
-  - tests/**/test_p61*.py
-  - tests/p61/**
-  - tests/**/p61/**
+  - docs/plans/P62-*.md
+  - docs/evidence/P62-*.md
+  - tests/test_p62*.py
+  - tests/**/test_p62*.py
+  - tests/p62/**
+  - tests/**/p62/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How does a direction of arrival become a phase slope across sensors?'
+- 'Preserve the guiding question: How do aperture size and element spacing shape a beam pattern?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P61 artifact completeness and manifest identity
-  - P61 deterministic-input contract
-  - P61 sweep and broken-case markers
-  - P61 placeholder/black-box regression
+  - P62 artifact completeness and manifest identity
+  - P62 deterministic-input contract
+  - P62 sweep and broken-case markers
+  - P62 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P61 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P62 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P61-<date>.md
+  - docs/evidence/P62-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

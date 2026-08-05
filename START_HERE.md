@@ -189,5 +189,10 @@ across an explicit ULA. It connects broadside-referenced angle to geometric
 delay and spatial phase slope, separates spacing from carrier-frequency
 sensitivity, and recovers from an exact spatial-alias failure by restoring
 half-wavelength spacing.
+Project 62 follows P61 by summing explicit ULA element phasors into normalized
+linear and dB patterns. It measures beamwidth and sidelobes, varies aperture
+and spacing independently, compares uniform and Hamming illumination, and
+removes an exact equal-height grating lobe by restoring half-wavelength
+spatial sampling.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

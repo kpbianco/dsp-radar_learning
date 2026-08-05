@@ -244,16 +244,21 @@ difference into an explicit spatial phase slope across a uniform linear array.
 It infers an unambiguous broadside-referenced angle, sweeps angle, physical
 spacing, and carrier frequency, and exposes an exact spatial alias before
 recovering the source direction with half-wavelength spacing.
+Project 62 follows P61 by coherently adding those spatial phases into an
+explicit ULA array factor. It measures half-power and first-null beamwidths and
+peak sidelobes, sweeps element count and spacing, exposes the Hamming
+sidelobe-versus-beamwidth trade, and recovers from an exact equal-height
+grating lobe by restoring half-wavelength spacing.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–61 have completed their separate governed
-implementation batches. Projects 62–84 wait for their own
+ready-to-paste AI prompt. Projects 1–62 have completed their separate governed
+implementation batches. Projects 63–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P61.
+the current implementation frontier is P62.
 
 ## Module layout
 
