@@ -199,5 +199,10 @@ noisy two-source array data. It compares one look with covariance averaging,
 varies source separation, array size, SNR, and snapshot count independently,
 and recovers an exact mirrored-angle failure caused by reversing the steering
 phase convention.
+Project 64 follows P63 by phase-aligning fixed left/right receive beams before
+forming explicit sum, difference, and normalized angle-error channels. It
+varies beam squint and receiver SNR independently, bounds estimation to one
+monotonic boresight calibration sector, and recovers a false angle caused by a
+right-channel gain mismatch without changing the target data.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

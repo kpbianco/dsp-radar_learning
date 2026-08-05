@@ -769,7 +769,7 @@
       "phase_title": "Arrays, Beamforming, DOA, and STAP",
       "slug": "build-an-amplitude-comparison-monopulse-experiment",
       "folder": "modules/64-build-an-amplitude-comparison-monopulse-experiment",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P64"
     },
     {

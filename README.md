@@ -255,16 +255,22 @@ sample-covariance quadratic form, and separating aperture-limited resolution
 from SNR- and snapshot-limited scan reliability. Source-separation, array-size,
 SNR, and snapshot sweeps lead to an exact wrong-sign mirrored scan that
 recovers on unchanged data with the consistent Hermitian convention.
+Project 64 follows P63 by phase-aligning two symmetrically squinted receive
+beams, forming explicit sum and difference voltages, and calibrating their
+signed ratio over a local boresight sector. Beam-squint and receiver-SNR sweeps
+separate comparator sensitivity from random precision, while a right-channel
+gain mismatch creates a false boresight angle that recovers on unchanged data
+with the known inverse calibration.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–63 have completed their separate governed
-implementation batches. Projects 64–84 wait for their own
+ready-to-paste AI prompt. Projects 1–64 have completed their separate governed
+implementation batches. Projects 65–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P63.
+the current implementation frontier is P64.
 
 ## Module layout
 
