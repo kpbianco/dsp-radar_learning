@@ -160,5 +160,9 @@ smoothing-versus-maneuver-lag tradeoff visible.
 Project 55 follows P54 by replacing fixed gains with explicit covariance
 prediction and correction, then varying Q and R independently to show how
 model and measurement uncertainty set Kalman trust and expose overconfidence.
+Project 56 follows P55 by replacing the linear report with an explicit
+range-bearing prediction and local Jacobian. It wraps angular innovations,
+shows range-dependent tangential covariance, and exposes the branch-cut failure
+caused by ordinary angle subtraction.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
