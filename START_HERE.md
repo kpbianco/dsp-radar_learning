@@ -169,5 +169,10 @@ its innovation covariance, gating on dimensionless Mahalanobis distance, and
 enforcing one-to-one greedy nearest-neighbor links before any update. It shows
 why ungated Euclidean proximity can prefer clutter across a narrow uncertainty
 axis.
+Project 58 follows P57 by turning the associated report stream into explicit
+tentative, confirmed, coasting, and deletion states. A 3-of-4 confirmation
+window rejects isolated false alarms, a two-scan coast preserves one target ID
+through a short dropout, and separate sweeps expose declaration latency versus
+false promotion and dropout tolerance versus stale-state retention.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
