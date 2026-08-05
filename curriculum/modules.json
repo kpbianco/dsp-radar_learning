@@ -697,7 +697,7 @@
       "phase_title": "Radar Tracking and Data Association",
       "slug": "implement-track-initiation-confirmation-coasting-and-deletion",
       "folder": "modules/58-implement-track-initiation-confirmation-coasting-and-deletion",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P58"
     },
     {

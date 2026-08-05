@@ -221,16 +221,22 @@ with explicit innovation covariances and squared Mahalanobis distances. It
 gates implausible pairs, enforces one-to-one greedy nearest-neighbor assignment,
 sweeps gate threshold and covariance scale, and recovers from an ungated
 Euclidean clutter assignment.
+Project 58 follows P57 by converting associated hit/miss histories into an
+explicit track lifecycle. It initiates tentative hypotheses, requires M-of-N
+evidence for confirmation, coasts confirmed tracks through bounded dropouts,
+deletes stale state, sweeps confirmation and coast policy independently, and
+exposes the false-track accumulation caused by immediate confirmation without
+practical deletion.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–57 have completed their separate governed
-implementation batches. Projects 58–84 wait for their own
+ready-to-paste AI prompt. Projects 1–58 have completed their separate governed
+implementation batches. Projects 59–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P57.
+the current implementation frontier is P58.
 
 ## Module layout
 
