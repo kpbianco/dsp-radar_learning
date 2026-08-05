@@ -709,7 +709,7 @@
       "phase_title": "Radar Tracking and Data Association",
       "slug": "track-crossing-targets-and-observe-association-failure",
       "folder": "modules/59-track-crossing-targets-and-observe-association-failure",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P59"
     },
     {

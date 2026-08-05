@@ -227,16 +227,22 @@ evidence for confirmation, coasts confirmed tracks through bounded dropouts,
 deletes stale state, sweeps confirmation and coast policy independently, and
 exposes the false-track accumulation caused by immediate confirmation without
 practical deletion.
+Project 59 follows P58 by driving two established equal-speed tracks through a
+crossing, exposing a persistent identity exchange from explicit position-only
+greedy association, and adding a normalized velocity feature that lowers the
+failure rate across position-noise, update-interval, and closest-approach
+sweeps. An independent-nearest broken path reuses one report before exact
+one-to-one recovery on the same arrays.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–58 have completed their separate governed
-implementation batches. Projects 59–84 wait for their own
+ready-to-paste AI prompt. Projects 1–59 have completed their separate governed
+implementation batches. Projects 60–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P58.
+the current implementation frontier is P59.
 
 ## Module layout
 
