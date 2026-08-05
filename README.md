@@ -216,16 +216,21 @@ corrections with an explicit nonlinear measurement prediction and Jacobian. It
 wraps bearing innovations at the `+/-pi` branch cut, visualizes rotating
 covariance ellipses, sweeps bearing trust and range-dependent tangential error,
 and recovers from deliberately unwrapped angle subtraction.
+Project 57 follows P56 by testing every predicted track against every detection
+with explicit innovation covariances and squared Mahalanobis distances. It
+gates implausible pairs, enforces one-to-one greedy nearest-neighbor assignment,
+sweeps gate threshold and covariance scale, and recovers from an ungated
+Euclidean clutter assignment.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–56 have completed their separate governed
-implementation batches. Projects 57–84 wait for their own
+ready-to-paste AI prompt. Projects 1–57 have completed their separate governed
+implementation batches. Projects 58–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P56.
+the current implementation frontier is P57.
 
 ## Module layout
 

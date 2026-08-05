@@ -58,7 +58,7 @@
 | [P54](../modules/54-build-an-alpha-beta-tracker/) | implemented | 6 | Build an Alpha-Beta Tracker |
 | [P55](../modules/55-implement-a-constant-velocity-kalman-filter/) | implemented | 6 | Implement a Constant-Velocity Kalman Filter |
 | [P56](../modules/56-use-an-ekf-for-range-bearing-measurements/) | implemented | 6 | Use an EKF for Range-Bearing Measurements |
-| [P57](../modules/57-gate-and-associate-detections-by-nearest-neighbor/) | scaffolded | 6 | Gate and Associate Detections by Nearest Neighbor |
+| [P57](../modules/57-gate-and-associate-detections-by-nearest-neighbor/) | implemented | 6 | Gate and Associate Detections by Nearest Neighbor |
 | [P58](../modules/58-implement-track-initiation-confirmation-coasting-and-deletion/) | scaffolded | 6 | Implement Track Initiation, Confirmation, Coasting, and Deletion |
 | [P59](../modules/59-track-crossing-targets-and-observe-association-failure/) | scaffolded | 6 | Track Crossing Targets and Observe Association Failure |
 | [P60](../modules/60-use-an-imm-for-a-maneuvering-target/) | scaffolded | 6 | Use an IMM for a Maneuvering Target |

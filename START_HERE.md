@@ -164,5 +164,10 @@ Project 56 follows P55 by replacing the linear report with an explicit
 range-bearing prediction and local Jacobian. It wraps angular innovations,
 shows range-dependent tangential covariance, and exposes the branch-cut failure
 caused by ordinary angle subtraction.
+Project 57 follows P56 by comparing each prediction with every report through
+its innovation covariance, gating on dimensionless Mahalanobis distance, and
+enforcing one-to-one greedy nearest-neighbor links before any update. It shows
+why ungated Euclidean proximity can prefer clutter across a narrow uncertainty
+axis.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

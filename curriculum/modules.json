@@ -685,7 +685,7 @@
       "phase_title": "Radar Tracking and Data Association",
       "slug": "gate-and-associate-detections-by-nearest-neighbor",
       "folder": "modules/57-gate-and-associate-detections-by-nearest-neighbor",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P57"
     },
     {
