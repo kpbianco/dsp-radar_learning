@@ -60,7 +60,7 @@
 | [P56](../modules/56-use-an-ekf-for-range-bearing-measurements/) | implemented | 6 | Use an EKF for Range-Bearing Measurements |
 | [P57](../modules/57-gate-and-associate-detections-by-nearest-neighbor/) | implemented | 6 | Gate and Associate Detections by Nearest Neighbor |
 | [P58](../modules/58-implement-track-initiation-confirmation-coasting-and-deletion/) | implemented | 6 | Implement Track Initiation, Confirmation, Coasting, and Deletion |
-| [P59](../modules/59-track-crossing-targets-and-observe-association-failure/) | scaffolded | 6 | Track Crossing Targets and Observe Association Failure |
+| [P59](../modules/59-track-crossing-targets-and-observe-association-failure/) | implemented | 6 | Track Crossing Targets and Observe Association Failure |
 | [P60](../modules/60-use-an-imm-for-a-maneuvering-target/) | scaffolded | 6 | Use an IMM for a Maneuvering Target |
 | [P61](../modules/61-see-phase-steering-in-a-uniform-linear-array/) | scaffolded | 7 | See Phase Steering in a Uniform Linear Array |
 | [P62](../modules/62-plot-array-factor-beamwidth-and-grating-lobes/) | scaffolded | 7 | Plot Array Factor, Beamwidth, and Grating Lobes |

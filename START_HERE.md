@@ -174,5 +174,10 @@ tentative, confirmed, coasting, and deletion states. A 3-of-4 confirmation
 window rejects isolated false alarms, a two-scan coast preserves one target ID
 through a short dropout, and separate sweeps expose declaration latency versus
 false promotion and dropout tolerance versus stale-state retention.
+Project 59 follows P58 by holding two confirmed tracks alive through an exact
+crossing, showing how position-only greedy association can exchange their
+histories, then adding a normalized velocity feature and sweeping measurement
+noise, update interval, and closest approach. Its broken path lets both tracks
+reuse one report before deterministic one-to-one recovery.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
