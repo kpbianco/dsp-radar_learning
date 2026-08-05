@@ -757,7 +757,7 @@
       "phase_title": "Arrays, Beamforming, DOA, and STAP",
       "slug": "implement-conventional-delay-and-sum-beamforming",
       "folder": "modules/63-implement-conventional-delay-and-sum-beamforming",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P63"
     },
     {

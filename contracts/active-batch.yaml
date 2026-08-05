@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P62
-  title: 'Implement P62: Plot Array Factor, Beamwidth, and Grating Lobes'
-  goal: Implement Project 62 as an interactive MATLAB lesson answering 'How do aperture size and element spacing
-    shape a beam pattern?' through visible cause and effect.
+  id: P63
+  title: 'Implement P63: Implement Conventional Delay-and-Sum Beamforming'
+  goal: Implement Project 63 as an interactive MATLAB lesson answering 'How does steering align one direction and
+    misalign others?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/62-plot-array-factor-beamwidth-and-grating-lobes/README.md
+  - modules/63-implement-conventional-delay-and-sum-beamforming/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M7.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P62.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P63.yaml
   control_plane_revision: e00e41f067672bfe98209746ce4fc30780fdd160  # pragma: allowlist secret
 dependencies:
-- P61
+- P62
 scope:
   allowed_paths:
-  - modules/62-plot-array-factor-beamwidth-and-grating-lobes/**
+  - modules/63-implement-conventional-delay-and-sum-beamforming/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P62-*.md
-  - docs/evidence/P62-*.md
-  - tests/test_p62*.py
-  - tests/**/test_p62*.py
-  - tests/p62/**
-  - tests/**/p62/**
+  - docs/plans/P63-*.md
+  - docs/evidence/P63-*.md
+  - tests/test_p63*.py
+  - tests/**/test_p63*.py
+  - tests/p63/**
+  - tests/**/p63/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How do aperture size and element spacing shape a beam pattern?'
+- 'Preserve the guiding question: How does steering align one direction and misalign others?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P62 artifact completeness and manifest identity
-  - P62 deterministic-input contract
-  - P62 sweep and broken-case markers
-  - P62 placeholder/black-box regression
+  - P63 artifact completeness and manifest identity
+  - P63 deterministic-input contract
+  - P63 sweep and broken-case markers
+  - P63 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P62 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P63 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P62-<date>.md
+  - docs/evidence/P63-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

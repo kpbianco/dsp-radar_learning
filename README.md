@@ -249,16 +249,22 @@ explicit ULA array factor. It measures half-power and first-null beamwidths and
 peak sidelobes, sweeps element count and spacing, exposes the Hamming
 sidelobe-versus-beamwidth trade, and recovers from an exact equal-height
 grating lobe by restoring half-wavelength spacing.
+Project 63 follows P62 by applying explicit conjugate steering weights to two
+noisy narrowband sources, proving direct snapshot-power averaging equals the
+sample-covariance quadratic form, and separating aperture-limited resolution
+from SNR- and snapshot-limited scan reliability. Source-separation, array-size,
+SNR, and snapshot sweeps lead to an exact wrong-sign mirrored scan that
+recovers on unchanged data with the consistent Hermitian convention.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–62 have completed their separate governed
-implementation batches. Projects 63–84 wait for their own
+ready-to-paste AI prompt. Projects 1–63 have completed their separate governed
+implementation batches. Projects 64–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P62.
+the current implementation frontier is P63.
 
 ## Module layout
 
