@@ -673,7 +673,7 @@
       "phase_title": "Radar Tracking and Data Association",
       "slug": "use-an-ekf-for-range-bearing-measurements",
       "folder": "modules/56-use-an-ekf-for-range-bearing-measurements",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P56"
     },
     {

@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P55
-  title: 'Implement P55: Implement a Constant-Velocity Kalman Filter'
-  goal: Implement Project 55 as an interactive MATLAB lesson answering 'How do process noise and measurement noise
-    determine trust in prediction versus measurement?' through visible cause and effect.
+  id: P56
+  title: 'Implement P56: Use an EKF for Range-Bearing Measurements'
+  goal: Implement Project 56 as an interactive MATLAB lesson answering 'How can nonlinear radar measurements update
+    Cartesian target state?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/55-implement-a-constant-velocity-kalman-filter/README.md
+  - modules/56-use-an-ekf-for-range-bearing-measurements/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M6.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P55.yaml
-  control_plane_revision: 1c780ce8d6d1a998076fde0fd5eeced4a0dcd5b9  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P56.yaml
+  control_plane_revision: 44dbd047bec4dca47775ff17145ff3e9ce3e5abb  # pragma: allowlist secret
 dependencies:
-- P54
+- P55
 scope:
   allowed_paths:
-  - modules/55-implement-a-constant-velocity-kalman-filter/**
+  - modules/56-use-an-ekf-for-range-bearing-measurements/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P55-*.md
-  - docs/evidence/P55-*.md
-  - tests/test_p55*.py
-  - tests/**/test_p55*.py
-  - tests/p55/**
-  - tests/**/p55/**
+  - docs/plans/P56-*.md
+  - docs/evidence/P56-*.md
+  - tests/test_p56*.py
+  - tests/**/test_p56*.py
+  - tests/p56/**
+  - tests/**/p56/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,8 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How do process noise and measurement noise determine trust in prediction versus
-  measurement?'
+- 'Preserve the guiding question: How can nonlinear radar measurements update Cartesian target state?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -60,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P55 artifact completeness and manifest identity
-  - P55 deterministic-input contract
-  - P55 sweep and broken-case markers
-  - P55 placeholder/black-box regression
+  - P56 artifact completeness and manifest identity
+  - P56 deterministic-input contract
+  - P56 sweep and broken-case markers
+  - P56 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -79,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P55 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P56 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P55-<date>.md
+  - docs/evidence/P56-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
