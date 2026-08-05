@@ -184,5 +184,10 @@ persistent-acceleration Kalman filters for one maneuvering target. Innovation
 likelihood moves mode probability, two sweeps expose maneuver-strength and
 persistence tradeoffs, and a zero-support broken mode is recovered exactly on
 the same reports.
+Project 61 follows P60 and begins Phase 7 by sampling one narrowband plane wave
+across an explicit ULA. It connects broadside-referenced angle to geometric
+delay and spatial phase slope, separates spacing from carrier-frequency
+sensitivity, and recovers from an exact spatial-alias failure by restoring
+half-wavelength spacing.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
