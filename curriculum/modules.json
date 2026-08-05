@@ -733,7 +733,7 @@
       "phase_title": "Arrays, Beamforming, DOA, and STAP",
       "slug": "see-phase-steering-in-a-uniform-linear-array",
       "folder": "modules/61-see-phase-steering-in-a-uniform-linear-array",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P61"
     },
     {
