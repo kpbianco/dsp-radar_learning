@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P64
-  title: 'Implement P64: Build an Amplitude-Comparison Monopulse Experiment'
-  goal: Implement Project 64 as an interactive MATLAB lesson answering 'How can sum and difference beams estimate
-    small angle error around boresight?' through visible cause and effect.
+  id: P65
+  title: 'Implement P65: Use MVDR/Capon Adaptive Beamforming'
+  goal: Implement Project 65 as an interactive MATLAB lesson answering 'How can a beamformer place data-dependent
+    nulls on interference?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/64-build-an-amplitude-comparison-monopulse-experiment/README.md
+  - modules/65-use-mvdr-capon-adaptive-beamforming/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M7.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P64.yaml
-  control_plane_revision: 04d26300a7f3a1a54b4240d24fa91df7b665975b  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P65.yaml
+  control_plane_revision: 0dd41167bac9b0fdd863d7305d9bd8500e341cb7  # pragma: allowlist secret
 dependencies:
-- P63
+- P64
 scope:
   allowed_paths:
-  - modules/64-build-an-amplitude-comparison-monopulse-experiment/**
+  - modules/65-use-mvdr-capon-adaptive-beamforming/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P64-*.md
-  - docs/evidence/P64-*.md
-  - tests/test_p64*.py
-  - tests/**/test_p64*.py
-  - tests/p64/**
-  - tests/**/p64/**
+  - docs/plans/P65-*.md
+  - docs/evidence/P65-*.md
+  - tests/test_p65*.py
+  - tests/**/test_p65*.py
+  - tests/p65/**
+  - tests/**/p65/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How can sum and difference beams estimate small angle error around boresight?'
+- 'Preserve the guiding question: How can a beamformer place data-dependent nulls on interference?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P64 artifact completeness and manifest identity
-  - P64 deterministic-input contract
-  - P64 sweep and broken-case markers
-  - P64 placeholder/black-box regression
+  - P65 artifact completeness and manifest identity
+  - P65 deterministic-input contract
+  - P65 sweep and broken-case markers
+  - P65 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P64 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P65 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P64-<date>.md
+  - docs/evidence/P65-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

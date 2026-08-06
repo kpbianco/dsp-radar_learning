@@ -204,5 +204,10 @@ forming explicit sum, difference, and normalized angle-error channels. It
 varies beam squint and receiver SNR independently, bounds estimation to one
 monotonic boresight calibration sector, and recovers a false angle caused by a
 right-channel gain mismatch without changing the target data.
+Project 65 follows P64 by estimating a spatial sample covariance, forming
+explicit distortionless MVDR/Capon weights, and comparing their data-dependent
+interference null and output SINR with conventional beamforming. Shared-prefix
+snapshot and diagonal-loading sweeps expose covariance uncertainty, steering
+mismatch, a refused singular solve, and same-data recovery.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

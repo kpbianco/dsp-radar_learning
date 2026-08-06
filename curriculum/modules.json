@@ -781,7 +781,7 @@
       "phase_title": "Arrays, Beamforming, DOA, and STAP",
       "slug": "use-mvdr-capon-adaptive-beamforming",
       "folder": "modules/65-use-mvdr-capon-adaptive-beamforming",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P65"
     },
     {
