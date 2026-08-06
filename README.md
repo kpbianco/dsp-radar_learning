@@ -261,16 +261,22 @@ signed ratio over a local boresight sector. Beam-squint and receiver-SNR sweeps
 separate comparator sensitivity from random precision, while a right-channel
 gain mismatch creates a false boresight angle that recovers on unchanged data
 with the known inverse calibration.
+Project 65 follows P64 by estimating the spatial sample covariance and solving
+the explicitly normalized MVDR/Capon weights. It compares a fixed conventional
+beam with a data-dependent interference null, varies snapshot count and
+diagonal loading independently, refuses a singular sample-starved solve, and
+recovers on unchanged data while separating robustness from steering-model
+correction.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–64 have completed their separate governed
-implementation batches. Projects 65–84 wait for their own
+ready-to-paste AI prompt. Projects 1–65 have completed their separate governed
+implementation batches. Projects 66–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P64.
+the current implementation frontier is P65.
 
 ## Module layout
 
