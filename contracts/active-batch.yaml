@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P65
-  title: 'Implement P65: Use MVDR/Capon Adaptive Beamforming'
-  goal: Implement Project 65 as an interactive MATLAB lesson answering 'How can a beamformer place data-dependent
-    nulls on interference?' through visible cause and effect.
+  id: P66
+  title: 'Implement P66: Estimate DOA with MUSIC'
+  goal: Implement Project 66 as an interactive MATLAB lesson answering 'How can subspace methods resolve sources
+    more finely than a conventional beam?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/65-use-mvdr-capon-adaptive-beamforming/README.md
+  - modules/66-estimate-doa-with-music/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M7.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P65.yaml
-  control_plane_revision: 0dd41167bac9b0fdd863d7305d9bd8500e341cb7  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P66.yaml
+  control_plane_revision: 2206fb22691b3af0d9d6a39e582e0e9516a24c50  # pragma: allowlist secret
 dependencies:
-- P64
+- P65
 scope:
   allowed_paths:
-  - modules/65-use-mvdr-capon-adaptive-beamforming/**
+  - modules/66-estimate-doa-with-music/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P65-*.md
-  - docs/evidence/P65-*.md
-  - tests/test_p65*.py
-  - tests/**/test_p65*.py
-  - tests/p65/**
-  - tests/**/p65/**
+  - docs/plans/P66-*.md
+  - docs/evidence/P66-*.md
+  - tests/test_p66*.py
+  - tests/**/test_p66*.py
+  - tests/p66/**
+  - tests/**/p66/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How can a beamformer place data-dependent nulls on interference?'
+- 'Preserve the guiding question: How can subspace methods resolve sources more finely than a conventional beam?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P65 artifact completeness and manifest identity
-  - P65 deterministic-input contract
-  - P65 sweep and broken-case markers
-  - P65 placeholder/black-box regression
+  - P66 artifact completeness and manifest identity
+  - P66 deterministic-input contract
+  - P66 sweep and broken-case markers
+  - P66 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P65 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P66 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P65-<date>.md
+  - docs/evidence/P66-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

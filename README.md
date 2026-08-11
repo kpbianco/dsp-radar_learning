@@ -267,16 +267,22 @@ beam with a data-dependent interference null, varies snapshot count and
 diagonal loading independently, refuses a singular sample-starved solve, and
 recovers on unchanged data while separating robustness from steering-model
 correction.
+Project 66 follows P65 by sorting the sample-covariance eigensystem and forming
+an explicit MUSIC noise-subspace pseudospectrum. It resolves a reviewed close
+pair that remains merged in a conventional Bartlett scan, varies source
+spacing, SNR, snapshot evidence, and assumed source count independently, then
+recovers a coherent-source rank collapse by spatially smoothing the unchanged
+sensor record.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–65 have completed their separate governed
-implementation batches. Projects 66–84 wait for their own
+ready-to-paste AI prompt. Projects 1–66 have completed their separate governed
+implementation batches. Projects 67–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P65.
+the current implementation frontier is P66.
 
 ## Module layout
 
