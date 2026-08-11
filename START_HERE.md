@@ -209,5 +209,10 @@ explicit distortionless MVDR/Capon weights, and comparing their data-dependent
 interference null and output SINR with conventional beamforming. Shared-prefix
 snapshot and diagonal-loading sweeps expose covariance uncertainty, steering
 mismatch, a refused singular solve, and same-data recovery.
+Project 66 follows P65 by partitioning ordered sample-covariance eigenvectors
+into signal and noise subspaces, comparing MUSIC direction peaks with a
+conventional Bartlett scan, and varying spacing, SNR, snapshots, and assumed
+source count one at a time. An exact coherent-source rank collapse recovers by
+averaging overlapping subarray covariances from the unchanged sensor record.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

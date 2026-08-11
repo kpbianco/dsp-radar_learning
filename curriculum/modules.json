@@ -793,7 +793,7 @@
       "phase_title": "Arrays, Beamforming, DOA, and STAP",
       "slug": "estimate-doa-with-music",
       "folder": "modules/66-estimate-doa-with-music",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P66"
     },
     {
