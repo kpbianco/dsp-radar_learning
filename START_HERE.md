@@ -214,5 +214,11 @@ into signal and noise subspaces, comparing MUSIC direction peaks with a
 conventional Bartlett scan, and varying spacing, SNR, snapshots, and assumed
 source count one at a time. An exact coherent-source rank collapse recovers by
 averaging overlapping subarray covariances from the unchanged sensor record.
+Project 67 follows P66 by distorting one deterministic ULA record with seeded
+gain, phase, position, and mutual-coupling errors. Nominal Bartlett, loaded
+Capon, and MUSIC processing expose angle and adaptive-response sensitivity; an
+independent known-source pilot estimates a one-direction composite channel
+equalizer, two controlled sweeps expose severity and off-angle coupling limits,
+and the unchanged data recover from a deliberately wrong broadside reference.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

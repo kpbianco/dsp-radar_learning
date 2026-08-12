@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P66
-  title: 'Implement P66: Estimate DOA with MUSIC'
-  goal: Implement Project 66 as an interactive MATLAB lesson answering 'How can subspace methods resolve sources
-    more finely than a conventional beam?' through visible cause and effect.
+  id: P67
+  title: 'Implement P67: Inject Array Calibration and Mutual-Coupling Errors'
+  goal: Implement Project 67 as an interactive MATLAB lesson answering 'How sensitive are beamforming and DOA results
+    to imperfect channels?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/66-estimate-doa-with-music/README.md
+  - modules/67-inject-array-calibration-and-mutual-coupling-errors/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M7.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P66.yaml
-  control_plane_revision: 2206fb22691b3af0d9d6a39e582e0e9516a24c50  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P67.yaml
+  control_plane_revision: 1ff551f83851d8b252144456b8f0a672d593770b  # pragma: allowlist secret
 dependencies:
-- P65
+- P66
 scope:
   allowed_paths:
-  - modules/66-estimate-doa-with-music/**
+  - modules/67-inject-array-calibration-and-mutual-coupling-errors/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P66-*.md
-  - docs/evidence/P66-*.md
-  - tests/test_p66*.py
-  - tests/**/test_p66*.py
-  - tests/p66/**
-  - tests/**/p66/**
+  - docs/plans/P67-*.md
+  - docs/evidence/P67-*.md
+  - tests/test_p67*.py
+  - tests/**/test_p67*.py
+  - tests/p67/**
+  - tests/**/p67/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How can subspace methods resolve sources more finely than a conventional beam?'
+- 'Preserve the guiding question: How sensitive are beamforming and DOA results to imperfect channels?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P66 artifact completeness and manifest identity
-  - P66 deterministic-input contract
-  - P66 sweep and broken-case markers
-  - P66 placeholder/black-box regression
+  - P67 artifact completeness and manifest identity
+  - P67 deterministic-input contract
+  - P67 sweep and broken-case markers
+  - P67 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P66 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P67 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P66-<date>.md
+  - docs/evidence/P67-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

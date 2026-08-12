@@ -805,7 +805,7 @@
       "phase_title": "Arrays, Beamforming, DOA, and STAP",
       "slug": "inject-array-calibration-and-mutual-coupling-errors",
       "folder": "modules/67-inject-array-calibration-and-mutual-coupling-errors",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P67"
     },
     {
