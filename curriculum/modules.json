@@ -877,7 +877,7 @@
       "phase_title": "FMCW, MIMO, and Micro-Doppler",
       "slug": "build-a-tdm-mimo-virtual-array",
       "folder": "modules/73-build-a-tdm-mimo-virtual-array",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P73"
     },
     {

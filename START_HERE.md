@@ -242,5 +242,9 @@ Project 72 follows P71 by adding an equal-magnitude opposite chirp slope. The
 signed beat difference isolates delay/range while the sum isolates
 Doppler/velocity; range, velocity, and noise sweeps expose those combinations,
 and a two-target wrong-pairing case shows why association remains unresolved.
+Project 73 follows P72 by adding TX and RX positions into a filled virtual ULA.
+It compares receive-only and virtual resolution, then separates spatial phase
+from the Doppler phase accumulated between TDM transmit slots and recovers the
+unchanged moving-target record with a same-TX slow-time estimate.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

@@ -74,7 +74,7 @@
 | [P70](../modules/70-create-an-fmcw-range-doppler-map/) | implemented | 8 | Create an FMCW Range-Doppler Map |
 | [P71](../modules/71-expose-fmcw-range-doppler-coupling/) | implemented | 8 | Expose FMCW Range-Doppler Coupling |
 | [P72](../modules/72-use-up-down-triangular-chirps-to-separate-range-and-velocity/) | implemented | 8 | Use Up/Down Triangular Chirps to Separate Range and Velocity |
-| [P73](../modules/73-build-a-tdm-mimo-virtual-array/) | scaffolded | 8 | Build a TDM-MIMO Virtual Array |
+| [P73](../modules/73-build-a-tdm-mimo-virtual-array/) | implemented | 8 | Build a TDM-MIMO Virtual Array |
 | [P74](../modules/74-create-a-micro-doppler-spectrogram/) | scaffolded | 8 | Create a Micro-Doppler Spectrogram |
 | [P75](../modules/75-build-sar-phase-history-intuition/) | scaffolded | 9 | Build SAR Phase-History Intuition |
 | [P76](../modules/76-perform-sar-range-compression/) | scaffolded | 9 | Perform SAR Range Compression |
