@@ -289,16 +289,21 @@ and its physically delayed echo on a shared time grid. It exposes valid
 overlap, mixer sign, beat FFT, and monostatic range conversion, varies target
 range and chirp slope independently, and recovers a deliberate factor-of-two
 propagation error on the unchanged beat estimate.
+Project 70 follows P69 by arranging explicit dechirped beat tones as fast-time
+rows by coherent chirp columns, transforming rows into range before columns
+into signed velocity, and separating targets that share one coordinate. It
+varies coherent chirp count and retained fast-time sample count independently,
+then recovers from deliberately discarding slow-time phase on unchanged data.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–69 have completed their separate governed
-implementation batches. Projects 70–84 wait for their own
+ready-to-paste AI prompt. Projects 1–70 have completed their separate governed
+implementation batches. Projects 71–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P69.
+the current implementation frontier is P70.
 
 ## Module layout
 

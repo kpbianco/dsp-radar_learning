@@ -841,7 +841,7 @@
       "phase_title": "FMCW, MIMO, and Micro-Doppler",
       "slug": "create-an-fmcw-range-doppler-map",
       "folder": "modules/70-create-an-fmcw-range-doppler-map",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P70"
     },
     {
