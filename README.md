@@ -294,16 +294,20 @@ rows by coherent chirp columns, transforming rows into range before columns
 into signed velocity, and separating targets that share one coordinate. It
 varies coherent chirp count and retained fast-time sample count independently,
 then recovers from deliberately discarding slow-time phase on unchanged data.
+Project 71 restores within-chirp Doppler to the up-chirp beat, exposes the
+signed stationary-assumption range bias, varies radial velocity and chirp
+slope independently, then recovers from a deliberately reversed Doppler
+correction using the unchanged measured beat and independently known velocity.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–70 have completed their separate governed
-implementation batches. Projects 71–84 wait for their own
+ready-to-paste AI prompt. Projects 1–71 have completed their separate governed
+implementation batches. Projects 72–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P70.
+the current implementation frontier is P71.
 
 ## Module layout
 

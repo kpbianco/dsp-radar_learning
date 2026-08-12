@@ -234,5 +234,9 @@ chirps, converting beat frequency to range before converting chirp phase rate
 to signed velocity, and separating targets that share range or velocity. It
 varies the two measured observation dimensions independently and recovers the
 same complex data after deliberately erasing slow-time phase.
+Project 71 follows P70 by putting carrier Doppler back inside one up-chirp's
+signed beat. It shows why approaching and receding motion bias a stationary
+range conversion in opposite directions, varies velocity and chirp slope, and
+recovers from a wrong-sign correction on the unchanged measurement.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
