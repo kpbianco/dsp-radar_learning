@@ -273,16 +273,22 @@ pair that remains merged in a conventional Bartlett scan, varies source
 spacing, SNR, snapshot evidence, and assumed source count independently, then
 recovers a coherent-source rank collapse by spatially smoothing the unchanged
 sensor record.
+Project 67 follows P66 by applying seeded per-element gain, phase, and position
+errors plus explicit banded mutual coupling to one deterministic ULA record.
+It compares nominal Bartlett, loaded Capon, and MUSIC processing before and
+after a known-source composite channel calibration, scales a fixed channel
+error realization, sweeps coupling alone, and recovers from an incorrect
+broadside calibration reference on unchanged pilot and operational data.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–66 have completed their separate governed
-implementation batches. Projects 67–84 wait for their own
+ready-to-paste AI prompt. Projects 1–67 have completed their separate governed
+implementation batches. Projects 68–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P66.
+the current implementation frontier is P67.
 
 ## Module layout
 

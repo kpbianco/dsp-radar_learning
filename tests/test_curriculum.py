@@ -74,6 +74,20 @@ class CurriculumTests(unittest.TestCase):
         self.assertIn(f"current implementation frontier is {frontier}.", root_readme)
         self.assertRegex(module_index, rf"\| \[{frontier}\].*\| implemented \|")
 
+        normalized_readme = " ".join(root_readme.split())
+        implemented_count = len(implemented)
+        self.assertIn(
+            f"Projects 1–{implemented_count} have completed their separate governed "
+            "implementation batches.",
+            normalized_readme,
+        )
+        if implemented_count < self.data["module_count"]:
+            self.assertIn(
+                f"Projects {implemented_count + 1}–{self.data['module_count']} wait for their own "
+                "MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.",
+                normalized_readme,
+            )
+
     def test_future_module_transition_preserves_frontier_contract(self):
         implemented_count = sum(
             module["status"] == "implemented" for module in self.data["modules"]
