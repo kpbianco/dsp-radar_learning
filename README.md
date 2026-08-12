@@ -298,16 +298,20 @@ Project 71 restores within-chirp Doppler to the up-chirp beat, exposes the
 signed stationary-assumption range bias, varies radial velocity and chirp
 slope independently, then recovers from a deliberately reversed Doppler
 correction using the unchanged measured beat and independently known velocity.
+Project 72 adds an equal-magnitude down-chirp measurement, preserves both
+signed beats, and uses their difference for range and sum for velocity. It
+varies range, velocity, and noise independently, then exposes cross-target
+up/down pairing ghosts and recovers on the unchanged detected beat lists.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–71 have completed their separate governed
-implementation batches. Projects 72–84 wait for their own
+ready-to-paste AI prompt. Projects 1–72 have completed their separate governed
+implementation batches. Projects 73–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P71.
+the current implementation frontier is P72.
 
 ## Module layout
 

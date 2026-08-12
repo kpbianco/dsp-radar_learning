@@ -865,7 +865,7 @@
       "phase_title": "FMCW, MIMO, and Micro-Doppler",
       "slug": "use-up-down-triangular-chirps-to-separate-range-and-velocity",
       "folder": "modules/72-use-up-down-triangular-chirps-to-separate-range-and-velocity",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P72"
     },
     {

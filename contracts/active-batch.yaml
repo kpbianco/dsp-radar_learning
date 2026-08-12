@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P71
-  title: 'Implement P71: Expose FMCW Range-Doppler Coupling'
-  goal: Implement Project 71 as an interactive MATLAB lesson answering 'Why can target motion bias the range estimated
-    from one chirp?' through visible cause and effect.
+  id: P72
+  title: 'Implement P72: Use Up/Down Triangular Chirps to Separate Range and Velocity'
+  goal: Implement Project 72 as an interactive MATLAB lesson answering 'How can opposite chirp slopes disentangle
+    delay and Doppler?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/71-expose-fmcw-range-doppler-coupling/README.md
+  - modules/72-use-up-down-triangular-chirps-to-separate-range-and-velocity/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M8.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P71.yaml
-  control_plane_revision: 0af47be659c19bd2864a617ebe3c56463f8c5eb5  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P72.yaml
+  control_plane_revision: a729f1460f56f24f904b45faf4f37157494f847b  # pragma: allowlist secret
 dependencies:
-- P70
+- P71
 scope:
   allowed_paths:
-  - modules/71-expose-fmcw-range-doppler-coupling/**
+  - modules/72-use-up-down-triangular-chirps-to-separate-range-and-velocity/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P71-*.md
-  - docs/evidence/P71-*.md
-  - tests/test_p71*.py
-  - tests/**/test_p71*.py
-  - tests/p71/**
-  - tests/**/p71/**
+  - docs/plans/P72-*.md
+  - docs/evidence/P72-*.md
+  - tests/test_p72*.py
+  - tests/**/test_p72*.py
+  - tests/p72/**
+  - tests/**/p72/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: Why can target motion bias the range estimated from one chirp?'
+- 'Preserve the guiding question: How can opposite chirp slopes disentangle delay and Doppler?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P71 artifact completeness and manifest identity
-  - P71 deterministic-input contract
-  - P71 sweep and broken-case markers
-  - P71 placeholder/black-box regression
+  - P72 artifact completeness and manifest identity
+  - P72 deterministic-input contract
+  - P72 sweep and broken-case markers
+  - P72 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P71 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P72 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P71-<date>.md
+  - docs/evidence/P72-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
