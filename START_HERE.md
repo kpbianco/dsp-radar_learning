@@ -229,5 +229,10 @@ Project 69 follows P68 and begins Phase 8 by turning one ideal linear-chirp
 round-trip delay into a signed dechirped beat. It varies target range and chirp
 slope independently, converts the FFT peak with the monostatic factor two, and
 recovers a deliberate one-way propagation error on the unchanged measurement.
+Project 70 follows P69 by stacking dechirped fast-time samples across coherent
+chirps, converting beat frequency to range before converting chirp phase rate
+to signed velocity, and separating targets that share range or velocity. It
+varies the two measured observation dimensions independently and recovers the
+same complex data after deliberately erasing slow-time phase.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
