@@ -238,5 +238,9 @@ Project 71 follows P70 by putting carrier Doppler back inside one up-chirp's
 signed beat. It shows why approaching and receding motion bias a stationary
 range conversion in opposite directions, varies velocity and chirp slope, and
 recovers from a wrong-sign correction on the unchanged measurement.
+Project 72 follows P71 by adding an equal-magnitude opposite chirp slope. The
+signed beat difference isolates delay/range while the sum isolates
+Doppler/velocity; range, velocity, and noise sweeps expose those combinations,
+and a two-target wrong-pairing case shows why association remains unresolved.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
