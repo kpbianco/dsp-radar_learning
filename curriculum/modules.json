@@ -829,7 +829,7 @@
       "phase_title": "FMCW, MIMO, and Micro-Doppler",
       "slug": "derive-fmcw-range-from-beat-frequency",
       "folder": "modules/69-derive-fmcw-range-from-beat-frequency",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P69"
     },
     {

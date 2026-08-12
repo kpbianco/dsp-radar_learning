@@ -284,16 +284,21 @@ pulses, building a moving-platform angle-Doppler clutter ridge, and comparing
 fixed, separate spatial/Doppler, and joint loaded-MVDR weights. It sweeps clean
 training support, injects target-like training contamination, and recovers the
 joint result from the unchanged clean covariance record.
+Project 69 follows P68 and begins Phase 8 by evaluating one ideal linear chirp
+and its physically delayed echo on a shared time grid. It exposes valid
+overlap, mixer sign, beat FFT, and monostatic range conversion, varies target
+range and chirp slope independently, and recovers a deliberate factor-of-two
+propagation error on the unchanged beat estimate.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–68 have completed their separate governed
-implementation batches. Projects 69–84 wait for their own
+ready-to-paste AI prompt. Projects 1–69 have completed their separate governed
+implementation batches. Projects 70–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P68.
+the current implementation frontier is P69.
 
 ## Module layout
 

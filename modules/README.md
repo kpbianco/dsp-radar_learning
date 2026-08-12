@@ -70,7 +70,7 @@
 | [P66](../modules/66-estimate-doa-with-music/) | implemented | 7 | Estimate DOA with MUSIC |
 | [P67](../modules/67-inject-array-calibration-and-mutual-coupling-errors/) | implemented | 7 | Inject Array Calibration and Mutual-Coupling Errors |
 | [P68](../modules/68-build-an-introductory-stap-clutter-ridge-experiment/) | implemented | 7 | Build an Introductory STAP Clutter-Ridge Experiment |
-| [P69](../modules/69-derive-fmcw-range-from-beat-frequency/) | scaffolded | 8 | Derive FMCW Range from Beat Frequency |
+| [P69](../modules/69-derive-fmcw-range-from-beat-frequency/) | implemented | 8 | Derive FMCW Range from Beat Frequency |
 | [P70](../modules/70-create-an-fmcw-range-doppler-map/) | scaffolded | 8 | Create an FMCW Range-Doppler Map |
 | [P71](../modules/71-expose-fmcw-range-doppler-coupling/) | scaffolded | 8 | Expose FMCW Range-Doppler Coupling |
 | [P72](../modules/72-use-up-down-triangular-chirps-to-separate-range-and-velocity/) | scaffolded | 8 | Use Up/Down Triangular Chirps to Separate Range and Velocity |

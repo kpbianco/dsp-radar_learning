@@ -225,5 +225,9 @@ in one small space-time snapshot. Its walkthrough makes the moving-platform
 clutter ridge visible, compares separate and joint adaptive weights, varies
 clean training support, and repairs target-like training contamination using
 the unchanged clean record.
+Project 69 follows P68 and begins Phase 8 by turning one ideal linear-chirp
+round-trip delay into a signed dechirped beat. It varies target range and chirp
+slope independently, converts the FFT peak with the monostatic factor two, and
+recovers a deliberate one-way propagation error on the unchanged measurement.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
