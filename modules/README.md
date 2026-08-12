@@ -72,7 +72,7 @@
 | [P68](../modules/68-build-an-introductory-stap-clutter-ridge-experiment/) | implemented | 7 | Build an Introductory STAP Clutter-Ridge Experiment |
 | [P69](../modules/69-derive-fmcw-range-from-beat-frequency/) | implemented | 8 | Derive FMCW Range from Beat Frequency |
 | [P70](../modules/70-create-an-fmcw-range-doppler-map/) | implemented | 8 | Create an FMCW Range-Doppler Map |
-| [P71](../modules/71-expose-fmcw-range-doppler-coupling/) | scaffolded | 8 | Expose FMCW Range-Doppler Coupling |
+| [P71](../modules/71-expose-fmcw-range-doppler-coupling/) | implemented | 8 | Expose FMCW Range-Doppler Coupling |
 | [P72](../modules/72-use-up-down-triangular-chirps-to-separate-range-and-velocity/) | scaffolded | 8 | Use Up/Down Triangular Chirps to Separate Range and Velocity |
 | [P73](../modules/73-build-a-tdm-mimo-virtual-array/) | scaffolded | 8 | Build a TDM-MIMO Virtual Array |
 | [P74](../modules/74-create-a-micro-doppler-spectrogram/) | scaffolded | 8 | Create a Micro-Doppler Spectrogram |

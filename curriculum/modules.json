@@ -853,7 +853,7 @@
       "phase_title": "FMCW, MIMO, and Micro-Doppler",
       "slug": "expose-fmcw-range-doppler-coupling",
       "folder": "modules/71-expose-fmcw-range-doppler-coupling",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P71"
     },
     {
