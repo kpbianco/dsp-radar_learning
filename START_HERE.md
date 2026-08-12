@@ -220,5 +220,10 @@ Capon, and MUSIC processing expose angle and adaptive-response sensitivity; an
 independent known-source pilot estimates a one-direction composite channel
 equalizer, two controlled sweeps expose severity and off-angle coupling limits,
 and the unchanged data recover from a deliberately wrong broadside reference.
+Project 68 follows P67 by pairing array-element phase with pulse-to-pulse phase
+in one small space-time snapshot. Its walkthrough makes the moving-platform
+clutter ridge visible, compares separate and joint adaptive weights, varies
+clean training support, and repairs target-like training contamination using
+the unchanged clean record.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

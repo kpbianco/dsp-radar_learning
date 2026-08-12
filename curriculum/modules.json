@@ -817,7 +817,7 @@
       "phase_title": "Arrays, Beamforming, DOA, and STAP",
       "slug": "build-an-introductory-stap-clutter-ridge-experiment",
       "folder": "modules/68-build-an-introductory-stap-clutter-ridge-experiment",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P68"
     },
     {

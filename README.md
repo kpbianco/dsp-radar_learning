@@ -279,16 +279,21 @@ It compares nominal Bartlett, loaded Capon, and MUSIC processing before and
 after a known-source composite channel calibration, scales a fixed channel
 error realization, sweeps coupling alone, and recovers from an incorrect
 broadside calibration reference on unchanged pilot and operational data.
+Project 68 follows P67 by stacking eight array elements across eight coherent
+pulses, building a moving-platform angle-Doppler clutter ridge, and comparing
+fixed, separate spatial/Doppler, and joint loaded-MVDR weights. It sweeps clean
+training support, injects target-like training contamination, and recovers the
+joint result from the unchanged clean covariance record.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–67 have completed their separate governed
-implementation batches. Projects 68–84 wait for their own
+ready-to-paste AI prompt. Projects 1–68 have completed their separate governed
+implementation batches. Projects 69–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P67.
+the current implementation frontier is P68.
 
 ## Module layout
 

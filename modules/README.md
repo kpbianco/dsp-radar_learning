@@ -69,7 +69,7 @@
 | [P65](../modules/65-use-mvdr-capon-adaptive-beamforming/) | implemented | 7 | Use MVDR/Capon Adaptive Beamforming |
 | [P66](../modules/66-estimate-doa-with-music/) | implemented | 7 | Estimate DOA with MUSIC |
 | [P67](../modules/67-inject-array-calibration-and-mutual-coupling-errors/) | implemented | 7 | Inject Array Calibration and Mutual-Coupling Errors |
-| [P68](../modules/68-build-an-introductory-stap-clutter-ridge-experiment/) | scaffolded | 7 | Build an Introductory STAP Clutter-Ridge Experiment |
+| [P68](../modules/68-build-an-introductory-stap-clutter-ridge-experiment/) | implemented | 7 | Build an Introductory STAP Clutter-Ridge Experiment |
 | [P69](../modules/69-derive-fmcw-range-from-beat-frequency/) | scaffolded | 8 | Derive FMCW Range from Beat Frequency |
 | [P70](../modules/70-create-an-fmcw-range-doppler-map/) | scaffolded | 8 | Create an FMCW Range-Doppler Map |
 | [P71](../modules/71-expose-fmcw-range-doppler-coupling/) | scaffolded | 8 | Expose FMCW Range-Doppler Coupling |
