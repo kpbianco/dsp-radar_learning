@@ -889,7 +889,7 @@
       "phase_title": "FMCW, MIMO, and Micro-Doppler",
       "slug": "create-a-micro-doppler-spectrogram",
       "folder": "modules/74-create-a-micro-doppler-spectrogram",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P74"
     },
     {

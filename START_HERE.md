@@ -246,5 +246,10 @@ Project 73 follows P72 by adding TX and RX positions into a filled virtual ULA.
 It compares receive-only and virtual resolution, then separates spatial phase
 from the Doppler phase accumulated between TDM transmit slots and recovers the
 unchanged moving-target record with a same-TX slow-time estimate.
+Project 74 follows P73 and closes Phase 8 by adding periodic component motion
+around a steady bulk velocity in one selected complex range-bin return. It
+forms the signed STFT explicitly, varies swing speed, carrier frequency, and
+window duration independently, and recovers the unchanged I/Q record after a
+magnitude-only path erases absolute signed Doppler.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
