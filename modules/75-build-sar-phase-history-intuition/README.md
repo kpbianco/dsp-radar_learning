@@ -1,7 +1,7 @@
 # P75: Build SAR Phase-History Intuition
 
 **Phase 9: SAR, ISAR, Passive Radar, and Capstone**  
-**Status:** Scaffolded; implementation batch `P75` is pending
+**Status:** Implemented by governed batch `P75`
 
 ## Guiding question
 
@@ -9,32 +9,67 @@ Why does moving one antenna create a large synthetic aperture?
 
 ## Experiment
 
-Simulate a monostatic radar moving along a straight track past one point target and record complex phase versus platform position and fast time.
+A monostatic radar visits 401 uniformly spaced positions on an 80 m straight
+track and observes one stationary point target. The deterministic base-MATLAB
+script computes slant range, two-way delay, the round-trip carrier phase, and a
+complex fast-time return explicitly. The rows of that return are separate
+antenna positions: motion has turned one physical antenna into a coherent
+sequence of spatial samples.
 
-## Procedure
+The baseline exposes geometry, range, phase curvature, and the raw
+fast-time/aperture matrix. One controlled sweep moves only the target's
+cross-range coordinate; a second changes only aperture length. An intentionally
+broken path discards I/Q phase, then compares it with recovery from the
+unchanged complex record using an explicit hypothesized-path coherent sum.
 
-Plot slant range, round-trip phase, and raw phase history. Change target cross-range position and aperture length.
+## Learning goal
 
-## What this should teach
+Explain that the synthetic aperture is created by preserving the phase of many
+looks from known platform positions—not merely by moving the antenna. Relate a
+target's cross-range coordinate to the location of its phase-history vertex,
+and relate a longer aperture to a larger observed range change and phase span.
+Aperture length reveals more of the curved history; it does not change the
+target geometry's local curvature at closest approach.
 
-SAR cross-range information is encoded in coherent phase curvature collected from many platform positions.
+## Prerequisites and dependencies
 
-## Completion condition
+- P18 supplies complex-I/Q and phase-preservation intuition.
+- P30 supplies the monostatic `R = c*tau/2` delay convention.
+- P36 connects two-way path change to coherent pulse-to-pulse phase.
+- P61-P63 connect spatial phase samples, aperture, and coherent steering.
+- P74 is the governed curriculum prerequisite.
+- Runtime target: base MATLAB R2016b or newer; no optional toolbox is used.
 
-You can explain why two targets at the same range can have different aperture-phase histories.
+P76 will add range compression, P77 will form a SAR image with backprojection,
+and P78 will isolate range-cell migration. This module deliberately stops at
+one point target and one transparent cross-range coherent sum.
 
-## Start or implement
+## Run
 
-```bash
-./bin/learn start 75
+```matlab
+cd modules/75-build-sar-phase-history-intuition
+run('experiment.m')
 ```
 
-If this module is scaffolded, tutor mode may review this brief but must not pretend the experiment is complete. Activate Portfolio Control batch `P75` to add the runnable MATLAB experiment, explanation, walkthrough, checks, validation, and evidence.
+Then use `walkthrough.md` one observation at a time and `checks.md` for the
+completion conversation. The script is a bounded synthetic learning model, not
+an operational SAR design or hardware/field validation.
+
+## Files
+
+- `experiment.m` — deterministic point-target model, raw phase history, two
+  physical sweeps, magnitude-only failure, same-data recovery, and bounds
+- `lesson.md` — physical model, equations, limits, and interpretation traps
+- `walkthrough.md` — baseline observations, controlled changes, failure,
+  recovery, cancellation, rollback, and concept connection
+- `checks.md` — answered observation/prediction checks and teach-back rubric
 
 ## AI chat prompt
 
-Act as my hands-on DSP and radar lab mentor. Create a self-contained MATLAB mini-project titled "Build SAR Phase-History Intuition". The guiding question is: "Why does moving one antenna create a large synthetic aperture?" Use this experiment: Simulate a monostatic radar moving along a straight track past one point target and record complex phase versus platform position and fast time. Have me perform these actions: Plot slant range, round-trip phase, and raw phase history. Change target cross-range position and aperture length. The main concept I must learn is: SAR cross-range information is encoded in coherent phase curvature collected from many platform positions. Assume I am a beginner in DSP/radar but can run and edit MATLAB scripts. Focus on physical meaning, signal flow, and visual intuition rather than MATLAB syntax or library instruction. Use seeded synthetic data, one runnable script organized into clear sections, and plots after every important processing step. Show the underlying equation or operation before using any toolbox convenience function; use base MATLAB where practical and give an optional toolbox version only when it adds real value. Include expected observations, two parameter sweeps that make the concept visually obvious, one intentionally broken case, common interpretation mistakes, and a short completion checklist. Do not turn it into homework or ask me to derive long equations before seeing the experiment.
-
-## Files currently present
-
-- `README.md`
+Act as my hands-on DSP and radar lab mentor. Keep the guiding question exactly:
+"Why does moving one antenna create a large synthetic aperture?" Begin with one
+antenna visiting known positions and the two-way path-length phase model.
+Inspect one baseline plot at a time, change target cross-range and aperture
+length one variable at a time, make the magnitude-only failure explicit, and
+finish with a short teach-back. Do not turn the lesson into MATLAB syntax
+instruction or describe static checks as MATLAB runtime evidence.

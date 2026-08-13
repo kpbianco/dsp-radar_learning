@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P74
-  title: 'Implement P74: Create a Micro-Doppler Spectrogram'
-  goal: Implement Project 74 as an interactive MATLAB lesson answering 'How do rotating or swinging target parts
-    produce time-varying Doppler around bulk motion?' through visible cause and effect.
+  id: P75
+  title: 'Implement P75: Build SAR Phase-History Intuition'
+  goal: Implement Project 75 as an interactive MATLAB lesson answering 'Why does moving one antenna create a large
+    synthetic aperture?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/74-create-a-micro-doppler-spectrogram/README.md
-  milestone: products/dsp-radar-learning/milestones/DRL-M8.md
+  - modules/75-build-sar-phase-history-intuition/README.md
+  milestone: products/dsp-radar-learning/milestones/DRL-M9.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P74.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P75.yaml
   control_plane_revision: e2ce44f28d3d3f92d7a8bf4d4f1c4ba7b563a185  # pragma: allowlist secret
 dependencies:
-- P73
+- P74
 scope:
   allowed_paths:
-  - modules/74-create-a-micro-doppler-spectrogram/**
+  - modules/75-build-sar-phase-history-intuition/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P74-*.md
-  - docs/evidence/P74-*.md
-  - tests/test_p74*.py
-  - tests/**/test_p74*.py
-  - tests/p74/**
-  - tests/**/p74/**
+  - docs/plans/P75-*.md
+  - docs/evidence/P75-*.md
+  - tests/test_p75*.py
+  - tests/**/test_p75*.py
+  - tests/p75/**
+  - tests/**/p75/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,8 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How do rotating or swinging target parts produce time-varying Doppler around bulk
-  motion?'
+- 'Preserve the guiding question: Why does moving one antenna create a large synthetic aperture?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -60,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P74 artifact completeness and manifest identity
-  - P74 deterministic-input contract
-  - P74 sweep and broken-case markers
-  - P74 placeholder/black-box regression
+  - P75 artifact completeness and manifest identity
+  - P75 deterministic-input contract
+  - P75 sweep and broken-case markers
+  - P75 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -79,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P74 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P75 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P74-<date>.md
+  - docs/evidence/P75-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
