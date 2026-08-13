@@ -312,16 +312,21 @@ separating bulk Doppler from periodic component tracks. Swing-speed, carrier,
 and window-duration sweeps expose physical scaling and time-frequency tradeoffs,
 then the unchanged complex record recovers signed motion after a deliberate
 magnitude-only failure.
+Project 75 begins Phase 9 by sampling one stationary point target from known
+positions along a straight track. It exposes slant range, two-way delay,
+carrier-phase curvature, and the raw fast-time/aperture record; target
+cross-range and aperture-length sweeps shift or extend that coherent history,
+and unchanged complex I/Q recovers after a magnitude-only failure.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–74 have completed their separate governed
-implementation batches. Projects 75–84 wait for their own
+ready-to-paste AI prompt. Projects 1–75 have completed their separate governed
+implementation batches. Projects 76–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P74.
+the current implementation frontier is P75.
 
 ## Module layout
 

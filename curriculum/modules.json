@@ -901,7 +901,7 @@
       "phase_title": "SAR, ISAR, Passive Radar, and Capstone",
       "slug": "build-sar-phase-history-intuition",
       "folder": "modules/75-build-sar-phase-history-intuition",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P75"
     },
     {

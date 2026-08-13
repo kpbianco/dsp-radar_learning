@@ -251,5 +251,10 @@ around a steady bulk velocity in one selected complex range-bin return. It
 forms the signed STFT explicitly, varies swing speed, carrier frequency, and
 window duration independently, and recovers the unchanged I/Q record after a
 magnitude-only path erases absolute signed Doppler.
+Project 75 follows P74 and begins Phase 9 by recording one point target from a
+known straight-track sequence of antenna positions. It connects slant-range
+change to two-way phase curvature, moves the phase-history vertex with target
+cross-range, extends the observed curvature with aperture length, and recovers
+coherent path matching from unchanged I/Q after magnitude-only processing.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
