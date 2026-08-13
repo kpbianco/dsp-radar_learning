@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P78
-  title: 'Implement P78: Observe and Correct Range-Cell Migration'
-  goal: Implement Project 78 as an interactive MATLAB lesson answering 'Why does a target move through range bins
-    during a long synthetic aperture?' through visible cause and effect.
+  id: P79
+  title: 'Implement P79: Compare SAR Resolution, Aperture Length, and Windowing'
+  goal: Implement Project 79 as an interactive MATLAB lesson answering 'What controls range and cross-range resolution
+    and sidelobes?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/78-observe-and-correct-range-cell-migration/README.md
+  - modules/79-compare-sar-resolution-aperture-length-and-windowing/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M9.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P78.yaml
-  control_plane_revision: 68c301f0efdd3c32d0a01528cfd47e494f4ff24b  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P79.yaml
+  control_plane_revision: dd8101db6fb9fb82c6ba905fa6a04feb12d472b6  # pragma: allowlist secret
 dependencies:
-- P77
+- P78
 scope:
   allowed_paths:
-  - modules/78-observe-and-correct-range-cell-migration/**
+  - modules/79-compare-sar-resolution-aperture-length-and-windowing/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P78-*.md
-  - docs/evidence/P78-*.md
-  - tests/test_p78*.py
-  - tests/**/test_p78*.py
-  - tests/p78/**
-  - tests/**/p78/**
+  - docs/plans/P79-*.md
+  - docs/evidence/P79-*.md
+  - tests/test_p79*.py
+  - tests/**/test_p79*.py
+  - tests/p79/**
+  - tests/**/p79/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: Why does a target move through range bins during a long synthetic aperture?'
+- 'Preserve the guiding question: What controls range and cross-range resolution and sidelobes?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P78 artifact completeness and manifest identity
-  - P78 deterministic-input contract
-  - P78 sweep and broken-case markers
-  - P78 placeholder/black-box regression
+  - P79 artifact completeness and manifest identity
+  - P79 deterministic-input contract
+  - P79 sweep and broken-case markers
+  - P79 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P78 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P79 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P78-<date>.md
+  - docs/evidence/P79-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

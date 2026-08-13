@@ -271,5 +271,10 @@ linear interpolation, fairly compares fixed-bin and path-following image
 formation under identical phase compensation, varies aperture and squint, and
 recovers the unchanged complex input after a wrong-sign shift doubles the
 migration.
+Project 79 follows P78 by forming isolated SAR range and cross-range point
+responses with explicit coherent sums. It varies waveform bandwidth and
+synthetic-aperture length independently, compares uniform and Hamming aperture
+weights, then deliberately undersamples the same track to create spatial
+aliases before exact recovery from the unchanged seeded point scene.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
