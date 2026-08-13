@@ -334,16 +334,21 @@ common range. Fixed-bin and path-following processors use identical complex
 data and phase compensation; aperture-length and squint sweeps expose the
 geometry, while a wrong-sign shift doubles migration before exact same-data
 recovery.
+Project 79 separates SAR range and cross-range point responses into explicit
+coherent frequency and exact slant-range phase sums. Bandwidth and aperture-
+length sweeps independently narrow the two axes, Hamming illumination exposes
+the mainlobe/sidelobe/SNR trade, and a sparsely sampled track creates repeated
+false targets before exact dense-sampling recovery from the unchanged scene.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–78 have completed their separate governed
-implementation batches. Projects 79–84 wait for their own
+ready-to-paste AI prompt. Projects 1–79 have completed their separate governed
+implementation batches. Projects 80–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P78.
+the current implementation frontier is P79.
 
 ## Module layout
 

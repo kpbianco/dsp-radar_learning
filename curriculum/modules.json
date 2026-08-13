@@ -949,7 +949,7 @@
       "phase_title": "SAR, ISAR, Passive Radar, and Capstone",
       "slug": "compare-sar-resolution-aperture-length-and-windowing",
       "folder": "modules/79-compare-sar-resolution-aperture-length-and-windowing",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P79"
     },
     {

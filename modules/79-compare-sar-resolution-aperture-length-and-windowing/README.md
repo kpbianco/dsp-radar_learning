@@ -1,7 +1,7 @@
 # P79: Compare SAR Resolution, Aperture Length, and Windowing
 
 **Phase 9: SAR, ISAR, Passive Radar, and Capstone**  
-**Status:** Scaffolded; implementation batch `P79` is pending
+**Status:** Implemented by governed batch `P79`
 
 ## Guiding question
 
@@ -9,32 +9,73 @@ What controls range and cross-range resolution and sidelobes?
 
 ## Experiment
 
-Image closely spaced point targets while varying waveform bandwidth, aperture length, sampling spacing, and aperture taper.
+The experiment builds a focused SAR point-spread function from two transparent
+coherent sums. Frequency samples across `200 MHz` produce the range response;
+platform positions across a `30 m` synthetic aperture produce the cross-range
+response for a `10 GHz` monostatic radar viewing broadside at `1000 m`.
 
-## Procedure
+Three point targets make the two axes visible in a small range/cross-range
+image. The script then changes only bandwidth, only aperture length, only
+aperture weighting, and only platform-sample spacing. It reports half-power
+width, first-null locations, and peak sidelobe level from unclipped linear
+responses. The intentionally broken `5 m` platform spacing creates nearly
+equal-height cross-range replicas about `3 m` apart; recovery rebuilds the
+response from the unchanged scene with `0.25 m` spacing.
 
-Measure point-spread width and sidelobes in both dimensions. Deliberately undersample the aperture to create grating-lobe-like aliases.
+## Learning goal
 
-## What this should teach
+Independently control the two dimensions: transmitted bandwidth sets range
+resolution, synthetic aperture and geometry set cross-range resolution, and
+taper trades lower sidelobes for a wider mainlobe. Explain why dense display
+pixels cannot repair sparse aperture sampling.
 
-Range resolution depends mainly on transmitted bandwidth; cross-range resolution depends on synthetic aperture and geometry; taper trades sidelobes for width.
+## Prerequisites and dependencies
 
-## Completion condition
+- P12 and P33 establish finite-record leakage and the width/sidelobe cost of
+  weighting.
+- P30-P32 establish two-way range and bandwidth-limited pulse compression.
+- P61-P63 establish spatial phase, finite aperture, taper, and grating lobes.
+- P75 establishes exact monostatic SAR phase history.
+- P76 establishes the range-compressed matrix.
+- P77 establishes explicit path-compensated coherent focusing.
+- P78 establishes why the correct range path must be sampled before focusing.
+- Runtime target: base MATLAB R2016b or newer; no toolbox is used.
 
-You can independently change range and cross-range resolution and explain the resulting point-spread function.
+The model assumes known broadside geometry and ideal point targets. P80 owns
+unknown motion error and autofocus.
 
-## Start or implement
+## Run
 
-```bash
-./bin/learn start 79
+```matlab
+cd modules/79-compare-sar-resolution-aperture-length-and-windowing
+run('experiment.m')
 ```
 
-If this module is scaffolded, tutor mode may review this brief but must not pretend the experiment is complete. Activate Portfolio Control batch `P79` to add the runnable MATLAB experiment, explanation, walkthrough, checks, validation, and evidence.
+Then follow `walkthrough.md` one transition at a time and use `checks.md` for
+the completion conversation. The script writes no files and performs no
+network, timer, worker, or external-process operation.
+
+## Files
+
+- `experiment.m` — seeded point scene, explicit range/aperture sums, four
+  controlled comparisons, sparse-sampling failure, recovery, assertions, and
+  resource bounds
+- `lesson.md` — physical model, equations, limiting cases, and interpretation
+  traps
+- `walkthrough.md` — baseline observations, one-variable changes, failure,
+  recovery, cancellation, rollback, and concept connection
+- `checks.md` — answered observation/prediction checks and teach-back rubric
 
 ## AI chat prompt
 
-Act as my hands-on DSP and radar lab mentor. Create a self-contained MATLAB mini-project titled "Compare SAR Resolution, Aperture Length, and Windowing". The guiding question is: "What controls range and cross-range resolution and sidelobes?" Use this experiment: Image closely spaced point targets while varying waveform bandwidth, aperture length, sampling spacing, and aperture taper. Have me perform these actions: Measure point-spread width and sidelobes in both dimensions. Deliberately undersample the aperture to create grating-lobe-like aliases. The main concept I must learn is: Range resolution depends mainly on transmitted bandwidth; cross-range resolution depends on synthetic aperture and geometry; taper trades sidelobes for width. Assume I am a beginner in DSP/radar but can run and edit MATLAB scripts. Focus on physical meaning, signal flow, and visual intuition rather than MATLAB syntax or library instruction. Use seeded synthetic data, one runnable script organized into clear sections, and plots after every important processing step. Show the underlying equation or operation before using any toolbox convenience function; use base MATLAB where practical and give an optional toolbox version only when it adds real value. Include expected observations, two parameter sweeps that make the concept visually obvious, one intentionally broken case, common interpretation mistakes, and a short completion checklist. Do not turn it into homework or ask me to derive long equations before seeing the experiment.
-
-## Files currently present
-
-- `README.md`
+Act as my hands-on DSP and radar lab mentor. Keep the guiding question exactly:
+"What controls range and cross-range resolution and sidelobes?" Begin with the
+separable focused point response and inspect one dimension at a time. Show the
+explicit coherent sums over frequency and platform position. Vary only
+bandwidth, then only aperture length. Compare uniform and Hamming aperture
+weights without claiming that taper improves resolution. Deliberately
+undersample the platform track so cross-range aliases appear, and recover from
+the unchanged scene with dense sampling. Distinguish physical resolution from
+display spacing, connect each metric to metres and dB, teach physical meaning
+rather than MATLAB syntax, and never describe static checks as MATLAB runtime
+evidence.
