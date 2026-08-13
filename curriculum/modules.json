@@ -925,7 +925,7 @@
       "phase_title": "SAR, ISAR, Passive Radar, and Capstone",
       "slug": "focus-sar-with-backprojection",
       "folder": "modules/77-focus-sar-with-backprojection",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P77"
     },
     {

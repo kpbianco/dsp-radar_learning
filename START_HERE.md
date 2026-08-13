@@ -260,5 +260,10 @@ Project 76 follows P75 by transmitting an LFM pulse at each aperture position
 and applying an explicit matched filter independently along fast time. It
 localizes targets in slant range while preserving their complex aperture phase,
 then shows why a magnitude-only range map cannot support later azimuth focus.
+Project 77 follows P76 by sampling that complex range history along every
+pixel's hypothesized slant-range path, compensating the monostatic carrier
+phase, and coherently accumulating aperture looks. Partial-aperture and
+assumed-path-error sweeps separate genuine focus from a merely bright range
+history, with exact recovery on the unchanged complex measurement.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

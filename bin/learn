@@ -37,7 +37,11 @@ def save_state(state: dict) -> None:
 def resolve(selector: str | None, modules: list[dict], state: dict) -> dict:
     if selector is None:
         completed = set(state.get("completed", []))
-        implemented = [m for m in modules if m["status"] == "implemented"]
+        implemented = []
+        for module in modules:
+            if module["status"] != "implemented":
+                break
+            implemented.append(module)
         for m in implemented:
             if m["id"] not in completed:
                 return m
