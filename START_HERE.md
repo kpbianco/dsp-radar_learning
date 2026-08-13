@@ -256,5 +256,9 @@ known straight-track sequence of antenna positions. It connects slant-range
 change to two-way phase curvature, moves the phase-history vertex with target
 cross-range, extends the observed curvature with aperture length, and recovers
 coherent path matching from unchanged I/Q after magnitude-only processing.
+Project 76 follows P75 by transmitting an LFM pulse at each aperture position
+and applying an explicit matched filter independently along fast time. It
+localizes targets in slant range while preserving their complex aperture phase,
+then shows why a magnitude-only range map cannot support later azimuth focus.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
