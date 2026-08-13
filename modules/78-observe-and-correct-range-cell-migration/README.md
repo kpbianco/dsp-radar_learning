@@ -1,7 +1,7 @@
 # P78: Observe and Correct Range-Cell Migration
 
 **Phase 9: SAR, ISAR, Passive Radar, and Capstone**  
-**Status:** Scaffolded; implementation batch `P78` is pending
+**Status:** Implemented by governed batch `P78`
 
 ## Guiding question
 
@@ -9,32 +9,80 @@ Why does a target move through range bins during a long synthetic aperture?
 
 ## Experiment
 
-Use a long aperture or squinted geometry so a point target traces a curved range history.
+A stationary point target sits at `(60 m, 1000 m)` while a monostatic radar
+crosses a 400 m straight track. Its exact slant range
+`R(x_p) = sqrt((x_p-x_t)^2+y_t^2)` changes by about 33.25 m: 66.5 stored
+`0.5 m` bins, or 16.6 physical `2 m` range-resolution cells. The seeded
+range-compressed complex matrix therefore contains a curved ridge.
 
-## Procedure
+The script makes the range-cell migration correction visible. For each
+aperture row it linearly samples the original matrix at
+`r + (R(x_p)-R_ref)`, which aligns the target at one reference range. A
+fixed-bin coherent profile and image use the same complex data and the same
+two-way phase compensation, so their loss is caused only by ignoring the
+changing range sample. Path-following interpolation concentrates the energy.
 
-Plot the target migration before focusing. Compare processing that assumes a fixed range bin with interpolation/backprojection that follows the curved path.
+Two controlled sweeps vary only aperture length and only target squint offset.
+The intentionally broken case reverses the interpolation sign, nearly doubling
+the ridge motion. Recovery freshly reapplies the correct sign to the unchanged
+complex input.
 
-## What this should teach
+## Learning goal
 
-Changing slant range during aperture collection causes migration that must be compensated for high-resolution SAR.
+Explain that the target is not moving across the ground image. Platform motion
+changes its round-trip delay, so its localized range response crosses stored
+range bins during the aperture. Phase compensation cannot recover samples that
+a fixed range bin never captured; range interpolation must follow the curved
+path before the coherent aperture sum can concentrate the target.
 
-## Completion condition
+## Prerequisites and dependencies
 
-The corrected image concentrates energy that was smeared by fixed-bin processing.
+- P18 supplies complex-I/Q and phase-preservation intuition.
+- P30 supplies monostatic `R = c*tau/2` ranging.
+- P32 and P76 supply range-compressed response and fast-time/slow-time matrix
+  intuition.
+- P37 supplies the range-column/aperture-row orientation.
+- P75 supplies exact SAR slant-range history.
+- Governed P77 supplies explicit path-following backprojection; P78 isolates
+  why its range interpolation is necessary.
+- Runtime target: base MATLAB R2016b or newer; no optional toolbox is used.
 
-## Start or implement
+P79 will separately compare SAR resolution, aperture length, and windowing.
+P80 will treat unknown motion error and autofocus. P78 assumes known geometry
+and does not claim either later topic.
 
-```bash
-./bin/learn start 78
+## Run
+
+```matlab
+cd modules/78-observe-and-correct-range-cell-migration
+run('experiment.m')
 ```
 
-If this module is scaffolded, tutor mode may review this brief but must not pretend the experiment is complete. Activate Portfolio Control batch `P78` to add the runnable MATLAB experiment, explanation, walkthrough, checks, validation, and evidence.
+Then follow `walkthrough.md` one transition at a time and use `checks.md` for
+the completion conversation. This is a bounded deterministic synthetic model,
+not an operational SAR processor or hardware/field result.
+
+## Files
+
+- `experiment.m` — deterministic curved range history, explicit correction,
+  two one-variable sweeps, fixed-bin comparison, wrong-sign failure,
+  same-data recovery, metrics, assertions, and resource bounds
+- `lesson.md` — physical model, equations, limiting cases, and interpretation
+  traps
+- `walkthrough.md` — baseline observations, controlled changes, failure,
+  recovery, cancellation, rollback, and concept connection
+- `checks.md` — answered observation/prediction checks and teach-back rubric
 
 ## AI chat prompt
 
-Act as my hands-on DSP and radar lab mentor. Create a self-contained MATLAB mini-project titled "Observe and Correct Range-Cell Migration". The guiding question is: "Why does a target move through range bins during a long synthetic aperture?" Use this experiment: Use a long aperture or squinted geometry so a point target traces a curved range history. Have me perform these actions: Plot the target migration before focusing. Compare processing that assumes a fixed range bin with interpolation/backprojection that follows the curved path. The main concept I must learn is: Changing slant range during aperture collection causes migration that must be compensated for high-resolution SAR. Assume I am a beginner in DSP/radar but can run and edit MATLAB scripts. Focus on physical meaning, signal flow, and visual intuition rather than MATLAB syntax or library instruction. Use seeded synthetic data, one runnable script organized into clear sections, and plots after every important processing step. Show the underlying equation or operation before using any toolbox convenience function; use base MATLAB where practical and give an optional toolbox version only when it adds real value. Include expected observations, two parameter sweeps that make the concept visually obvious, one intentionally broken case, common interpretation mistakes, and a short completion checklist. Do not turn it into homework or ask me to derive long equations before seeing the experiment.
-
-## Files currently present
-
-- `README.md`
+Act as my hands-on DSP and radar lab mentor. Keep the guiding question exactly:
+"Why does a target move through range bins during a long synthetic aperture?"
+Begin with the stationary target and its exact changing slant range. Inspect the
+uncorrected range-compressed ridge, then the explicit linear interpolation that
+aligns it. Compare fixed-bin and path-following processing using identical
+complex data and identical phase compensation. Vary only aperture length, then
+only squint offset. Make the wrong interpolation sign double the migration and
+recover from the byte-for-byte unchanged complex input. Distinguish stored
+sampling bins from physical range-resolution cells, teach physical meaning
+rather than MATLAB syntax, and never describe static checks as MATLAB runtime
+evidence.
