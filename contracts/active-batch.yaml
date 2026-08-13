@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P76
-  title: 'Implement P76: Perform SAR Range Compression'
-  goal: Implement Project 76 as an interactive MATLAB lesson answering 'What information is created before azimuth
-    focusing begins?' through visible cause and effect.
+  id: P77
+  title: 'Implement P77: Focus SAR with Backprojection'
+  goal: Implement Project 77 as an interactive MATLAB lesson answering 'How does compensating the correct path length
+    focus a point in an image?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/76-perform-sar-range-compression/README.md
+  - modules/77-focus-sar-with-backprojection/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M9.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P76.yaml
-  control_plane_revision: e2ce44f28d3d3f92d7a8bf4d4f1c4ba7b563a185  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P77.yaml
+  control_plane_revision: b05e2309d1c63fdd2d71374945c9de3c6ca07e48  # pragma: allowlist secret
 dependencies:
-- P75
+- P76
 scope:
   allowed_paths:
-  - modules/76-perform-sar-range-compression/**
+  - modules/77-focus-sar-with-backprojection/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P76-*.md
-  - docs/evidence/P76-*.md
-  - tests/test_p76*.py
-  - tests/**/test_p76*.py
-  - tests/p76/**
-  - tests/**/p76/**
+  - docs/plans/P77-*.md
+  - docs/evidence/P77-*.md
+  - tests/test_p77*.py
+  - tests/**/test_p77*.py
+  - tests/p77/**
+  - tests/**/p77/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: What information is created before azimuth focusing begins?'
+- 'Preserve the guiding question: How does compensating the correct path length focus a point in an image?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P76 artifact completeness and manifest identity
-  - P76 deterministic-input contract
-  - P76 sweep and broken-case markers
-  - P76 placeholder/black-box regression
+  - P77 artifact completeness and manifest identity
+  - P77 deterministic-input contract
+  - P77 sweep and broken-case markers
+  - P77 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P76 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P77 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P76-<date>.md
+  - docs/evidence/P77-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

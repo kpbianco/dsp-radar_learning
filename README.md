@@ -322,16 +322,21 @@ three delayed point-target echoes with preserved two-way carrier phase, and
 range-compresses every fast-time row. Bandwidth and target-spacing sweeps expose
 range resolution, while unchanged complex compressed data recovers the phase
 that a magnitude-only display destroys before azimuth focusing.
+Project 77 backprojects the complex range history over a 2-D ground grid by
+explicitly interpolating each hypothesized slant range, compensating two-way
+carrier phase, and summing aperture looks. Partial-aperture accumulation exposes
+cross-range narrowing, point-response cuts verify focus coordinates, and an
+aperture-varying path-error sweep defocuses before exact same-data recovery.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–76 have completed their separate governed
-implementation batches. Projects 77–84 wait for their own
+ready-to-paste AI prompt. Projects 1–77 have completed their separate governed
+implementation batches. Projects 78–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P76.
+the current implementation frontier is P77.
 
 ## Module layout
 

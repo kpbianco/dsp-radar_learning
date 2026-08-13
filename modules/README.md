@@ -78,7 +78,7 @@
 | [P74](../modules/74-create-a-micro-doppler-spectrogram/) | implemented | 8 | Create a Micro-Doppler Spectrogram |
 | [P75](../modules/75-build-sar-phase-history-intuition/) | implemented | 9 | Build SAR Phase-History Intuition |
 | [P76](../modules/76-perform-sar-range-compression/) | implemented | 9 | Perform SAR Range Compression |
-| [P77](../modules/77-focus-sar-with-backprojection/) | scaffolded | 9 | Focus SAR with Backprojection |
+| [P77](../modules/77-focus-sar-with-backprojection/) | implemented | 9 | Focus SAR with Backprojection |
 | [P78](../modules/78-observe-and-correct-range-cell-migration/) | scaffolded | 9 | Observe and Correct Range-Cell Migration |
 | [P79](../modules/79-compare-sar-resolution-aperture-length-and-windowing/) | scaffolded | 9 | Compare SAR Resolution, Aperture Length, and Windowing |
 | [P80](../modules/80-inject-sar-motion-error-and-apply-autofocus/) | scaffolded | 9 | Inject SAR Motion Error and Apply Autofocus |
