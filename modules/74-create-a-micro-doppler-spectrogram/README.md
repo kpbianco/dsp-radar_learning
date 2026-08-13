@@ -1,7 +1,7 @@
 # P74: Create a Micro-Doppler Spectrogram
 
 **Phase 8: FMCW, MIMO, and Micro-Doppler**  
-**Status:** Scaffolded; implementation batch `P74` is pending
+**Status:** Implemented by governed batch `P74`
 
 ## Guiding question
 
@@ -9,32 +9,60 @@ How do rotating or swinging target parts produce time-varying Doppler around bul
 
 ## Experiment
 
-Simulate a walking-like torso plus swinging limbs or a rotating blade and generate a slow-time radar return.
+Build one deterministic complex slow-time return from a steadily approaching
+torso and two oppositely swinging limb scatterers. The script exposes each
+scatterer's radial velocity and phase before summing them, then implements the
+full-record Doppler FFT and short-time Fourier transform (STFT) with explicit
+windows, frame extraction, and FFTs.
 
-## Procedure
+The baseline plots raw complex phase, a dwell-wide Doppler spectrum, and a
+signed spectrogram. Three controlled sweeps change swing speed, carrier
+frequency, and STFT window duration one variable at a time. An intentionally
+broken path discards I/Q phase with `abs`, then recovers the signed
+micro-Doppler view from the unchanged complex measurement.
 
-Plot raw phase, Doppler spectrum, and spectrogram. Change limb/rotor speed, carrier frequency, and STFT window length.
+## Learning goal
 
-## What this should teach
+Identify the nearly constant bulk Doppler ridge and distinguish it from the
+periodic side tracks produced by component motion. Explain why a full-dwell
+spectrum loses timing, why carrier frequency scales Doppler in hertz, and why
+STFT window duration trades time localization against Doppler resolution.
 
-Micro-Doppler reveals periodic component motion that is not represented by a single target velocity.
+## Prerequisites and dependencies
 
-## Completion condition
+- P15 supplies explicit STFT and window-duration intuition.
+- P18 explains why complex I/Q preserves signed frequency.
+- P36 connects radial velocity with coherent phase progression.
+- P70 supplies the selected-range-bin slow-time interpretation.
+- P73 is the governed curriculum prerequisite.
+- Runtime target: base MATLAB R2016b or newer; no optional toolbox is used.
 
-You can identify the bulk Doppler and the side patterns caused by periodic motion.
+## Run
 
-## Start or implement
-
-```bash
-./bin/learn start 74
+```matlab
+cd modules/74-create-a-micro-doppler-spectrogram
+run('experiment.m')
 ```
 
-If this module is scaffolded, tutor mode may review this brief but must not pretend the experiment is complete. Activate Portfolio Control batch `P74` to add the runnable MATLAB experiment, explanation, walkthrough, checks, validation, and evidence.
+Then follow `walkthrough.md` one observation at a time and use `checks.md` for
+the completion conversation. The script is a bounded synthetic learning model,
+not a physical-radar, human-gait classifier, or operational validation.
+
+## Files
+
+- `experiment.m` — deterministic model, explicit FFT/STFT, three sweeps,
+  broken case, recovery, assertions, and retained metrics
+- `lesson.md` — physical model, equations, limits, and interpretation traps
+- `walkthrough.md` — guided baseline, controlled changes, failure, recovery,
+  cancellation, and rollback
+- `checks.md` — answered observation/prediction checks and teach-back rubric
 
 ## AI chat prompt
 
-Act as my hands-on DSP and radar lab mentor. Create a self-contained MATLAB mini-project titled "Create a Micro-Doppler Spectrogram". The guiding question is: "How do rotating or swinging target parts produce time-varying Doppler around bulk motion?" Use this experiment: Simulate a walking-like torso plus swinging limbs or a rotating blade and generate a slow-time radar return. Have me perform these actions: Plot raw phase, Doppler spectrum, and spectrogram. Change limb/rotor speed, carrier frequency, and STFT window length. The main concept I must learn is: Micro-Doppler reveals periodic component motion that is not represented by a single target velocity. Assume I am a beginner in DSP/radar but can run and edit MATLAB scripts. Focus on physical meaning, signal flow, and visual intuition rather than MATLAB syntax or library instruction. Use seeded synthetic data, one runnable script organized into clear sections, and plots after every important processing step. Show the underlying equation or operation before using any toolbox convenience function; use base MATLAB where practical and give an optional toolbox version only when it adds real value. Include expected observations, two parameter sweeps that make the concept visually obvious, one intentionally broken case, common interpretation mistakes, and a short completion checklist. Do not turn it into homework or ask me to derive long equations before seeing the experiment.
-
-## Files currently present
-
-- `README.md`
+Act as my hands-on DSP and radar lab mentor. Keep the guiding question exactly:
+"How do rotating or swinging target parts produce time-varying Doppler around
+bulk motion?" Start with the physical velocity-to-phase model, inspect one
+baseline plot at a time, vary only one physical or STFT parameter per step,
+make the magnitude-only failure explicit, and finish with a short teach-back.
+Do not turn the lesson into MATLAB syntax instruction or describe static checks
+as MATLAB runtime evidence.

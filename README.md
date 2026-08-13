@@ -306,16 +306,22 @@ Project 73 combines two explicit TX positions with four RX positions into
 eight unique half-wavelength virtual phase centers, compares receive-only and
 virtual beamwidth and target separation, then exposes TDM motion phase as an
 angle bias and recovers the unchanged record using same-TX Doppler estimation.
+Project 74 closes Phase 8 by coherently summing a steady torso with two
+oppositely swinging limb scatterers, forming a two-sided explicit STFT, and
+separating bulk Doppler from periodic component tracks. Swing-speed, carrier,
+and window-duration sweeps expose physical scaling and time-frequency tradeoffs,
+then the unchanged complex record recovers signed motion after a deliberate
+magnitude-only failure.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–73 have completed their separate governed
-implementation batches. Projects 74–84 wait for their own
+ready-to-paste AI prompt. Projects 1–74 have completed their separate governed
+implementation batches. Projects 75–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P73.
+the current implementation frontier is P74.
 
 ## Module layout
 
