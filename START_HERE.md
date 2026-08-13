@@ -265,5 +265,11 @@ pixel's hypothesized slant-range path, compensating the monostatic carrier
 phase, and coherently accumulating aperture looks. Partial-aperture and
 assumed-path-error sweeps separate genuine focus from a merely bright range
 history, with exact recovery on the unchanged complex measurement.
+Project 78 follows P77 by isolating the curved range path of one stationary
+target over a long squinted aperture. It explicitly aligns aperture rows with
+linear interpolation, fairly compares fixed-bin and path-following image
+formation under identical phase compensation, varies aperture and squint, and
+recovers the unchanged complex input after a wrong-sign shift doubles the
+migration.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

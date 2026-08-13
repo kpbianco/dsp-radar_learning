@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P77
-  title: 'Implement P77: Focus SAR with Backprojection'
-  goal: Implement Project 77 as an interactive MATLAB lesson answering 'How does compensating the correct path length
-    focus a point in an image?' through visible cause and effect.
+  id: P78
+  title: 'Implement P78: Observe and Correct Range-Cell Migration'
+  goal: Implement Project 78 as an interactive MATLAB lesson answering 'Why does a target move through range bins
+    during a long synthetic aperture?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/77-focus-sar-with-backprojection/README.md
+  - modules/78-observe-and-correct-range-cell-migration/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M9.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P77.yaml
-  control_plane_revision: b05e2309d1c63fdd2d71374945c9de3c6ca07e48  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P78.yaml
+  control_plane_revision: 68c301f0efdd3c32d0a01528cfd47e494f4ff24b  # pragma: allowlist secret
 dependencies:
-- P76
+- P77
 scope:
   allowed_paths:
-  - modules/77-focus-sar-with-backprojection/**
+  - modules/78-observe-and-correct-range-cell-migration/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P77-*.md
-  - docs/evidence/P77-*.md
-  - tests/test_p77*.py
-  - tests/**/test_p77*.py
-  - tests/p77/**
-  - tests/**/p77/**
+  - docs/plans/P78-*.md
+  - docs/evidence/P78-*.md
+  - tests/test_p78*.py
+  - tests/**/test_p78*.py
+  - tests/p78/**
+  - tests/**/p78/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How does compensating the correct path length focus a point in an image?'
+- 'Preserve the guiding question: Why does a target move through range bins during a long synthetic aperture?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P77 artifact completeness and manifest identity
-  - P77 deterministic-input contract
-  - P77 sweep and broken-case markers
-  - P77 placeholder/black-box regression
+  - P78 artifact completeness and manifest identity
+  - P78 deterministic-input contract
+  - P78 sweep and broken-case markers
+  - P78 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P77 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P78 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P77-<date>.md
+  - docs/evidence/P78-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
