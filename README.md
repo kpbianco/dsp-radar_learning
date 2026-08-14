@@ -362,16 +362,21 @@ range-Doppler bank and a small joint space-time processor the same array-pulse
 range record. It makes a near-ridge target visible with neighboring-range
 covariance, varies ridge separation and clean training support independently,
 and recovers exactly after target-like training contamination erases contrast.
+Project 84 closes the curriculum by tracing one explicit pulsed-LFM scene from
+waveform and receiver samples through pulse compression, signed range-Doppler,
+linear-power 2-D CA-CFAR, 8-connected reports, and a gated alpha-beta tracker.
+Matched-filter taper and requested-Pfa sweeps reuse retained data, a quiet-side
+fixed threshold exposes the clutter-edge failure, and a wrong LFM replica
+recovers cell-for-cell from the unchanged calibrated receiver cube.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–83 have completed their separate governed
-implementation batches. Projects 84–84 wait for their own
-MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
+ready-to-paste AI prompt. Projects 1–84 have completed their separate governed
+implementation batches.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P83.
+the current implementation frontier is P84.
 
 ## Module layout
 

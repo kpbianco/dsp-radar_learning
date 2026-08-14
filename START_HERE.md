@@ -299,5 +299,9 @@ ridge in one already range-compressed array-pulse record. It compares a fixed
 beam plus Doppler bank with a transparent loaded joint covariance solve, varies
 ridge distance and clean training support separately, and rebuilds the exact
 baseline from retained clean cells after target-like training contamination.
-When you reach a scaffolded module, implement it through its Portfolio Control
-`P##` batch rather than allowing tutor mode to invent ungoverned content.
+Project 84 follows P83 and closes the curriculum by retaining visible products
+from LFM generation, seeded scene and receiver calibration, pulse compression,
+range-Doppler processing, 2-D CA-CFAR, clustering, and gated alpha-beta
+tracking. It attributes a modeled miss, receiver-spur artifact, clutter-edge
+false reports, and wrong-replica failure to their first responsible stage, then
+recovers exactly from the unchanged calibrated samples.
