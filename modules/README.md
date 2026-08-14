@@ -84,5 +84,5 @@
 | [P80](../modules/80-inject-sar-motion-error-and-apply-autofocus/) | implemented | 9 | Inject SAR Motion Error and Apply Autofocus |
 | [P81](../modules/81-form-an-isar-image-from-a-rotating-target/) | implemented | 9 | Form an ISAR Image from a Rotating Target |
 | [P82](../modules/82-build-a-passive-radar-cross-ambiguity-experiment/) | implemented | 9 | Build a Passive Radar Cross-Ambiguity Experiment |
-| [P83](../modules/83-compare-range-doppler-processing-with-a-small-stap-processor/) | scaffolded | 9 | Compare Range-Doppler Processing with a Small STAP Processor |
+| [P83](../modules/83-compare-range-doppler-processing-with-a-small-stap-processor/) | implemented | 9 | Compare Range-Doppler Processing with a Small STAP Processor |
 | [P84](../modules/84-run-the-end-to-end-radar-processing-capstone/) | scaffolded | 9 | Run the End-to-End Radar Processing Capstone |

@@ -997,7 +997,7 @@
       "phase_title": "SAR, ISAR, Passive Radar, and Capstone",
       "slug": "compare-range-doppler-processing-with-a-small-stap-processor",
       "folder": "modules/83-compare-range-doppler-processing-with-a-small-stap-processor",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P83"
     },
     {

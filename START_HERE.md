@@ -294,5 +294,10 @@ delay-Doppler cross-ambiguity, removes dominant zero-delay leakage with a
 visible one-coefficient projection, varies target delay, Doppler, coherent
 time, and reference quality, and recovers the unchanged channels after
 deliberate under-cancellation leaves the origin dominant.
+Project 83 follows P82 by placing a target near a moving-platform clutter
+ridge in one already range-compressed array-pulse record. It compares a fixed
+beam plus Doppler bank with a transparent loaded joint covariance solve, varies
+ridge distance and clean training support separately, and rebuilds the exact
+baseline from retained clean cells after target-like training contamination.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
