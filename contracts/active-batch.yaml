@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P83
-  title: 'Implement P83: Compare Range-Doppler Processing with a Small STAP Processor'
-  goal: Implement Project 83 as an interactive MATLAB lesson answering 'When is Doppler filtering alone insufficient
-    against clutter?' through visible cause and effect.
+  id: P84
+  title: 'Implement P84: Run the End-to-End Radar Processing Capstone'
+  goal: Implement Project 84 as an interactive MATLAB lesson answering 'Can I trace a target from waveform generation
+    through detection and tracking without treating any stage as a black box?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/83-compare-range-doppler-processing-with-a-small-stap-processor/README.md
+  - modules/84-run-the-end-to-end-radar-processing-capstone/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M9.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P83.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P84.yaml
   control_plane_revision: 1f20648ac59fc7105e0481f4e2c1f4d278b40f91  # pragma: allowlist secret
 dependencies:
-- P82
+- P83
 scope:
   allowed_paths:
-  - modules/83-compare-range-doppler-processing-with-a-small-stap-processor/**
+  - modules/84-run-the-end-to-end-radar-processing-capstone/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P83-*.md
-  - docs/evidence/P83-*.md
-  - tests/test_p83*.py
-  - tests/**/test_p83*.py
-  - tests/p83/**
-  - tests/**/p83/**
+  - docs/plans/P84-*.md
+  - docs/evidence/P84-*.md
+  - tests/test_p84*.py
+  - tests/**/test_p84*.py
+  - tests/p84/**
+  - tests/**/p84/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,8 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: When is Doppler filtering alone insufficient against clutter?'
+- 'Preserve the guiding question: Can I trace a target from waveform generation through detection and tracking without
+  treating any stage as a black box?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +60,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P83 artifact completeness and manifest identity
-  - P83 deterministic-input contract
-  - P83 sweep and broken-case markers
-  - P83 placeholder/black-box regression
+  - P84 artifact completeness and manifest identity
+  - P84 deterministic-input contract
+  - P84 sweep and broken-case markers
+  - P84 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +79,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P83 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P84 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P83-<date>.md
+  - docs/evidence/P84-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

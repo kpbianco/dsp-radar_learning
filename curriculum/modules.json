@@ -1009,7 +1009,7 @@
       "phase_title": "SAR, ISAR, Passive Radar, and Capstone",
       "slug": "run-the-end-to-end-radar-processing-capstone",
       "folder": "modules/84-run-the-end-to-end-radar-processing-capstone",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P84"
     }
   ]
