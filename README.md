@@ -345,16 +345,22 @@ wavelength-fraction and error-correlation sweeps, and applies an explicit
 phase-gradient autofocus estimate from a strong isolated range gate. A
 contaminated reference gate exposes scene-dependent bias before fresh recovery
 from the unchanged complex phase history.
+Project 81 keeps the radar fixed while a rigid point target rotates, explicitly
+range-compresses stepped-frequency history, removes full envelope-and-carrier
+centroid translation, and maps angle phase slope into cross-range. Angular
+aperture and rotation rate sweeps separate resolution from CPI/Doppler scale;
+omitted translation compensation smears the layout before exact same-history
+recovery.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–80 have completed their separate governed
-implementation batches. Projects 81–84 wait for their own
+ready-to-paste AI prompt. Projects 1–81 have completed their separate governed
+implementation batches. Projects 82–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P80.
+the current implementation frontier is P81.
 
 ## Module layout
 

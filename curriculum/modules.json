@@ -973,7 +973,7 @@
       "phase_title": "SAR, ISAR, Passive Radar, and Capstone",
       "slug": "form-an-isar-image-from-a-rotating-target",
       "folder": "modules/81-form-an-isar-image-from-a-rotating-target",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P81"
     },
     {
