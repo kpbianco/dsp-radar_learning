@@ -351,16 +351,22 @@ centroid translation, and maps angle phase slope into cross-range. Angular
 aperture and rotation rate sweeps separate resolution from CPI/Doppler scale;
 omitted translation compensation smears the layout before exact same-history
 recovery.
+Project 82 listens to one seeded broadcast-like illuminator through reference
+and surveillance channels, explicitly searches delayed reference products and
+signed Doppler phasors, and projects dominant zero-delay leakage before the
+weak target owns the map. Delay, Doppler, coherent-time, and reference-quality
+variations expose separate coordinates and processing-gain limits; deliberate
+under-cancellation fails before exact same-channel recovery.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–81 have completed their separate governed
-implementation batches. Projects 82–84 wait for their own
+ready-to-paste AI prompt. Projects 1–82 have completed their separate governed
+implementation batches. Projects 83–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P81.
+the current implementation frontier is P82.
 
 ## Module layout
 

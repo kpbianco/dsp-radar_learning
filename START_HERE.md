@@ -288,5 +288,11 @@ stepped-frequency history, removes centroid translation in envelope and
 carrier phase, maps angle-frequency into cross-range, separates angular
 aperture from rotation-rate/CPI effects, and recovers the unchanged raw history
 after deliberately omitting translation compensation.
+Project 82 follows P81 by observing a seeded broadcast-like illuminator in
+separate reference and surveillance channels. It explicitly forms normalized
+delay-Doppler cross-ambiguity, removes dominant zero-delay leakage with a
+visible one-coefficient projection, varies target delay, Doppler, coherent
+time, and reference quality, and recovers the unchanged channels after
+deliberate under-cancellation leaves the origin dominant.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.

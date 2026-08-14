@@ -1,7 +1,7 @@
 # P82: Build a Passive Radar Cross-Ambiguity Experiment
 
 **Phase 9: SAR, ISAR, Passive Radar, and Capstone**  
-**Status:** Scaffolded; implementation batch `P82` is pending
+**Status:** Implemented by governed batch `P82`
 
 ## Guiding question
 
@@ -9,32 +9,75 @@ How can a known broadcast-like reference reveal delayed Doppler-shifted echoes w
 
 ## Experiment
 
-Create a wideband reference waveform, a surveillance channel containing direct-path leakage plus delayed/Doppler-shifted target copies, and noise.
+A deterministic complex baseband waveform stands in for a broadcast
+illuminator. The reference receiver observes a high-quality copy. The
+surveillance receiver observes strong zero-delay leakage, one delayed static
+multipath copy, a much weaker delayed `+500 Hz` target echo, and noise. The
+script evaluates the normalized cross-ambiguity sum explicitly on a delay and
+Doppler grid before and after a one-coefficient least-squares direct-path
+canceller.
 
-## Procedure
+The target is hidden by the origin peak before cancellation and is the map
+maximum at `24` samples and `+500 Hz` afterward. Controlled cases then vary
+target delay, target Doppler, coherent integration time, and reference-channel
+quality. An intentionally under-cancelled case leaves the origin dominant;
+recovery reprocesses the unchanged measured channels with the full projection.
 
-Compute delay-Doppler cross-ambiguity before and after direct-path cancellation. Sweep target delay, Doppler, integration time, and reference quality.
+## Learning goal
 
-## What this should teach
+Explain why a passive receiver needs both a reference and a surveillance
+channel, how delay and Doppler become the two matched coordinates, why the
+direct path can dominate the map, and why coherent time and reference quality
+control visibility. Distinguish bistatic excess path from monostatic range and
+a one-tap teaching canceller from practical multipath cancellation.
 
-Passive radar compares a reference signal with a surveillance channel; direct-path and multipath cancellation are central challenges.
+## Prerequisites and dependencies
 
-## Completion condition
+- P08 supplies correlation as a hidden-pattern locator.
+- P18 supplies signed frequency in complex I/Q.
+- P26 supplies adaptive interference-cancellation intuition.
+- P34 supplies waveform ambiguity and mismatch intuition.
+- P36 and P42 supply Doppler phase and range-Doppler map interpretation.
+- Runtime target: base MATLAB R2016b or newer; no toolbox, external data, or
+  transmitted waveform is used.
 
-The target peak appears at correct delay/Doppler only after the dominant direct component is sufficiently suppressed.
+The illuminator, channels, delays, Dopplers, and cancellation coefficient are
+known synthetic teaching quantities. The map is not a calibrated bistatic
+range/velocity product and does not model antennas, synchronization
+estimation, propagation geometry, broadcast standards, or operational clutter.
 
-## Start or implement
+## Run
 
-```bash
-./bin/learn start 82
+```matlab
+cd modules/82-build-a-passive-radar-cross-ambiguity-experiment
+run('experiment.m')
 ```
 
-If this module is scaffolded, tutor mode may review this brief but must not pretend the experiment is complete. Activate Portfolio Control batch `P82` to add the runnable MATLAB experiment, explanation, walkthrough, checks, validation, and evidence.
+Then follow `walkthrough.md` one transition at a time and use `checks.md` for
+the completion conversation. The script writes no files and performs no
+network, timer, worker, GPU, or external-process operation.
+
+## Files
+
+- `experiment.m` — deterministic channel synthesis, explicit cancellation and
+  cross-ambiguity, four controlled variations, failure, recovery, assertions,
+  plots, and resource ceilings
+- `lesson.md` — physical signal model, equations, limiting cases,
+  dependencies, and interpretation traps
+- `walkthrough.md` — baseline observation, one-variable changes, failure,
+  recovery, and concept connection
+- `checks.md` — answered observation/prediction checks and teach-back rubric
 
 ## AI chat prompt
 
-Act as my hands-on DSP and radar lab mentor. Create a self-contained MATLAB mini-project titled "Build a Passive Radar Cross-Ambiguity Experiment". The guiding question is: "How can a known broadcast-like reference reveal delayed Doppler-shifted echoes without transmitting?" Use this experiment: Create a wideband reference waveform, a surveillance channel containing direct-path leakage plus delayed/Doppler-shifted target copies, and noise. Have me perform these actions: Compute delay-Doppler cross-ambiguity before and after direct-path cancellation. Sweep target delay, Doppler, integration time, and reference quality. The main concept I must learn is: Passive radar compares a reference signal with a surveillance channel; direct-path and multipath cancellation are central challenges. Assume I am a beginner in DSP/radar but can run and edit MATLAB scripts. Focus on physical meaning, signal flow, and visual intuition rather than MATLAB syntax or library instruction. Use seeded synthetic data, one runnable script organized into clear sections, and plots after every important processing step. Show the underlying equation or operation before using any toolbox convenience function; use base MATLAB where practical and give an optional toolbox version only when it adds real value. Include expected observations, two parameter sweeps that make the concept visually obvious, one intentionally broken case, common interpretation mistakes, and a short completion checklist. Do not turn it into homework or ask me to derive long equations before seeing the experiment.
-
-## Files currently present
-
-- `README.md`
+Act as my hands-on DSP and radar lab mentor. Keep the guiding question exactly:
+"How can a known broadcast-like reference reveal delayed Doppler-shifted echoes
+without transmitting?" Begin with the reference and surveillance channels,
+then show the explicit cross-ambiguity sum before naming the result. Compare
+the same measurement before and after direct-path projection. Change target
+delay, target Doppler, coherent integration time, and reference quality while
+holding the other controls fixed. Deliberately under-cancel the direct path and
+recover from the unchanged channels. Separate bistatic excess path from
+monostatic range, signed Doppler from speed, one-tap cancellation from practical
+multipath suppression, static/simulated evidence from MATLAB runtime evidence,
+and physical meaning from MATLAB syntax.
