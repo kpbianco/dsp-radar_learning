@@ -282,5 +282,11 @@ wavelength fractions, holds RMS fixed while changing spatial correlation,
 estimates adjacent phase gradients from a strong isolated range gate, and
 recovers the unchanged complex history after a contaminated autofocus gate
 mixes scene phase with motion phase.
+Project 81 follows P80 by keeping the radar fixed while a rigid point target
+rotates through known aspect angles. It explicitly range-compresses coherent
+stepped-frequency history, removes centroid translation in envelope and
+carrier phase, maps angle-frequency into cross-range, separates angular
+aperture from rotation-rate/CPI effects, and recovers the unchanged raw history
+after deliberately omitting translation compensation.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
