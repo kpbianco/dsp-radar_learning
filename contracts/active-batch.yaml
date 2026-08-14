@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P81
-  title: 'Implement P81: Form an ISAR Image from a Rotating Target'
-  goal: Implement Project 81 as an interactive MATLAB lesson answering 'How does target rotation create synthetic
-    aperture when the radar is stationary?' through visible cause and effect.
+  id: P82
+  title: 'Implement P82: Build a Passive Radar Cross-Ambiguity Experiment'
+  goal: Implement Project 82 as an interactive MATLAB lesson answering 'How can a known broadcast-like reference
+    reveal delayed Doppler-shifted echoes without transmitting?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/81-form-an-isar-image-from-a-rotating-target/README.md
+  - modules/82-build-a-passive-radar-cross-ambiguity-experiment/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M9.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P81.yaml
-  control_plane_revision: 59fa17ad163b69194535a606a132d18d56112ddf  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P82.yaml
+  control_plane_revision: 1f20648ac59fc7105e0481f4e2c1f4d278b40f91  # pragma: allowlist secret
 dependencies:
-- P80
+- P81
 scope:
   allowed_paths:
-  - modules/81-form-an-isar-image-from-a-rotating-target/**
+  - modules/82-build-a-passive-radar-cross-ambiguity-experiment/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P81-*.md
-  - docs/evidence/P81-*.md
-  - tests/test_p81*.py
-  - tests/**/test_p81*.py
-  - tests/p81/**
-  - tests/**/p81/**
+  - docs/plans/P82-*.md
+  - docs/evidence/P82-*.md
+  - tests/test_p82*.py
+  - tests/**/test_p82*.py
+  - tests/p82/**
+  - tests/**/p82/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,8 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How does target rotation create synthetic aperture when the radar is stationary?'
+- 'Preserve the guiding question: How can a known broadcast-like reference reveal delayed Doppler-shifted echoes
+  without transmitting?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +60,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P81 artifact completeness and manifest identity
-  - P81 deterministic-input contract
-  - P81 sweep and broken-case markers
-  - P81 placeholder/black-box regression
+  - P82 artifact completeness and manifest identity
+  - P82 deterministic-input contract
+  - P82 sweep and broken-case markers
+  - P82 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +79,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P81 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P82 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P81-<date>.md
+  - docs/evidence/P82-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

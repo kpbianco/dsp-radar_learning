@@ -985,7 +985,7 @@
       "phase_title": "SAR, ISAR, Passive Radar, and Capstone",
       "slug": "build-a-passive-radar-cross-ambiguity-experiment",
       "folder": "modules/82-build-a-passive-radar-cross-ambiguity-experiment",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P82"
     },
     {
