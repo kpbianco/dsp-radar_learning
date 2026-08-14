@@ -961,7 +961,7 @@
       "phase_title": "SAR, ISAR, Passive Radar, and Capstone",
       "slug": "inject-sar-motion-error-and-apply-autofocus",
       "folder": "modules/80-inject-sar-motion-error-and-apply-autofocus",
-      "status": "scaffolded",
+      "status": "implemented",
       "implementation_batch": "P80"
     },
     {

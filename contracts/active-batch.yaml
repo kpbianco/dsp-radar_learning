@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P79
-  title: 'Implement P79: Compare SAR Resolution, Aperture Length, and Windowing'
-  goal: Implement Project 79 as an interactive MATLAB lesson answering 'What controls range and cross-range resolution
-    and sidelobes?' through visible cause and effect.
+  id: P80
+  title: 'Implement P80: Inject SAR Motion Error and Apply Autofocus'
+  goal: Implement Project 80 as an interactive MATLAB lesson answering 'How small a platform-position error is enough
+    to blur a coherent image?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/79-compare-sar-resolution-aperture-length-and-windowing/README.md
+  - modules/80-inject-sar-motion-error-and-apply-autofocus/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M9.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P79.yaml
-  control_plane_revision: dd8101db6fb9fb82c6ba905fa6a04feb12d472b6  # pragma: allowlist secret
+  control_plane_path: products/dsp-radar-learning/batches/P80.yaml
+  control_plane_revision: 59fa17ad163b69194535a606a132d18d56112ddf  # pragma: allowlist secret
 dependencies:
-- P78
+- P79
 scope:
   allowed_paths:
-  - modules/79-compare-sar-resolution-aperture-length-and-windowing/**
+  - modules/80-inject-sar-motion-error-and-apply-autofocus/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P79-*.md
-  - docs/evidence/P79-*.md
-  - tests/test_p79*.py
-  - tests/**/test_p79*.py
-  - tests/p79/**
-  - tests/**/p79/**
+  - docs/plans/P80-*.md
+  - docs/evidence/P80-*.md
+  - tests/test_p80*.py
+  - tests/**/test_p80*.py
+  - tests/p80/**
+  - tests/**/p80/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,7 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: What controls range and cross-range resolution and sidelobes?'
+- 'Preserve the guiding question: How small a platform-position error is enough to blur a coherent image?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -59,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P79 artifact completeness and manifest identity
-  - P79 deterministic-input contract
-  - P79 sweep and broken-case markers
-  - P79 placeholder/black-box regression
+  - P80 artifact completeness and manifest identity
+  - P80 deterministic-input contract
+  - P80 sweep and broken-case markers
+  - P80 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -78,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P79 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P80 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P79-<date>.md
+  - docs/evidence/P80-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations

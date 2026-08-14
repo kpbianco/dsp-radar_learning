@@ -276,5 +276,11 @@ responses with explicit coherent sums. It varies waveform bandwidth and
 synthetic-aperture length independently, compares uniform and Hamming aperture
 weights, then deliberately undersamples the same track to create spatial
 aliases before exact recovery from the unchanged seeded point scene.
+Project 80 follows P79 by applying smooth and short-correlated line-of-sight
+motion error as an explicit common two-way phase screen. It sweeps error in
+wavelength fractions, holds RMS fixed while changing spatial correlation,
+estimates adjacent phase gradients from a strong isolated range gate, and
+recovers the unchanged complex history after a contaminated autofocus gate
+mixes scene phase with motion phase.
 When you reach a scaffolded module, implement it through its Portfolio Control
 `P##` batch rather than allowing tutor mode to invent ungoverned content.
