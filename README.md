@@ -357,16 +357,21 @@ signed Doppler phasors, and projects dominant zero-delay leakage before the
 weak target owns the map. Delay, Doppler, coherent-time, and reference-quality
 variations expose separate coordinates and processing-gain limits; deliberate
 under-cancellation fails before exact same-channel recovery.
+Project 83 returns to moving-platform clutter and gives a fixed-beam
+range-Doppler bank and a small joint space-time processor the same array-pulse
+range record. It makes a near-ridge target visible with neighboring-range
+covariance, varies ridge separation and clean training support independently,
+and recovers exactly after target-like training contamination erases contrast.
 Every module folder already contains its complete curriculum brief and
-ready-to-paste AI prompt. Projects 1–82 have completed their separate governed
-implementation batches. Projects 83–84 wait for their own
+ready-to-paste AI prompt. Projects 1–83 have completed their separate governed
+implementation batches. Projects 84–84 wait for their own
 MATLAB experiment, lesson, walkthrough, checks, validation, and evidence.
 
 Historical compatibility checkpoints recorded that Projects 6–84 intentionally wait
 for separate batches after P05, Projects 7–84 followed that rule after P06, and
 Projects 8–84 followed it after P07. Projects 9–84 were the corresponding
 checkpoint after P08. Those statements describe their respective checkpoints;
-the current implementation frontier is P82.
+the current implementation frontier is P83.
 
 ## Module layout
 

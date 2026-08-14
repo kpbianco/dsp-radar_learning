@@ -1,36 +1,36 @@
 schema_version: 1
 batch:
-  id: P82
-  title: 'Implement P82: Build a Passive Radar Cross-Ambiguity Experiment'
-  goal: Implement Project 82 as an interactive MATLAB lesson answering 'How can a known broadcast-like reference
-    reveal delayed Doppler-shifted echoes without transmitting?' through visible cause and effect.
+  id: P83
+  title: 'Implement P83: Compare Range-Doppler Processing with a Small STAP Processor'
+  goal: Implement Project 83 as an interactive MATLAB lesson answering 'When is Doppler filtering alone insufficient
+    against clutter?' through visible cause and effect.
 sources:
   product: products/dsp-radar-learning/product.yaml
   requirements:
   - products/dsp-radar-learning/PRD.md#cap-module-01---complete-module-implementation
   - products/dsp-radar-learning/acceptance.yaml#CAP-MODULE-01
-  - modules/82-build-a-passive-radar-cross-ambiguity-experiment/README.md
+  - modules/83-compare-range-doppler-processing-with-a-small-stap-processor/README.md
   milestone: products/dsp-radar-learning/milestones/DRL-M9.md
   baseline_commit: 10069b5d976688302397922df4bd7ad69e823b22
   control_plane_repository: kpbianco/portfolio-control
-  control_plane_path: products/dsp-radar-learning/batches/P82.yaml
+  control_plane_path: products/dsp-radar-learning/batches/P83.yaml
   control_plane_revision: 1f20648ac59fc7105e0481f4e2c1f4d278b40f91  # pragma: allowlist secret
 dependencies:
-- P81
+- P82
 scope:
   allowed_paths:
-  - modules/82-build-a-passive-radar-cross-ambiguity-experiment/**
+  - modules/83-compare-range-doppler-processing-with-a-small-stap-processor/**
   - curriculum/modules.json
   - README.md
   - START_HERE.md
   - modules/README.md
   - bin/learn
-  - docs/plans/P82-*.md
-  - docs/evidence/P82-*.md
-  - tests/test_p82*.py
-  - tests/**/test_p82*.py
-  - tests/p82/**
-  - tests/**/p82/**
+  - docs/plans/P83-*.md
+  - docs/evidence/P83-*.md
+  - tests/test_p83*.py
+  - tests/**/test_p83*.py
+  - tests/p83/**
+  - tests/**/p83/**
   - tests/test_curriculum.py
   - tests/test_learn_cli.py
   forbidden_paths:
@@ -45,8 +45,7 @@ scope:
   - docs/TUTOR_PROTOCOL.md
   - Makefile
 acceptance:
-- 'Preserve the guiding question: How can a known broadcast-like reference reveal delayed Doppler-shifted echoes
-  without transmitting?'
+- 'Preserve the guiding question: When is Doppler filtering alone insufficient against clutter?'
 - experiment.m has deterministic baseline, visible parameters, labeled plots/metrics, a sweep, and a broken case.
 - lesson.md explains the DSP/radar model and limiting cases without syntax-first teaching.
 - walkthrough.md guides baseline observation, one-variable changes, failure interpretation, and concept connection.
@@ -60,10 +59,10 @@ validation:
   - DSP_RADAR_VERIFY_PROFILE=quick python3 -m unittest discover -s tests -v
   - DSP_RADAR_VERIFY_PROFILE=full ./scripts/agent-verify.sh
   focused_tests_to_add:
-  - P82 artifact completeness and manifest identity
-  - P82 deterministic-input contract
-  - P82 sweep and broken-case markers
-  - P82 placeholder/black-box regression
+  - P83 artifact completeness and manifest identity
+  - P83 deterministic-input contract
+  - P83 sweep and broken-case markers
+  - P83 placeholder/black-box regression
   required_ci:
   - Control plane validation and target Quality validation
 risk:
@@ -79,10 +78,10 @@ risk:
   - changes exceed allowed paths
   - expected result conflicts with the governing model
 rollback:
-  strategy: Revert P82 implementation commits and restore only its manifest status to scaffolded.
+  strategy: Revert P83 implementation commits and restore only its manifest status to scaffolded.
 evidence:
   output:
-  - docs/evidence/P82-<date>.md
+  - docs/evidence/P83-<date>.md
   - validation commands and exit results
   - figure/metric inventory with units
   - acceptance map and limitations
